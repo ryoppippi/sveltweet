@@ -1,84 +1,96 @@
 /*
     IMPORTANT NOTICE! -
-    This code is originally taken from Vercel's 'react-tweet' package. 
+    This code is originally taken from Vercel's 'react-tweet' package.
     It just has a bit of modifications to work on Svelte and suit my coding style.
 
     Package URL: https://github.com/vercel/react-tweet
 */
 
 import type {
-	ITweetBase,
-	ITweet,
-	IMediaDetails,
 	IHashtagEntity,
-	ISymbolEntity,
 	IMediaAnimatedGif,
+	IMediaDetails,
 	IMediaVideo,
+	ISymbolEntity,
+	ITweet,
+	ITweetBase,
 	TEnrichedTweet,
 	TEntity,
 	TEntityWithType,
-	TTweetEntity
+	TTweetEntity,
 } from './types.js';
 
-const getTweetUrl = (tweet: ITweetBase) =>
-	`https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`;
+function getTweetUrl(tweet: ITweetBase) {
+	return `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`;
+}
 
-const getUserUrl = (usernameOrTweet: string | ITweetBase) =>
-	`https://twitter.com/${
+function getUserUrl(usernameOrTweet: string | ITweetBase) {
+	return `https://twitter.com/${
 		typeof usernameOrTweet === 'string' ? usernameOrTweet : usernameOrTweet.user.screen_name
 	}`;
+}
 
-const getLikeUrl = (tweet: ITweetBase) =>
-	`https://twitter.com/intent/like?tweet_id=${tweet.id_str}`;
+function getLikeUrl(tweet: ITweetBase) {
+	return `https://twitter.com/intent/like?tweet_id=${tweet.id_str}`;
+}
 
-const getReplyUrl = (tweet: ITweetBase) =>
-	`https://twitter.com/intent/tweet?in_reply_to=${tweet.id_str}`;
+function getReplyUrl(tweet: ITweetBase) {
+	return `https://twitter.com/intent/tweet?in_reply_to=${tweet.id_str}`;
+}
 
-const getFollowUrl = (tweet: ITweetBase) =>
-	`https://twitter.com/intent/follow?screen_name=${tweet.user.screen_name}`;
+function getFollowUrl(tweet: ITweetBase) {
+	return `https://twitter.com/intent/follow?screen_name=${tweet.user.screen_name}`;
+}
 
 const getHashtagUrl = (hashtag: IHashtagEntity) => `https://twitter.com/hashtag/${hashtag.text}`;
 
 const getSymbolUrl = (symbol: ISymbolEntity) => `https://twitter.com/search?q=%24${symbol.text}`;
 
-const getInReplyToUrl = (tweet: ITweet) =>
-	`https://twitter.com/${tweet.in_reply_to_screen_name}/status/${tweet.in_reply_to_status_id_str}`;
+function getInReplyToUrl(tweet: ITweet) {
+	return `https://twitter.com/${tweet.in_reply_to_screen_name}/status/${tweet.in_reply_to_status_id_str}`;
+}
 
-export const getMediaUrl = (media: IMediaDetails, size: 'small' | 'medium' | 'large'): string => {
+export function getMediaUrl(media: IMediaDetails, size: 'small' | 'medium' | 'large'): string {
 	const url = new URL(media.media_url_https);
 	const extension = url.pathname.split('.').pop();
 
-	if (!extension) return media.media_url_https;
+	if (extension == null) {
+		return media.media_url_https;
+	}
 
 	url.pathname = url.pathname.replace(`.${extension}`, '');
 	url.searchParams.set('format', extension);
 	url.searchParams.set('name', size);
 
 	return url.toString();
-};
+}
 
-export const getMp4Videos = (media: IMediaAnimatedGif | IMediaVideo) => {
+export function getMp4Videos(media: IMediaAnimatedGif | IMediaVideo) {
 	const { variants } = media.video_info;
 	const sortedMp4Videos = variants
-		.filter((vid) => vid.content_type === 'video/mp4')
+		.filter(vid => vid.content_type === 'video/mp4')
 		.sort((a, b) => (b.bitrate ?? 0) - (a.bitrate ?? 0));
 
 	return sortedMp4Videos;
-};
+}
 
-export const getMp4Video = (media: IMediaAnimatedGif | IMediaVideo) => {
+export function getMp4Video(media: IMediaAnimatedGif | IMediaVideo) {
 	const mp4Videos = getMp4Videos(media);
 	// Skip the highest quality video and use the next quality
 	return mp4Videos.length > 1 ? mp4Videos[1] : mp4Videos[0];
-};
+}
 
-export const formatNumber = (n: number): string => {
-	if (n > 999999) return `${(n / 1000000).toFixed(1)}M`;
-	if (n > 999) return `${(n / 1000).toFixed(1)}K`;
+export function formatNumber(n: number): string {
+	if (n > 999999) {
+		return `${(n / 1000000).toFixed(1)}M`;
+	}
+	if (n > 999) {
+		return `${(n / 1000).toFixed(1)}K`;
+	}
 	return n.toString();
-};
+}
 
-const getEntities = (tweet: ITweetBase): TEntity[] => {
+function getEntities(tweet: ITweetBase): TEntity[] {
 	const textMap = Array.from(tweet.text);
 	const result: TEntityWithType[] = [{ indices: tweet.display_text_range, type: 'text' }];
 
@@ -99,13 +111,13 @@ const getEntities = (tweet: ITweetBase): TEntity[] => {
 			case 'mention':
 				return Object.assign(entity, {
 					href: getUserUrl(entity.screen_name),
-					text
+					text,
 				});
 			case 'url':
 			case 'media':
 				return Object.assign(entity, {
 					href: entity.expanded_url,
-					text: entity.display_url
+					text: entity.display_url,
 				});
 			case 'symbol':
 				return Object.assign(entity, { href: getSymbolUrl(entity), text });
@@ -113,13 +125,9 @@ const getEntities = (tweet: ITweetBase): TEntity[] => {
 				return Object.assign(entity, { text });
 		}
 	});
-};
+}
 
-const addEntities = (
-	result: TEntityWithType[],
-	type: TEntityWithType['type'],
-	entities: TTweetEntity[]
-) => {
+function addEntities(result: TEntityWithType[],	type: TEntityWithType['type'],	entities: TTweetEntity[]) {
 	for (const entity of entities) {
 		for (const [i, item] of result.entries()) {
 			if (item.indices[0] > entity.indices[0] || item.indices[1] < entity.indices[1]) {
@@ -131,13 +139,13 @@ const addEntities = (
 			if (item.indices[0] < entity.indices[0]) {
 				items.unshift({
 					indices: [item.indices[0], entity.indices[0]],
-					type: 'text'
+					type: 'text',
 				});
 			}
 			if (item.indices[1] > entity.indices[1]) {
 				items.push({
 					indices: [entity.indices[1], item.indices[1]],
-					type: 'text'
+					type: 'text',
 				});
 			}
 
@@ -145,13 +153,13 @@ const addEntities = (
 			break; // Break out of the loop to avoid iterating over the new items
 		}
 	}
-};
+}
 
 /**
  * Update display_text_range to work w/ Array.from
  * Array.from is unicode aware, unlike string.slice()
  */
-const fixRange = (tweet: ITweetBase, entities: TEntityWithType[]) => {
+function fixRange(tweet: ITweetBase, entities: TEntityWithType[]) {
 	if (tweet.entities.media && tweet.entities.media[0].indices[0] < tweet.display_text_range[1]) {
 		tweet.display_text_range[1] = tweet.entities.media[0].indices[0];
 	}
@@ -159,16 +167,17 @@ const fixRange = (tweet: ITweetBase, entities: TEntityWithType[]) => {
 	if (lastEntity && lastEntity.indices[1] > tweet.display_text_range[1]) {
 		lastEntity.indices[1] = tweet.display_text_range[1];
 	}
-};
+}
 
 /**
  * Enriches a tweet with additional data used to more easily use the tweet in a UI.
  */
-export const enrichTweet = (tweet: ITweet): TEnrichedTweet => {
-	if (!tweet)
+export function enrichTweet(tweet: ITweet): TEnrichedTweet {
+	if (tweet == null) {
 		throw new Error(
-			`Tweet not defined, please use a valid tweet, the tweet you used is ${JSON.stringify(tweet)}`
+			`Tweet not defined, please use a valid tweet, the tweet you used is ${JSON.stringify(tweet)}`,
 		);
+	}
 
 	return {
 		...tweet,
@@ -176,18 +185,18 @@ export const enrichTweet = (tweet: ITweet): TEnrichedTweet => {
 		user: {
 			...tweet.user,
 			url: getUserUrl(tweet),
-			follow_url: getFollowUrl(tweet)
+			follow_url: getFollowUrl(tweet),
 		},
 		like_url: getLikeUrl(tweet),
 		reply_url: getReplyUrl(tweet),
-		in_reply_to_url: tweet.in_reply_to_screen_name ? getInReplyToUrl(tweet) : undefined,
+		in_reply_to_url: tweet.in_reply_to_screen_name != null ? getInReplyToUrl(tweet) : undefined,
 		entities: getEntities(tweet),
 		quoted_tweet: tweet.quoted_tweet
 			? {
 					...tweet.quoted_tweet,
 					url: getTweetUrl(tweet.quoted_tweet),
-					entities: getEntities(tweet.quoted_tweet)
-			  }
-			: undefined
+					entities: getEntities(tweet.quoted_tweet),
+				}
+			: undefined,
 	};
-};
+}

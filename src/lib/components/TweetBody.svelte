@@ -1,12 +1,14 @@
-<script lang="ts">
+<script lang='ts'>
 	import type { TEnrichedTweet } from '../types.js';
 	import TweetLink from './TweetLink.svelte';
 
 	export let tweet: TEnrichedTweet;
 </script>
 
-<p class="root">
-	{#each tweet.entities as item, i}
+<!-- eslint-disable svelte/no-at-html-tags -->
+
+<p class='root'>
+	{#each tweet.entities as item, i (i)}
 		{#if item.type === 'hashtag' || item.type === 'mention' || item.type === 'url' || item.type === 'symbol'}
 			<TweetLink href={item.href}>{item.text}</TweetLink>
 		{:else if item.type !== 'media'}

@@ -1,13 +1,13 @@
-<script lang="ts">
+<script lang='ts'>
 	import scn from 'scn';
 	import '../theme.css';
 
 	export let className: string = '';
-	let computedClass = scn('react-tweet-theme', 'root', className);
+	const computedClass = scn('react-tweet-theme', 'root', className);
 </script>
 
 <div class={computedClass}>
-	<article class="article">
+	<article class='article'>
 		<slot />
 	</article>
 </div>

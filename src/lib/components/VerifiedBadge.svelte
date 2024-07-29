@@ -6,7 +6,7 @@
 	export let user;
 	export let className = '';
 
-	let verified = user.verified || user.is_blue_verified || user.verified_type;
+	const verified = user.verified || user.is_blue_verified || user.verified_type;
 	let iconComponent = Verified;
 	let iconClassName = 'verifiedBlue';
 
@@ -28,7 +28,7 @@
 </script>
 
 {#if verified}
-	<div class="authorVerified {iconClassName}">
+	<div class='authorVerified {iconClassName}'>
 		<svelte:component this={iconComponent} />
 	</div>
 {/if}

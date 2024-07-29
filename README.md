@@ -25,26 +25,27 @@ npm install sveltekit-tweet
     ```ts
     import { getTweet } from 'sveltekit-tweet/server';
 
-    export const load = async () => {
+    export async function load() {
     	try {
     		const tweet = await getTweet('1694201062717034868');
 
     		return {
     			tweet
     		};
-    	} catch (error) {
+    	}
+    	catch (error) {
     		return {
     			status: 500,
     			error: 'Could not load tweet'
     		};
     	}
-    };
+    }
     ```
 
 3.  Use the `Tweet` component in your `+page.svelte` file to render the tweet.
 
     ```svelte
-    <script lang="ts">
+    <script lang='ts'>
     	import Tweet from 'sveltekit-tweet/server';
     	import type { PageData } from './$types';
 
@@ -64,4 +65,4 @@ npm install sveltekit-tweet
 - [ ] Drop external dependencies.
 - [ ] Add support for Quoted Tweets.
 - [ ] Add TweetNotFound component.
-- [X] Add easy way for mdsvex integration.
+- [x] Add easy way for mdsvex integration.

@@ -1,9 +1,9 @@
-<script lang="ts">
-	import EmbeddedTweet from './EmbeddedTweet.svelte';
+<script lang='ts'>
 	import type { ITweet } from '../types.js';
+	import EmbeddedTweet from './EmbeddedTweet.svelte';
 
 	export let components = {};
 	export let tweet: ITweet;
 </script>
 
-<EmbeddedTweet {tweet} {components} />
+<EmbeddedTweet {components} {tweet} />

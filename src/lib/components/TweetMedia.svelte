@@ -1,9 +1,8 @@
-<script lang="ts">
-	import type { TEnrichedTweet, TEnrichedQuotedTweet, IMediaDetails } from '../types.js';
-	import type { TwitterComponents } from '../types.js';
+<script lang='ts'>
+	import type { IMediaDetails, TEnrichedQuotedTweet, TEnrichedTweet, TwitterComponents } from '../types.js';
+	import { getMediaUrl } from '../utils.js';
 	import TweetMediaVideo from './TweetMediaVideo.svelte';
 	import MediaImg from './MediaImg.svelte';
-	import { getMediaUrl } from '../utils.js';
 
 	export let tweet: TEnrichedTweet | TEnrichedQuotedTweet;
 	export let components: TwitterComponents | undefined;
@@ -12,9 +11,12 @@
 	const getSkeletonStyle = (media: IMediaDetails, itemCount: number) => {
 		let paddingBottom = 56.25; // default of 16x9
 
-		if (itemCount === 1)
+		if (itemCount === 1) {
 			paddingBottom = (100 / media.original_info.width) * media.original_info.height;
-		if (itemCount === 2) paddingBottom = paddingBottom * 2;
+		}
+		if (itemCount === 2) {
+			paddingBottom = paddingBottom * 2;
+		}
 
 		// return {
 		// 	width: media.type === 'photo' ? undefined : 'unset',
@@ -26,8 +28,8 @@
 		}; padding-bottom: ${paddingBottom}%;`;
 	};
 
-	let length = tweet.mediaDetails?.length ?? 0;
-	let Img = components?.MediaImg ?? MediaImg;
+	const length = tweet.mediaDetails?.length ?? 0;
+	const Img = components?.MediaImg ?? MediaImg;
 
 	const mediaDetails = tweet.mediaDetails ?? [];
 </script>
@@ -38,24 +40,24 @@
 			'mediaWrapper',
 			length > 1 && 'grid2Columns',
 			length === 3 && 'grid3',
-			length > 4 && 'grid2x2'
+			length > 4 && 'grid2x2',
 		].join(' ')}
 	>
-		{#each mediaDetails as media}
+		{#each mediaDetails as media (media)}
 			{#if media.type === 'photo'}
 				<a
-					href={tweet.url}
 					class={['mediaContainer', 'mediaLink'].join(' ')}
-					target="_blank"
-					rel="noopener noreferrer"
+					href={tweet.url}
+					rel='noopener noreferrer'
+					target='_blank'
 				>
-					<div class="skeleton" style={getSkeletonStyle(media, length)} />
-					<Img src={getMediaUrl(media, 'small')} alt={media.ext_alt_text || 'Image'} draggable />
+					<div style={getSkeletonStyle(media, length)} class='skeleton' />
+					<Img alt={media.ext_alt_text || 'Image'} draggable src={getMediaUrl(media, 'small')} />
 				</a>
 			{:else}
-				<div class="mediaContainer">
-					<div class="skeleton" style={getSkeletonStyle(media, length)} />
-					<TweetMediaVideo {tweet} {media} />
+				<div class='mediaContainer'>
+					<div style={getSkeletonStyle(media, length)} class='skeleton' />
+					<TweetMediaVideo {media} {tweet} />
 				</div>
 			{/if}
 		{/each}

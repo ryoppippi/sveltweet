@@ -1,6 +1,6 @@
-<script lang="ts">
-	import AvatarImg from './AvatarImg.svelte';
+<script lang='ts'>
 	import type { TEnrichedTweet, TwitterComponents } from '../types.js';
+	import AvatarImg from './AvatarImg.svelte';
 	import VerifiedBadge from './VerifiedBadge.svelte';
 
 	export let tweet: TEnrichedTweet;
@@ -10,55 +10,54 @@
 	const { user } = tweet;
 </script>
 
-<div class="header">
-	<a href={tweet.url} class="avatar" target="_blank" rel="noopener noreferrer">
+<div class='header'>
+	<a class='avatar' href={tweet.url} rel='noopener noreferrer' target='_blank'>
 		<div
 			class={user.profile_image_shape === 'Square'
 				? 'avatarOverflow avatarSquare'
 				: 'avatarOverflow'}
 		>
 			<Img
-				style="margin-top: 0; margin-bottom: 0;"
-				src={user.profile_image_url_https}
+				style='margin-top: 0; margin-bottom: 0;'
 				alt={user.name}
-				width="48"
-				height="48"
+				height='48'
+				src={user.profile_image_url_https}
+				width='48'
 			/>
 		</div>
-		<div class="avatarOverflow">
-			<div class="avatarShadow" />
+		<div class='avatarOverflow'>
+			<div class='avatarShadow' />
 		</div>
 	</a>
-	<div class="author">
-		<a href={tweet.url} class="authorLink" target="_blank" rel="noopener noreferrer">
-			<div class="authorLinkText">
+	<div class='author'>
+		<a class='authorLink' href={tweet.url} rel='noopener noreferrer' target='_blank'>
+			<div class='authorLinkText'>
 				<span title={user.name}>{user.name}</span>
 			</div>
 			<VerifiedBadge {user} />
 		</a>
-		<div class="authorMeta">
-			<a href={tweet.url} class="username" target="_blank" rel="noopener noreferrer">
-				<span title="@{user.screen_name}">@{user.screen_name}</span>
+		<div class='authorMeta'>
+			<a class='username' href={tweet.url} rel='noopener noreferrer' target='_blank'>
+				<span title='@{user.screen_name}'>@{user.screen_name}</span>
 			</a>
-			<div class="authorFollow">
-				<span class="separator">·</span>
-				<a href={user.follow_url} class="follow" target="_blank" rel="noopener noreferrer">
+			<div class='authorFollow'>
+				<span class='separator'>·</span>
+				<a class='follow' href={user.follow_url} rel='noopener noreferrer' target='_blank'>
 					Follow
 				</a>
 			</div>
 		</div>
 	</div>
 	<a
+		class='brand'
+		aria-label='View on Twitter'
 		href={tweet.url}
-		class="brand"
-		target="_blank"
-		rel="noopener noreferrer"
-		aria-label="View on Twitter"
+		rel='noopener noreferrer'
+		target='_blank'
 	>
-		<svg viewBox="0 0 24 24" aria-hidden="true" class="twitterIcon">
+		<svg class='twitterIcon' aria-hidden='true' viewBox='0 0 24 24'>
 			<g>
-				<path
-					d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+				<path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'
 				/>
 			</g>
 		</svg>

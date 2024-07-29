@@ -1,8 +1,8 @@
-<script lang="ts">
+<script lang='ts'>
 	export let href: string;
 </script>
 
-<a {href} class="root" target="_blank" rel="noopener noreferrer">
+<a class='root' {href} rel='noopener noreferrer' target='_blank'>
 	<slot />
 </a>
 

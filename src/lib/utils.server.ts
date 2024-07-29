@@ -1,6 +1,6 @@
 /*
     IMPORTANT NOTICE! -
-    This code is originally taken from Vercel's 'react-tweet' package. 
+    This code is originally taken from Vercel's 'react-tweet' package.
     It just has a bit of modifications to work on Svelte and suit my coding style.
 
     Package URL: https://github.com/vercel/react-tweet
@@ -12,17 +12,14 @@ import type { ITweet } from './types.js';
 
 const SYNDICATION_URL = 'https://cdn.syndication.twimg.com';
 
-const getToken = (id: string) => {
+function getToken(id: string) {
 	return ((Number(id) / 1e15) * Math.PI).toString(6 ** 2).replace(/(0+|\.)/g, '');
-};
+}
 
 /**
  * Fetches a tweet from the Twitter syndication API.
  */
-export const getTweet = async (
-	id: string,
-	fetchOptions?: RequestInit
-): Promise<ITweet | undefined> => {
+export async function getTweet(id: string,	fetchOptions?: RequestInit): Promise<ITweet | undefined> {
 	console.info(`Getting tweet with id ${id}`);
 
 	if (id.length > 40 || !TWEET_REGEX.test(id)) {
@@ -50,8 +47,8 @@ export const getTweet = async (
 			'tfw_legacy_timeline_sunset:true',
 			'tfw_show_gov_verified_badge:on',
 			'tfw_show_business_affiliate_badge:on',
-			'tfw_tweet_edit_frontend:on'
-		].join(';')
+			'tfw_tweet_edit_frontend:on',
+		].join(';'),
 	);
 	url.searchParams.set('token', getToken(id));
 
@@ -70,23 +67,23 @@ export const getTweet = async (
 		console.info(`res text: ${await res?.text()}`);
 	}
 
-	if (res.ok) return data;
+	if (res.ok) { return data; }
 	if (res.status === 404) {
 		console.error(`Getting tweet ${id} returned a status of ${404}`);
 		return;
 	}
 
 	throw new Error(`Failed to fetch tweet ${id}: ${data?.errors?.[0]?.message ?? res.statusText}`);
-};
+}
 
-export const renderTweets = async (content: string, fetchedTweets?: ITweet[]) => {
+export async function renderTweets(content: string, fetchedTweets?: ITweet[]) {
 	// find all data-tweet-id fields
 	const tweetIds = content.match(/data-tweet="(\d+)"/g)?.map((s: string) => s.match(/\d+/)?.[0]);
 
 	if (tweetIds && tweetIds.length > 0) {
 		const tweets: ITweet[] = fetchedTweets || [];
 
-		if (!tweets.length)
+		if (!tweets.length) {
 			for (const id of tweetIds) {
 				if (!id) {
 					console.info(`Found tweetId as ${id}`);
@@ -100,18 +97,19 @@ export const renderTweets = async (content: string, fetchedTweets?: ITweet[]) =>
 					console.info(`fetching tweet ${id} returned falsy value ${tweet}`);
 				}
 
-				if (!tweet) continue;
+				if (!tweet) { continue; }
 
 				tweets.push(tweet);
 			}
+		}
 
-		if (!tweets.length) throw new Error(`No tweets found!`);
+		if (!tweets.length) { throw new Error(`No tweets found!`); }
 
-		let lastCSS: any = undefined;
+		let lastCSS: any;
 
 		// replace all data-tweet-id fields with rendered tweets
 		content = content.replace(/<div data-tweet="(\d+)">/g, (_, p1) => {
-			const tweet = tweets.find((tweet) => tweet.id_str === p1);
+			const tweet = tweets.find(tweet => tweet.id_str === p1);
 			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-expect-error
 			const renderedTweet = Tweet.render({ tweet });
@@ -126,4 +124,4 @@ export const renderTweets = async (content: string, fetchedTweets?: ITweet[]) =>
 	}
 
 	return content;
-};
+}

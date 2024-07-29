@@ -1,58 +1,58 @@
 /*
     IMPORTANT NOTICE! -
-    This code is originally taken from Vercel's 'react-tweet' package. 
+    This code is originally taken from Vercel's 'react-tweet' package.
     It just has a bit of modifications to work on Svelte and suit my coding style.
 
     Package URL: https://github.com/vercel/react-tweet
 */
 
-export interface ITweetEditControl {
+export type ITweetEditControl = {
 	edit_tweet_ids: string[];
 	editable_until_msecs: string;
 	is_edit_eligible: boolean;
 	edits_remaining: string;
-}
+};
 
 export type TIndices = [number, number];
 
-export interface IHashtagEntity {
+export type IHashtagEntity = {
 	indices: TIndices;
 	text: string;
-}
+};
 
-export interface IUserMentionEntity {
+export type IUserMentionEntity = {
 	id_str: string;
 	indices: TIndices;
 	name: string;
 	screen_name: string;
-}
+};
 
-export interface IMediaEntity {
+export type IMediaEntity = {
 	display_url: string;
 	expanded_url: string;
 	indices: TIndices;
 	url: string;
-}
+};
 
-export interface IUrlEntity {
+export type IUrlEntity = {
 	display_url: string;
 	expanded_url: string;
 	indices: TIndices;
 	url: string;
-}
+};
 
-export interface ISymbolEntity {
+export type ISymbolEntity = {
 	indices: TIndices;
 	text: string;
-}
+};
 
-export interface ITweetEntities {
+export type ITweetEntities = {
 	hashtags: IHashtagEntity[];
 	urls: IUrlEntity[];
 	user_mentions: IUserMentionEntity[];
 	symbols: ISymbolEntity[];
 	media?: IMediaEntity[];
-}
+};
 
 export type TRGB = {
 	red: number;
@@ -73,16 +73,16 @@ export type TSize = {
 	resize: string;
 };
 
-export interface IVideoInfo {
+export type IVideoInfo = {
 	aspect_ratio: [number, number];
 	variants: {
 		bitrate?: number;
 		content_type: 'video/mp4' | 'application/x-mpegURL';
 		url: string;
 	}[];
-}
+};
 
-interface IMediaBase {
+type IMediaBase = {
 	display_url: string;
 	expanded_url: string;
 	ext_media_availability: {
@@ -108,35 +108,35 @@ interface IMediaBase {
 		thumb: TSize;
 	};
 	url: string;
-}
+};
 
-export interface IMediaPhoto extends IMediaBase {
+export type IMediaPhoto = {
 	type: 'photo';
 	ext_alt_text?: string;
-}
+} & IMediaBase;
 
-export interface IMediaAnimatedGif extends IMediaBase {
+export type IMediaAnimatedGif = {
 	type: 'animated_gif';
 	video_info: IVideoInfo;
-}
+} & IMediaBase;
 
-export interface IMediaVideo extends IMediaBase {
+export type IMediaVideo = {
 	type: 'video';
 	video_info: IVideoInfo;
-}
+} & IMediaBase;
 
 export type IMediaDetails = IMediaPhoto | IMediaAnimatedGif | IMediaVideo;
 
-export interface ITweetPhoto {
+export type ITweetPhoto = {
 	backgroundColor: TRGB;
 	cropCandidates: TRect[];
 	expandedUrl: string;
 	url: string;
 	width: number;
 	height: number;
-}
+};
 
-export interface ITweetUser {
+export type ITweetUser = {
 	id_str: string;
 	name: string;
 	profile_image_url_https: string;
@@ -145,9 +145,9 @@ export interface ITweetUser {
 	verified: boolean;
 	verified_type?: 'Business' | 'Government';
 	is_blue_verified: boolean;
-}
+};
 
-export interface ITweetVideo {
+export type ITweetVideo = {
 	aspectRatio: [number, number];
 	contentType: string;
 	durationMs: number;
@@ -164,12 +164,12 @@ export interface ITweetVideo {
 		id: string;
 	};
 	viewCount: number;
-}
+};
 
 /**
  * Base tweet information shared by a tweet, a parent tweet and a quoted tweet.
  */
-export interface ITweetBase {
+export type ITweetBase = {
 	/**
 	 * Language code of the tweet. E.g "en", "es".
 	 */
@@ -204,12 +204,12 @@ export interface ITweetBase {
 	edit_control: ITweetEditControl;
 	isEdited: boolean;
 	isStaleEdit: boolean;
-}
+};
 
 /**
  * A tweet as returned by the the Twitter syndication API.
  */
-export interface ITweet extends ITweetBase {
+export type ITweet = {
 	__typename: 'Tweet';
 	favorite_count: number;
 	mediaDetails?: IMediaDetails[];
@@ -223,21 +223,21 @@ export interface ITweet extends ITweetBase {
 	in_reply_to_user_id_str?: string;
 	parent?: ITweetParent;
 	possibly_sensitive?: boolean;
-}
+} & ITweetBase;
 
 /**
  * The parent tweet of a tweet reply.
  */
-export interface ITweetParent extends ITweetBase {
+export type ITweetParent = {
 	reply_count: number;
 	retweet_count: number;
 	favorite_count: number;
-}
+} & ITweetBase;
 
 /**
  * A tweet quoted by another tweet.
  */
-export interface IQuotedTweet extends ITweetBase {
+export type IQuotedTweet = {
 	reply_count: number;
 	retweet_count: number;
 	favorite_count: number;
@@ -245,11 +245,11 @@ export interface IQuotedTweet extends ITweetBase {
 	self_thread: {
 		id_str: string;
 	};
-}
+} & ITweetBase;
 
 export type TTweetCoreProps = {
 	id: string;
-	onError?(error: any): any;
+	onError?: (error: any) => any;
 };
 
 type TextEntity = {

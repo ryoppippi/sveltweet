@@ -1,20 +1,20 @@
-<script lang="ts">
+<script lang='ts'>
 	import type { TEnrichedTweet } from '../types.js';
 	import { formatNumber } from '../utils.js';
 
 	export let tweet: TEnrichedTweet;
 
-	$: replyText =
-		tweet.conversation_count === 0
+	$: replyText
+		= tweet.conversation_count === 0
 			? 'Read more on X'
 			: tweet.conversation_count === 1
 			? `Read ${formatNumber(tweet.conversation_count)} reply`
 			: `Read ${formatNumber(tweet.conversation_count)} replies`;
 </script>
 
-<div class="replies">
-	<a class="link" href={tweet.url} target="_blank" rel="noopener noreferrer">
-		<span class="text">
+<div class='replies'>
+	<a class='link' href={tweet.url} rel='noopener noreferrer' target='_blank'>
+		<span class='text'>
 			{replyText}
 		</span>
 	</a>

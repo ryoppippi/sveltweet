@@ -1,4 +1,4 @@
-<script lang="js">
+<script lang='js'>
 	import Tweet from '$lib/components/Tweet.svelte';
 
 	export let data;

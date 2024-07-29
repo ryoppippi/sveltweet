@@ -1,10 +1,10 @@
-<script lang="ts">
+<script lang='ts'>
 	import type { TEnrichedTweet } from '../types.js';
 
 	export let tweet: TEnrichedTweet;
 </script>
 
-<a href={tweet.in_reply_to_url} class="root" target="_blank" rel="noopener noreferrer">
+<a class='root' href={tweet.in_reply_to_url} rel='noopener noreferrer' target='_blank'>
 	Replying to @{tweet.in_reply_to_screen_name}
 </a>
 

@@ -1,20 +1,10 @@
 {
-	"name": "sveltekit-tweet",
-	"version": "0.0.18",
+	"name": "@ryoppippi/sveltekit-tweet",
+	"type": "module",
+	"version": "0.0.0",
+	"packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
 	"description": "The best way to embed tweets in your SvelteKit app, supporting both SSR and static prerendering modes.",
-	"author": "Fayez Nazzal <contact@fayez.io> (https://fayez.io)",
 	"license": "MIT",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build && npm run package",
-		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
-		"prepublishOnly": "npm run package",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
-	},
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -26,45 +16,46 @@
 		},
 		"./theme.css": "./dist/theme.css"
 	},
+	"types": "./dist/index.d.ts",
 	"files": [
-		"dist",
+		"!dist/**/*.spec.*",
 		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
+		"dist"
 	],
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build && npm run package",
+		"preview": "vite preview",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"prepublishOnly": "npm run package",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "eslint --cache .",
+		"format": "npm run lint -- --fix"
+	},
 	"peerDependencies": {
-		"svelte": "^4.0.0"
+		"svelte": "^5.0.0"
+	},
+	"dependencies": {
+		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.21",
+		"date-fns": "^2.30.0",
+		"scn": "^1.0.19",
+		"svelte-html-event": "^0.0.6"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
 		"@sveltejs/package": "^2.0.0",
-		"@typescript-eslint/eslint-plugin": "^5.45.0",
-		"@typescript-eslint/parser": "^5.45.0",
-		"eslint": "^8.28.0",
-		"eslint-config-prettier": "^8.5.0",
+		"eslint": "^9.8.0",
+		"eslint-plugin-format": "^0.1.2",
 		"eslint-plugin-svelte": "^2.30.0",
-		"prettier": "^2.8.0",
-		"prettier-plugin-svelte": "^2.10.1",
 		"publint": "^0.1.9",
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.3",
+		"svelte-eslint-parser": "^0.41.0",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
 		"vite": "^4.4.2"
 	},
-	"svelte": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"type": "module",
-	"dependencies": {
-		"date-fns": "^2.30.0",
-		"scn": "^1.0.19"
-	},
-	"homepage": "https://github.com/fayez-nazzal/sveltekit-tweet",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/fayez-nazzal/sveltekit-tweet"
-	},
-	"bugs": {
-		"url": "https://github.com/fayez-nazzal/sveltekit-tweet/issues"
-	}
+	"svelte": "./dist/index.js"
 }

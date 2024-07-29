@@ -1,6 +1,6 @@
-<script lang="ts">
+<script lang='ts'>
 	import { enrichTweet } from '../utils.js';
-	import { building, dev } from '$app/environment';
+	import type { ITweet, TwitterComponents } from '../types.js';
 	import TweetContainer from './TweetContainer.svelte';
 	import TweetHeader from './TweetHeader.svelte';
 	import TweetInReplyTo from './TweetInReply.svelte';
@@ -9,31 +9,34 @@
 	import TweetInfo from './TweetInfo.svelte';
 	import TweetActions from './TweetActions.svelte';
 	import TweetReplies from './TweetReplies.svelte';
+	import { building, dev } from '$app/environment';
 	// import QuotedTweet from './quoted-tweet/QuotedTweet.svelte';
-	import type { ITweet, TwitterComponents } from '../types.js';
 
 	export let tweet: ITweet;
 	export let components: TwitterComponents = {};
 
-	if (dev || building) console.info(`using tweet ${JSON.stringify(tweet)}`);
+	if (dev || building) {
+	// console.info(`using tweet ${JSON.stringify(tweet)}`);
+	}
 
 	let enrichedTweet: any;
 	try {
 		enrichedTweet = enrichTweet(tweet);
-	} catch (e) {
-		console.log(e);
+	}
+	catch {
+	// console.log(e);
 	}
 </script>
 
 {#if enrichedTweet}
 	<TweetContainer>
-		<TweetHeader tweet={enrichedTweet} {components} />
+		<TweetHeader {components} tweet={enrichedTweet} />
 		{#if enrichedTweet.in_reply_to_status_id_str}
 			<TweetInReplyTo tweet={enrichedTweet} />
 		{/if}
 		<TweetBody tweet={enrichedTweet} />
 		{#if enrichedTweet.mediaDetails?.length}
-			<TweetMedia tweet={enrichedTweet} {components} />
+			<TweetMedia {components} tweet={enrichedTweet} />
 		{/if}
 		<!-- {#if enrichedTweet.quoted_tweet}
       <QuotedTweet {enrichedTweet.quoted_tweet} />
