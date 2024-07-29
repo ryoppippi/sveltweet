@@ -1,10 +1,10 @@
+import type { RequestEvent } from './$types';
 import { getTweet } from '$lib/utils.server.js';
 
-export const prerender = true;
-
-export async function load() {
+export async function load({ params }: RequestEvent) {
+	const { id } = params;
 	try {
-		const tweet = await getTweet('1694201062717034868');
+		const tweet = await getTweet(id);
 
 		return {
 			tweet,
