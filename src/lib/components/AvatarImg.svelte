@@ -16,4 +16,11 @@
 	}: Props = $props();
 </script>
 
-<img {style} {alt} {height} loading='lazy' {src} {width} />
+<img
+	{style}
+	{alt}
+	{height}
+	loading='lazy'
+	{src}
+	{width}
+/>
