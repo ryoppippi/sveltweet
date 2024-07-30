@@ -12,7 +12,6 @@
 	import TweetReplies from './TweetReplies.svelte';
 	import { QuotedTweet } from './quoted';
 	import { building, dev } from '$app/environment';
-	// import QuotedTweet from './quoted-tweet/QuotedTweet.svelte';
 
 	type Props = {
 		tweet: Tweet;
