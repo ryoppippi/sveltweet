@@ -1,6 +1,5 @@
 <script lang='ts'>
 	import type { Tweet } from 'react-tweet/api';
-	import type { EnrichedTweet } from 'react-tweet';
 	import { enrichTweet } from 'react-tweet';
 	import TweetContainer from './TweetContainer.svelte';
 	import TweetHeader from './TweetHeader.svelte';
@@ -11,33 +10,24 @@
 	import TweetActions from './TweetActions.svelte';
 	import TweetReplies from './TweetReplies.svelte';
 	import { QuotedTweet } from './quoted';
-	import type { TwitterComponents } from '$lib/types.js';
-	import { building, dev } from '$app/environment';
-	// import QuotedTweet from './quoted-tweet/QuotedTweet.svelte';
+	import { dev } from '$app/environment';
 
 	type Props = {
 		tweet: Tweet;
-		components?: TwitterComponents;
 	};
 
-	const { tweet, components }: Props = $props();
+	const { tweet }: Props = $props();
 
-	if (dev || building) {
-	// console.info(`using tweet ${JSON.stringify(tweet)}`);
+	if (dev) {
+		console.info(`using tweet ${JSON.stringify(tweet)}`); // eslint-disable-line no-console
 	}
 
-	let enrichedTweet = $state<EnrichedTweet>();
-	try {
-		enrichedTweet = enrichTweet(tweet);
-	}
-	catch {
-	// console.log(e);
-	}
+	const enrichedTweet = enrichTweet(tweet);
 </script>
 
 {#if enrichedTweet != null}
 	<TweetContainer>
-		<TweetHeader {components} tweet={enrichedTweet} />
+		<TweetHeader tweet={enrichedTweet} />
 
 		{#if enrichedTweet.in_reply_to_status_id_str != null}
 			<TweetInReplyTo tweet={enrichedTweet} />
@@ -46,7 +36,7 @@
 		<TweetBody tweet={enrichedTweet} />
 
 		{#if (enrichedTweet.mediaDetails ?? []).length > 0}
-			<TweetMedia {components} tweet={enrichedTweet} />
+			<TweetMedia tweet={enrichedTweet} />
 		{/if}
 
 		{#if enrichedTweet.quoted_tweet != null}

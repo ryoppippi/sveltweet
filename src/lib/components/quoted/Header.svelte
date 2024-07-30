@@ -1,7 +1,6 @@
 <script lang='ts'>
 	import type { EnrichedQuotedTweet } from 'react-tweet';
 	import VerifiedBadge from '$components/VerifiedBadge.svelte';
-	import AvatarImg from '$components/AvatarImg.svelte';
 
 	type Props = { tweet: EnrichedQuotedTweet };
 
@@ -22,7 +21,7 @@
 			class:avatarOverflow={!isIconSquare}
 			class:avatarSquare={isIconSquare}
 		>
-			<AvatarImg
+			<img
 				alt={user.name}
 				height={20}
 				src={user.profile_image_url_https}
