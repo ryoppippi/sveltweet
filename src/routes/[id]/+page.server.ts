@@ -1,4 +1,5 @@
 import { getTweet } from 'react-tweet/api';
+import { error } from '@sveltejs/kit';
 import type { RequestEvent } from './$types';
 
 export async function load({ params }: RequestEvent) {
@@ -11,9 +12,6 @@ export async function load({ params }: RequestEvent) {
 		};
 	}
 	catch {
-		return {
-			status: 500,
-			error: 'Could not load tweet',
-		};
+		return error(500, 'Could not load tweet');
 	}
 }
