@@ -1,5 +1,5 @@
+import { getTweet } from 'react-tweet/api';
 import type { RequestEvent } from './$types';
-import { getTweet } from '$lib/utils.server.js';
 
 export async function load({ params }: RequestEvent) {
 	const { id } = params;

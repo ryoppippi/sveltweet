@@ -6,4 +6,4 @@
     Package URL: https://github.com/vercel/react-tweet
 */
 
-export { getTweet } from './utils.server.js';
+export { getTweet } from 'react-tweet/api';
