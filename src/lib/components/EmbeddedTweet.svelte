@@ -1,6 +1,8 @@
 <script lang='ts'>
-	import { enrichTweet } from '../utils.js';
-	import type { ITweet, TEnrichedTweet, TwitterComponents } from '../types.js';
+	import type { Tweet } from 'react-tweet/api';
+	import type { EnrichedTweet } from 'react-tweet';
+	import { enrichTweet } from 'react-tweet';
+	import type { TwitterComponents } from '../types.js';
 	import TweetContainer from './TweetContainer.svelte';
 	import TweetHeader from './TweetHeader.svelte';
 	import TweetInReplyTo from './TweetInReply.svelte';
@@ -13,7 +15,7 @@
 	// import QuotedTweet from './quoted-tweet/QuotedTweet.svelte';
 
 	type Props = {
-		tweet: ITweet;
+		tweet: Tweet;
 		components?: TwitterComponents;
 	};
 
@@ -23,7 +25,7 @@
 	// console.info(`using tweet ${JSON.stringify(tweet)}`);
 	}
 
-	let enrichedTweet = $state<TEnrichedTweet>();
+	let enrichedTweet = $state<EnrichedTweet>();
 	try {
 		enrichedTweet = enrichTweet(tweet);
 	}

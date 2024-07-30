@@ -1,7 +1,7 @@
 <script lang='ts'>
-	import type { TEnrichedTweet } from '../types.js';
+	import type { EnrichedTweet } from 'react-tweet';
 
-	const { tweet }: { tweet: TEnrichedTweet } = $props();
+	const { tweet }: { tweet: EnrichedTweet } = $props();
 
 	let copied = $state(false);
 	let copyAllText = $state(false);

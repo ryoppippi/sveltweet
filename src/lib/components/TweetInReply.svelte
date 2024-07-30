@@ -1,7 +1,7 @@
 <script lang='ts'>
-	import type { TEnrichedTweet } from '../types.js';
+	import type { EnrichedTweet } from 'react-tweet';
 
-	const { tweet }: { tweet: TEnrichedTweet } = $props();
+	const { tweet }: { tweet: EnrichedTweet } = $props();
 </script>
 
 <a class='root' href={tweet.in_reply_to_url} rel='noopener noreferrer' target='_blank'>

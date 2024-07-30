@@ -1,8 +1,8 @@
 <script lang='ts'>
+	import type { EnrichedTweet } from 'react-tweet';
 	import { format } from 'date-fns';
-	import type { TEnrichedTweet } from '../types.js';
 
-	const { tweet }: { tweet: TEnrichedTweet } = $props();
+	const { tweet }: { tweet: EnrichedTweet } = $props();
 
 	let createdAt = $state<Date>();
 

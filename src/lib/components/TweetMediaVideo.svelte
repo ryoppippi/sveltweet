@@ -1,16 +1,12 @@
 <script lang='ts'>
+	import type { EnrichedQuotedTweet, EnrichedTweet } from 'react-tweet';
+	import type { MediaAnimatedGif, MediaVideo	} from 'react-tweet/api';
+	import { getMediaUrl, getMp4Video } from 'react-tweet';
 	import { onDestroy } from 'svelte';
-	import type {
-		IMediaAnimatedGif,
-		IMediaVideo,
-		TEnrichedQuotedTweet,
-		TEnrichedTweet,
-	} from '../types.js';
-	import { getMediaUrl, getMp4Video } from '../utils.js';
 
 	type Props = {
-		tweet: TEnrichedTweet | TEnrichedQuotedTweet;
-		media: IMediaAnimatedGif | IMediaVideo;
+		tweet: EnrichedTweet | EnrichedQuotedTweet;
+		media: MediaAnimatedGif | MediaVideo;
 	};
 	const { tweet, media }: Props = $props();
 

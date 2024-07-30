@@ -1,18 +1,20 @@
 <script lang='ts'>
-	import type { IMediaDetails, TEnrichedQuotedTweet, TEnrichedTweet, TwitterComponents } from '../types.js';
-	import { getMediaUrl } from '../utils.js';
+	import type { EnrichedQuotedTweet, EnrichedTweet } from 'react-tweet';
+	import type { MediaDetails } from 'react-tweet/api';
+	import { getMediaUrl } from 'react-tweet';
+	import type { TwitterComponents } from '../types.js';
 	import TweetMediaVideo from './TweetMediaVideo.svelte';
 	import MediaImg from './MediaImg.svelte';
 
 	type Props = {
-		tweet: TEnrichedTweet | TEnrichedQuotedTweet;
+		tweet: EnrichedTweet | EnrichedQuotedTweet;
 		components: TwitterComponents | undefined;
 		quoted?: boolean;
 	};
 
 	const { tweet, components, quoted = false }: Props = $props();
 
-	const getSkeletonStyle = (media: IMediaDetails, itemCount: number) => {
+	const getSkeletonStyle = (media: MediaDetails, itemCount: number) => {
 		let paddingBottom = 56.25; // default of 16x9
 
 		if (itemCount === 1) {
