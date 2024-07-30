@@ -10,6 +10,7 @@
 	import TweetInfo from './TweetInfo.svelte';
 	import TweetActions from './TweetActions.svelte';
 	import TweetReplies from './TweetReplies.svelte';
+	import { QuotedTweet } from './quoted';
 	import type { TwitterComponents } from '$lib/types.js';
 	import { building, dev } from '$app/environment';
 	// import QuotedTweet from './quoted-tweet/QuotedTweet.svelte';
@@ -44,9 +45,9 @@
 		{#if enrichedTweet.mediaDetails?.length}
 			<TweetMedia {components} tweet={enrichedTweet} />
 		{/if}
-		<!-- {#if enrichedTweet.quoted_tweet}
-      <QuotedTweet {enrichedTweet.quoted_tweet} />
-    {/if} -->
+		{#if enrichedTweet.quoted_tweet != null}
+			<QuotedTweet tweet={enrichedTweet.quoted_tweet} />
+		{/if}
 		<TweetInfo tweet={enrichedTweet} />
 		<TweetActions tweet={enrichedTweet} />
 		<TweetReplies tweet={enrichedTweet} />
