@@ -1,7 +1,7 @@
 <script lang='ts'>
 	import type { Snippet } from 'svelte';
 	import scn from 'scn';
-	import '../theme.css';
+	import 'react-tweet/theme.css';
 
 	type Props = {
 		className?: string;
