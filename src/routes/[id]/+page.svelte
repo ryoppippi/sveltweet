@@ -1,6 +1,6 @@
 <script lang='js'>
 	import ToggleDark from './ToggleDark.svelte';
-	import Tweet from '$components/Tweet.svelte';
+	import { SvelteTweet } from '$lib';
 
 	const { data } = $props();
 
@@ -26,7 +26,7 @@
 <div id='container'>
 	<ToggleDark />
 
-	<Tweet tweet={data.tweet} />
+	<SvelteTweet tweet={data.tweet} />
 </div>
 
 <style>

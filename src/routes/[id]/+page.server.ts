@@ -1,4 +1,4 @@
-import { getTweet } from 'react-tweet/api';
+import { type Tweet, getTweet } from 'react-tweet/api';
 import { error } from '@sveltejs/kit';
 import type { RequestEvent } from './$types';
 
@@ -14,6 +14,8 @@ export async function load({ params }: RequestEvent) {
 	if (tweet == null) {
 		return error(404, 'Tweet not found');
 	}
+
+	tweet satisfies Tweet;
 
 	return { tweet };
 }
