@@ -2,16 +2,13 @@
 	import type { EnrichedTweet } from 'react-tweet';
 	import AvatarImg from './AvatarImg.svelte';
 	import VerifiedBadge from './VerifiedBadge.svelte';
-	import type { TwitterComponents } from '$lib/types.js';
 
 	type Props = {
 		tweet: EnrichedTweet;
-		components?: TwitterComponents;
 	};
 
-	const { tweet, components }: Props = $props();
+	const { tweet }: Props = $props();
 
-	const Img = components?.AvatarImg ?? AvatarImg;
 	const { user } = tweet;
 </script>
 
@@ -21,7 +18,7 @@
 			class='avatarOverflow'
 			class:avatarSquare={user.profile_image_shape === 'Square'}
 		>
-			<Img
+			<AvatarImg
 				style='margin-top: 0; margin-bottom: 0;'
 				alt={user.name}
 				height={48}

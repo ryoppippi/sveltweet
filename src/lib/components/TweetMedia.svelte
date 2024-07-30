@@ -3,16 +3,13 @@
 	import type { MediaDetails } from 'react-tweet/api';
 	import { getMediaUrl } from 'react-tweet';
 	import TweetMediaVideo from './TweetMediaVideo.svelte';
-	import MediaImg from './MediaImg.svelte';
-	import type { TwitterComponents } from '$lib/types.js';
 
 	type Props = {
 		tweet: EnrichedTweet | EnrichedQuotedTweet;
-		components?: TwitterComponents;
 		quoted?: boolean;
 	};
 
-	const { tweet, components, quoted = false }: Props = $props();
+	const { tweet, quoted = false }: Props = $props();
 
 	const getSkeletonStyle = (media: MediaDetails, itemCount: number) => {
 		let paddingBottom = 56.25; // default of 16x9
@@ -35,7 +32,6 @@
 	};
 
 	const length = tweet.mediaDetails?.length ?? 0;
-	const Img = components?.MediaImg ?? MediaImg;
 
 	const mediaDetails = tweet.mediaDetails ?? [];
 </script>
@@ -57,7 +53,7 @@
 				>
 					<!-- svelte-ignore element_invalid_self_closing_tag -->
 					<div style={getSkeletonStyle(media, length)} class='skeleton' />
-					<Img alt={media.ext_alt_text || 'Image'} draggable src={getMediaUrl(media, 'small')} />
+					<img class='image' alt={media.ext_alt_text || 'Image'} draggable src={getMediaUrl(media, 'small')} />
 				</a>
 			{:else}
 				<div class='mediaContainer'>

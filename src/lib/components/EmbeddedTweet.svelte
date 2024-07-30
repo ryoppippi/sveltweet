@@ -11,16 +11,14 @@
 	import TweetActions from './TweetActions.svelte';
 	import TweetReplies from './TweetReplies.svelte';
 	import { QuotedTweet } from './quoted';
-	import type { TwitterComponents } from '$lib/types.js';
 	import { building, dev } from '$app/environment';
 	// import QuotedTweet from './quoted-tweet/QuotedTweet.svelte';
 
 	type Props = {
 		tweet: Tweet;
-		components?: TwitterComponents;
 	};
 
-	const { tweet, components }: Props = $props();
+	const { tweet }: Props = $props();
 
 	if (dev || building) {
 	// console.info(`using tweet ${JSON.stringify(tweet)}`);
@@ -37,7 +35,7 @@
 
 {#if enrichedTweet != null}
 	<TweetContainer>
-		<TweetHeader {components} tweet={enrichedTweet} />
+		<TweetHeader tweet={enrichedTweet} />
 
 		{#if enrichedTweet.in_reply_to_status_id_str != null}
 			<TweetInReplyTo tweet={enrichedTweet} />
@@ -46,7 +44,7 @@
 		<TweetBody tweet={enrichedTweet} />
 
 		{#if (enrichedTweet.mediaDetails ?? []).length > 0}
-			<TweetMedia {components} tweet={enrichedTweet} />
+			<TweetMedia tweet={enrichedTweet} />
 		{/if}
 
 		{#if enrichedTweet.quoted_tweet != null}
