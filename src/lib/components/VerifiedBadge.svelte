@@ -1,55 +1,50 @@
 <script lang='ts'>
-	import Verified from './icons/Verified.svelte';
-	import VerifiedBusiness from './icons/VerifiedBusiness.svelte';
-	import VerifiedGovernment from './icons/VerifiedGovernment.svelte';
+	import type { EnrichedTweet } from 'react-tweet';
+	import * as Icons from './icons';
 
 	type Props = {
-		user: any;
+		user: EnrichedTweet['user'];
 	};
 	const { user }: Props = $props();
 
-	const verified = user.verified || user.is_blue_verified || user.verified_type;
-	let iconComponent = $state(Verified);
-	let iconClassName = $state('verifiedBlue');
-
-	if (verified) {
-		if (!user.is_blue_verified) {
-			iconClassName = 'verifiedOld';
-		}
-		switch (user.verified_type) {
-			case 'Government':
-				iconComponent = VerifiedGovernment;
-				iconClassName = 'verifiedGovernment';
-				break;
-			case 'Business':
-				iconComponent = VerifiedBusiness;
-				iconClassName = '';
-				break;
-		}
-	}
+	const isVerified = user.verified || user.is_blue_verified || user.verified_type != null;
+	const isGovernment = user.verified_type === 'Government';
+	const isBusiness = user.verified_type === 'Business';
+	const isBlue = user.is_blue_verified;
 </script>
 
-{#if verified}
-	<div class='authorVerified {iconClassName}'>
-		<svelte:component this={iconComponent} />
+{#if isVerified}
+	<div
+		class='authorVerified'
+		class:verifiedBlue={isBlue && !isGovernment && !isBusiness /* blue and nor government or business */}
+		class:verifiedGovernment={isGovernment}
+		class:verifiedOld={!isBlue && !isGovernment && !isBusiness /* verifed but not blue */}
+	>
+		{#if isGovernment}
+			<Icons.VerifiedGovernment />
+		{:else if isBusiness}
+			<Icons.VerifiedBusiness />
+		{:else}
+			<Icons.Verified />
+		{/if}
 	</div>
 {/if}
 
 <style>
-	.verifiedOld {
-		color: var(--tweet-verified-old-color);
-	}
+.verifiedOld {
+	color: var(--tweet-verified-old-color);
+}
 
-	.verifiedBlue {
-		color: var(--tweet-verified-blue-color);
-	}
+.verifiedBlue {
+	color: var(--tweet-verified-blue-color);
+}
 
-	.verifiedGovernment {
-		/* color: var(--tweet-verified-government-color); */
-		color: rgb(130, 154, 171);
-	}
+.verifiedGovernment {
+	/* color: var(--tweet-verified-government-color); */
+	color: rgb(130, 154, 171);
+}
 
-	.authorVerified {
-		display: inline-flex;
-	}
+.authorVerified {
+	display: inline-flex;
+}
 </style>
