@@ -24,3 +24,5 @@ jobs:
         run: pnpm check
       - name: Run lint
         run: pnpm lint
+      - name: publish to pkg-pr-now
+        run: pnpm dlx pkg-pr-new publish
