@@ -21,23 +21,24 @@ npm install sveltekit-tweet
 2.  Use the `getTweet` function in your `+page.server.ts` file to fetch the tweet data.
 
     ```ts
-    import { getTweet } from 'sveltekit-tweet/server';
+    import { getTweet } from 'react-tweet/api';
+    import { error } from '@sveltejs/kit';
+    import type { RequestEvent } from './$types';
 
-    export async function load() {
-    	try {
-    		const tweet = await getTweet('1694201062717034868');
+    export async function load({ params }: RequestEvent) {
+        const { id } = params;
+        try {
+            const tweet = await getTweet(id);
 
-    		return {
-    			tweet
-    		};
-    	}
-    	catch (error) {
-    		return {
-    			status: 500,
-    			error: 'Could not load tweet'
-    		};
-    	}
+            return {
+                tweet,
+            };
+        }
+        catch {
+            return error(500, 'Could not load tweet');
+        }
     }
+
     ```
 
 3.  Use the `Tweet` component in your `+page.svelte` file to render the tweet.
