@@ -37,8 +37,7 @@
 		"svelte": "^5.0.0"
 	},
 	"dependencies": {
-		"scn": "^1.0.19",
-		"svelte-html-event": "^0.0.6"
+		"scn": "^1.0.19"
 	},
 	"devDependencies": {
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.21",
