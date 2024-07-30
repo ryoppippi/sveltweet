@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      scn:
-        specifier: ^1.0.19
-        version: 1.0.19
     devDependencies:
       '@ryoppippi/eslint-config':
         specifier: npm:@jsr/ryoppippi__eslint-config@^0.0.21
@@ -2016,9 +2012,6 @@ packages:
 
   scheduler@0.23.2:
     resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
-
-  scn@1.0.19:
-    resolution: {integrity: sha512-xOpcug2SXyG4bFQTvA58/kExFNE/gHdy2NLhg/v9azjhar4i3/ig179+Ec/+jf3PpQC8clf33On0dd+NIkN3BQ==}
 
   scslre@0.3.0:
     resolution: {integrity: sha512-3A6sD0WYP7+QrjbfNA2FN3FsOaGGFoekCVgTyypy53gPxhbkCIjtO6YWgdrfM+n/8sI8JeXZOIxsHjMTNxQ4nQ==}
@@ -4448,8 +4441,6 @@ snapshots:
   scheduler@0.23.2:
     dependencies:
       loose-envify: 1.4.0
-
-  scn@1.0.19: {}
 
   scslre@0.3.0:
     dependencies:
