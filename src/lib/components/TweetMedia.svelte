@@ -42,17 +42,15 @@
 
 <div class={['root', !quoted && 'rounded'].join(' ')}>
 	<div
-		class={[
-			'mediaWrapper',
-			length > 1 && 'grid2Columns',
-			length === 3 && 'grid3',
-			length > 4 && 'grid2x2',
-		].join(' ')}
+		class='mediaWrapper'
+		class:grid2Columns={length > 1}
+		class:grid2x2={length > 4}
+		class:grid3={length === 3}
 	>
 		{#each mediaDetails as media (media)}
 			{#if media.type === 'photo'}
 				<a
-					class={['mediaContainer', 'mediaLink'].join(' ')}
+					class='mediaContainer mediaLink'
 					href={tweet.url}
 					rel='noopener noreferrer'
 					target='_blank'

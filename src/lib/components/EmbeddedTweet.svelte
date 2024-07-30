@@ -2,7 +2,6 @@
 	import type { Tweet } from 'react-tweet/api';
 	import type { EnrichedTweet } from 'react-tweet';
 	import { enrichTweet } from 'react-tweet';
-	import type { TwitterComponents } from '../types.js';
 	import TweetContainer from './TweetContainer.svelte';
 	import TweetHeader from './TweetHeader.svelte';
 	import TweetInReplyTo from './TweetInReply.svelte';
@@ -11,6 +10,7 @@
 	import TweetInfo from './TweetInfo.svelte';
 	import TweetActions from './TweetActions.svelte';
 	import TweetReplies from './TweetReplies.svelte';
+	import type { TwitterComponents } from '$lib/types.js';
 	import { building, dev } from '$app/environment';
 	// import QuotedTweet from './quoted-tweet/QuotedTweet.svelte';
 

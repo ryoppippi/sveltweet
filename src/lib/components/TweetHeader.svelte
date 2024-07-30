@@ -18,9 +18,8 @@
 <div class='header'>
 	<a class='avatar' href={tweet.url} rel='noopener noreferrer' target='_blank'>
 		<div
-			class={user.profile_image_shape === 'Square'
-				? 'avatarOverflow avatarSquare'
-				: 'avatarOverflow'}
+			class='avatarOverflow'
+			class:avatarSquare={user.profile_image_shape === 'Square'}
 		>
 			<Img
 				style='margin-top: 0; margin-bottom: 0;'

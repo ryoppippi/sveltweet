@@ -14,4 +14,10 @@
 	}: Props = $props();
 </script>
 
-<img class={className} {alt} {draggable} loading='lazy' {src} />
+<img
+	class={className}
+	{alt}
+	{draggable}
+	loading='lazy'
+	{src}
+/>
