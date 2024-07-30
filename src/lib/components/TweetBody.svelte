@@ -1,8 +1,8 @@
 <script lang='ts'>
-	import type { TEnrichedTweet } from '../types.js';
+	import type { EnrichedTweet } from 'react-tweet';
 	import TweetLink from './TweetLink.svelte';
 
-	const { tweet }: { tweet: TEnrichedTweet } = $props();
+	const { tweet }: { tweet: EnrichedTweet } = $props();
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->

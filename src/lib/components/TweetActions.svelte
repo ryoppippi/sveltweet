@@ -1,9 +1,9 @@
 <script lang='ts'>
-	import { formatNumber } from '../utils.js';
-	import type { TEnrichedTweet } from '../types.js';
+	import type { EnrichedTweet } from 'react-tweet';
+	import { formatNumber } from 'react-tweet';
 	import TweetActionsCopy from './TweetActionsCopy.svelte';
 
-	const { tweet }: { tweet: TEnrichedTweet } = $props();
+	const { tweet }: { tweet: EnrichedTweet } = $props();
 	const favoriteCount = formatNumber(tweet.favorite_count);
 </script>
 
