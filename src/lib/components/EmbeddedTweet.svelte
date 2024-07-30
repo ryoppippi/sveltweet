@@ -38,16 +38,21 @@
 {#if enrichedTweet != null}
 	<TweetContainer>
 		<TweetHeader {components} tweet={enrichedTweet} />
-		{#if enrichedTweet.in_reply_to_status_id_str}
+
+		{#if enrichedTweet.in_reply_to_status_id_str != null}
 			<TweetInReplyTo tweet={enrichedTweet} />
 		{/if}
+
 		<TweetBody tweet={enrichedTweet} />
-		{#if enrichedTweet.mediaDetails?.length}
+
+		{#if (enrichedTweet.mediaDetails ?? []).length > 0}
 			<TweetMedia {components} tweet={enrichedTweet} />
 		{/if}
+
 		{#if enrichedTweet.quoted_tweet != null}
 			<QuotedTweet tweet={enrichedTweet.quoted_tweet} />
 		{/if}
+
 		<TweetInfo tweet={enrichedTweet} />
 		<TweetActions tweet={enrichedTweet} />
 		<TweetReplies tweet={enrichedTweet} />
