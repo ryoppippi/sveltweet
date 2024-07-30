@@ -1,4 +1,5 @@
 <script lang='js'>
+	import ToggleDark from './ToggleDark.svelte';
 	import Tweet from '$components/Tweet.svelte';
 
 	const { data } = $props();
@@ -6,24 +7,26 @@
 	let isDark = $state(false);
 
 	$effect(() => {
+		const mediaQueryObj = window.matchMedia('(prefers-color-scheme: dark)');
+		isDark = mediaQueryObj.matches;
+	});
+
+	$effect(() => {
 		if (isDark) {
 			window.document.body.classList.add('dark');
+			window.document.body.dataset.theme = 'dark';
 		}
 		else {
 			window.document.body.classList.remove('dark');
+			window.document.body.dataset.theme = 'light';
 		}
 	});
 </script>
 
 <div id='container'>
-	<div>
-		<input id='dark-mode' type='checkbox' bind:checked={isDark} />
-		<label for='dark-mode'>Dark mode</label>
-	</div>
+	<ToggleDark />
 
-	<div data-theme={isDark ? 'dark' : 'light'}>
-		<Tweet tweet={data.tweet} />
-	</div>
+	<Tweet tweet={data.tweet} />
 </div>
 
 <style>
@@ -32,18 +35,5 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-	}
-
-	:global {
-		body {
-			background-color: #f2eee2;
-			color: #0084f6;
-			transition: background-color 0.3s
-		}
-
-		body.dark {
-			background-color: #1d3040;
-			color: #bfc2c7;
-		}
 	}
 </style>
