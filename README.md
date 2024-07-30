@@ -9,10 +9,14 @@ The best way to embed tweets in your SvelteKit app, supporting both SSR and stat
 
 > This package is a sveltekit version of [vercel/react-tweet](https://github.com/vercel/react-tweet) licensed under MIT License, many thanks to the original authors for making it possible!
 
+# Requirements
+- SvelteKit 2.0.0 or later
+- Svelte 5.0.0-next or later ( This libray uses [`runes`](https://svelte-5-preview.vercel.app/docs/runes) )
+
 ## Installation
 
 ```bash
-npm install sveltekit-tweet
+npx nypm add @ryoppippi/sveltekit-tweet
 ```
 
 ## Usage
@@ -21,7 +25,7 @@ npm install sveltekit-tweet
 2.  Use the `getTweet` function in your `+page.server.ts` file to fetch the tweet data.
 
     ```ts
-    import { getTweet } from 'react-tweet/api';
+    import { getTweet } from '@ryoppippi/sveltekit-tweet/api';
     import { error } from '@sveltejs/kit';
     import type { RequestEvent } from './$types';
 
@@ -30,9 +34,7 @@ npm install sveltekit-tweet
         try {
             const tweet = await getTweet(id);
 
-            return {
-                tweet,
-            };
+            return { tweet };
         }
         catch {
             return error(500, 'Could not load tweet');
@@ -41,21 +43,17 @@ npm install sveltekit-tweet
 
     ```
 
-3.  Use the `Tweet` component in your `+page.svelte` file to render the tweet.
+3.  Use the `SvelteTweet` component in your `+page.svelte` file to render the tweet.
 
     ```svelte
     <script lang='ts'>
-    	import Tweet from 'sveltekit-tweet/server';
+    	import { SvelteTweet } from '@ryoppippi/sveltekit-tweet';
     	import type { PageData } from './$types';
 
-    	export let data: PageData;
+        const { data }: { data: PageData } = $props()
     </script>
 
-    {#if data.tweet}
-    	<Tweet tweet={data.tweet} />
-    {:else if data.error}
-    	<p>{data.error}</p>
-    {/if}
+    <SvelteTweet tweet={data.tweet} />
     ```
 
 # Acknowledgements
