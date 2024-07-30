@@ -1,9 +1,9 @@
 <script lang='ts'>
-	import type { EnrichedTweet } from 'react-tweet';
+	import type { TweetUser } from 'react-tweet/api';
 	import * as Icons from './icons';
 
 	type Props = {
-		user: EnrichedTweet['user'];
+		user: TweetUser;
 	};
 	const { user }: Props = $props();
 
