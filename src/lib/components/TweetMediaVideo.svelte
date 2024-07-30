@@ -2,7 +2,6 @@
 	import type { EnrichedQuotedTweet, EnrichedTweet } from 'react-tweet';
 	import type { MediaAnimatedGif, MediaVideo	} from 'react-tweet/api';
 	import { getMediaUrl, getMp4Video } from 'react-tweet';
-	import { onDestroy } from 'svelte';
 
 	type Props = {
 		tweet: EnrichedTweet | EnrichedQuotedTweet;
@@ -18,7 +17,7 @@
 	let timeout: any;
 	let video: HTMLVideoElement;
 
-	onDestroy(() => {
+	$effect(() => {
 		clearTimeout(timeout);
 	});
 
