@@ -5,7 +5,7 @@ import type { RequestEvent } from './$types';
 export async function load({ params }: RequestEvent) {
 	const { id } = params;
 
-	if (id !== '') {
+	if (id === '') {
 		return error(404, 'Tweet not found');
 	}
 
