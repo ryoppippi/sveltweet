@@ -1,3 +1,7 @@
+<script>
+	import './icon.css';
+</script>
+
 <svg class='verified' aria-label='Verified account' role='img' viewBox='0 0 22 22'>
 	<g>
 		<linearGradient
