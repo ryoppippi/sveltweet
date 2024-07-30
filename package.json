@@ -37,7 +37,6 @@
 		"svelte": "^5.0.0"
 	},
 	"dependencies": {
-		"date-fns": "^2.30.0",
 		"scn": "^1.0.19",
 		"svelte-html-event": "^0.0.6"
 	},

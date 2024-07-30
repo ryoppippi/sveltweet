@@ -1,26 +1,21 @@
 <script lang='ts'>
 	import type { EnrichedTweet } from 'react-tweet';
-	import { format } from 'date-fns';
+	import { formatDate } from '$lib/date-utils.js';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 
-	let createdAt = $state<Date>();
-
-	$effect(() => {
-		createdAt = new Date(tweet.created_at);
-	});
+	const createdAt = new Date(tweet.created_at);
 </script>
 
 {#if createdAt != null}
+	{@const formattedCreatedAtDate = formatDate(createdAt)}
 	<a
 		class='root'
-		aria-label={format(createdAt, 'h:mm a · MMM d, y')}
+		aria-label={formattedCreatedAtDate}
 		href={tweet.url}
 		rel='noopener noreferrer'
 		target='_blank'
 	>
-		<time dateTime={createdAt.toISOString()}>
-			{format(createdAt, 'h:mm a · MMM d, y')}
-		</time>
+		<time dateTime={createdAt.toISOString()}>{formattedCreatedAtDate}</time>
 	</a>
 {/if}
