@@ -62,7 +62,7 @@ npm install sveltekit-tweet
 
 - [ ] Add tests.
 - [ ] Drop external dependencies.
-- [ ] Add support for Quoted Tweets.
+- [x] Add support for Quoted Tweets.
 - [ ] Add TweetNotFound component.
 - [x] Add easy way for mdsvex integration.
 
