@@ -2,13 +2,13 @@
 	import type { EnrichedQuotedTweet, EnrichedTweet } from 'react-tweet';
 	import type { MediaDetails } from 'react-tweet/api';
 	import { getMediaUrl } from 'react-tweet';
-	import type { TwitterComponents } from '../types.js';
 	import TweetMediaVideo from './TweetMediaVideo.svelte';
 	import MediaImg from './MediaImg.svelte';
+	import type { TwitterComponents } from '$lib/types.js';
 
 	type Props = {
 		tweet: EnrichedTweet | EnrichedQuotedTweet;
-		components: TwitterComponents | undefined;
+		components?: TwitterComponents;
 		quoted?: boolean;
 	};
 

@@ -1,5 +1,5 @@
 <script lang='js'>
-	import Tweet from '$lib/components/Tweet.svelte';
+	import Tweet from '$components/Tweet.svelte';
 
 	const { data } = $props();
 
