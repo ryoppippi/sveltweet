@@ -3,10 +3,14 @@
 	import AvatarImg from './AvatarImg.svelte';
 	import VerifiedBadge from './VerifiedBadge.svelte';
 
-	export let tweet: TEnrichedTweet;
-	export let components: TwitterComponents;
+	type Props = {
+		tweet: TEnrichedTweet;
+		components?: TwitterComponents;
+	};
 
-	const Img = components.AvatarImg || AvatarImg;
+	const { tweet, components }: Props = $props();
+
+	const Img = components?.AvatarImg ?? AvatarImg;
 	const { user } = tweet;
 </script>
 
@@ -20,12 +24,13 @@
 			<Img
 				style='margin-top: 0; margin-bottom: 0;'
 				alt={user.name}
-				height='48'
+				height={48}
 				src={user.profile_image_url_https}
-				width='48'
+				width={48}
 			/>
 		</div>
 		<div class='avatarOverflow'>
+			<!-- svelte-ignore element_invalid_self_closing_tag -->
 			<div class='avatarShadow' />
 		</div>
 	</a>

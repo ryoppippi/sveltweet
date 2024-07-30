@@ -2,7 +2,7 @@
 	import type { TEnrichedTweet } from '../types.js';
 	import TweetLink from './TweetLink.svelte';
 
-	export let tweet: TEnrichedTweet;
+	const { tweet }: { tweet: TEnrichedTweet } = $props();
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->

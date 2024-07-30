@@ -1,7 +1,7 @@
 <script lang='js'>
 	import Tweet from '$lib/components/Tweet.svelte';
 
-	export let data;
+	const { data } = $props();
 </script>
 
 {#if data.tweet}

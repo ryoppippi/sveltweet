@@ -4,9 +4,13 @@
 	import TweetMediaVideo from './TweetMediaVideo.svelte';
 	import MediaImg from './MediaImg.svelte';
 
-	export let tweet: TEnrichedTweet | TEnrichedQuotedTweet;
-	export let components: TwitterComponents | undefined;
-	export let quoted: boolean = false;
+	type Props = {
+		tweet: TEnrichedTweet | TEnrichedQuotedTweet;
+		components: TwitterComponents | undefined;
+		quoted?: boolean;
+	};
+
+	const { tweet, components, quoted = false }: Props = $props();
 
 	const getSkeletonStyle = (media: IMediaDetails, itemCount: number) => {
 		let paddingBottom = 56.25; // default of 16x9
@@ -51,11 +55,13 @@
 					rel='noopener noreferrer'
 					target='_blank'
 				>
+					<!-- svelte-ignore element_invalid_self_closing_tag -->
 					<div style={getSkeletonStyle(media, length)} class='skeleton' />
 					<Img alt={media.ext_alt_text || 'Image'} draggable src={getMediaUrl(media, 'small')} />
 				</a>
 			{:else}
 				<div class='mediaContainer'>
+					<!-- svelte-ignore element_invalid_self_closing_tag -->
 					<div style={getSkeletonStyle(media, length)} class='skeleton' />
 					<TweetMediaVideo {media} {tweet} />
 				</div>

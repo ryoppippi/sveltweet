@@ -1,14 +1,16 @@
-<script>
+<script lang='ts'>
 	import Verified from './icons/Verified.svelte';
 	import VerifiedBusiness from './icons/VerifiedBusiness.svelte';
 	import VerifiedGovernment from './icons/VerifiedGovernment.svelte';
 
-	export let user;
-	export let className = '';
+	type Props = {
+		user: any;
+	};
+	const { user }: Props = $props();
 
 	const verified = user.verified || user.is_blue_verified || user.verified_type;
-	let iconComponent = Verified;
-	let iconClassName = 'verifiedBlue';
+	let iconComponent = $state(Verified);
+	let iconClassName = $state('verifiedBlue');
 
 	if (verified) {
 		if (!user.is_blue_verified) {

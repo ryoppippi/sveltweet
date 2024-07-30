@@ -1,8 +1,17 @@
 <script lang='ts'>
-	export let src: string;
-	export let alt: string;
-	export let className: string = '';
-	export let draggable: boolean = false;
+	type Props = {
+		src: string;
+		alt: string;
+		className?: string;
+		draggable?: boolean;
+	};
+
+	const {
+		src,
+		alt,
+		className = '',
+		draggable = false,
+	}: Props = $props();
 </script>
 
-<img class={className} alt={alt} draggable={draggable} src={src} />
+<img class={className} {alt} {draggable} {src} />

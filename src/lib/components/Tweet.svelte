@@ -1,9 +1,10 @@
 <script lang='ts'>
-	import type { ITweet } from '../types.js';
+	import type { ComponentProps } from 'svelte';
 	import EmbeddedTweet from './EmbeddedTweet.svelte';
 
-	export let components = {};
-	export let tweet: ITweet;
+	type Props = ComponentProps<EmbeddedTweet>;
+
+	const { ...rest }: Props = $props();
 </script>
 
-<EmbeddedTweet {components} {tweet} />
+<EmbeddedTweet {...rest} />
