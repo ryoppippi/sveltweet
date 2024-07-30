@@ -1,6 +1,5 @@
 <script lang='ts'>
 	import type { Tweet } from 'react-tweet/api';
-	import type { EnrichedTweet } from 'react-tweet';
 	import { enrichTweet } from 'react-tweet';
 	import TweetContainer from './TweetContainer.svelte';
 	import TweetHeader from './TweetHeader.svelte';
@@ -11,7 +10,7 @@
 	import TweetActions from './TweetActions.svelte';
 	import TweetReplies from './TweetReplies.svelte';
 	import { QuotedTweet } from './quoted';
-	import { building, dev } from '$app/environment';
+	import { dev } from '$app/environment';
 
 	type Props = {
 		tweet: Tweet;
@@ -19,17 +18,11 @@
 
 	const { tweet }: Props = $props();
 
-	if (dev || building) {
-	// console.info(`using tweet ${JSON.stringify(tweet)}`);
+	if (dev) {
+		console.info(`using tweet ${JSON.stringify(tweet)}`); // eslint-disable-line no-console
 	}
 
-	let enrichedTweet = $state<EnrichedTweet>();
-	try {
-		enrichedTweet = enrichTweet(tweet);
-	}
-	catch {
-	// console.log(e);
-	}
+	const enrichedTweet = enrichTweet(tweet);
 </script>
 
 {#if enrichedTweet != null}
