@@ -10,7 +10,7 @@
 	<a
 		class='infoLink'
 		aria-label='Twitter for Websites, Ads Information and Privacy'
-		href='https://help.twitter.com/en/twitter-for-websites-ads-info-and-privacy'
+		href='https://help.x.com/en/x-for-websites-ads-info-and-privacy'
 		rel='noopener noreferrer'
 		target='_blank'
 	>
