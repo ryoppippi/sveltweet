@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      await-to-js:
+        specifier: ^3.0.0
+        version: 3.0.0
       scn:
         specifier: ^1.0.19
         version: 1.0.19
@@ -30,9 +33,6 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.1.1
         version: 3.1.1(svelte@5.0.0-next.201)(vite@4.5.3)
-      await-to-js:
-        specifier: ^3.0.0
-        version: 3.0.0
       eslint:
         specifier: ^9.8.0
         version: 9.8.0
