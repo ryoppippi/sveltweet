@@ -36,7 +36,6 @@
 		"svelte": "^5.0.0"
 	},
 	"dependencies": {
-		"await-to-js": "^3.0.0",
 		"scn": "^1.0.19"
 	},
 	"devDependencies": {
