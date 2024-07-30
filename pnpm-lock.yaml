@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      react-tweet:
+        specifier: ^3.2.1
+        version: 3.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@ryoppippi/eslint-config':
         specifier: npm:@jsr/ryoppippi__eslint-config@^0.0.21
@@ -38,9 +42,6 @@ importers:
       publint:
         specifier: ^0.1.16
         version: 0.1.16
-      react-tweet:
-        specifier: ^3.2.1
-        version: 3.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       svelte:
         specifier: 5.0.0-next.201
         version: 5.0.0-next.201
