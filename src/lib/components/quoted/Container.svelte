@@ -1,7 +1,6 @@
 <script lang='ts'>
 	import type { EnrichedQuotedTweet } from 'react-tweet';
 	import type { Snippet } from 'svelte';
-	import { browser } from '$app/environment';
 
 	type Props = { tweet: EnrichedQuotedTweet; children: Snippet };
 
@@ -13,9 +12,6 @@
 <div
 	class='root'
 	onclick={(e) => {
-		if (!browser) {
-			return;
-		}
 		e.preventDefault();
 		window.open(tweet.url, '_blank');
 	}}
