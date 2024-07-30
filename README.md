@@ -58,14 +58,6 @@ npm install sveltekit-tweet
     {/if}
     ```
 
-## TODOs
-
-- [ ] Add tests.
-- [ ] Drop external dependencies.
-- [x] Add support for Quoted Tweets.
-- [ ] Add TweetNotFound component.
-- [x] Add easy way for mdsvex integration.
-
 # Acknowledgements
 
 This repo is fork of [fayez-nazzal/sveltekit-tweet](https://github.com/fayez-nazzal/sveltekit-tweet)
