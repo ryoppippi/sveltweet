@@ -8,7 +8,7 @@
 
 	type Props = {
 		tweet: EnrichedTweet | EnrichedQuotedTweet;
-		components: TwitterComponents | undefined;
+		components?: TwitterComponents;
 		quoted?: boolean;
 	};
 
