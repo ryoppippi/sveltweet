@@ -12,6 +12,10 @@ export async function load({ params }: RequestEvent) {
 	try {
 		const tweet = await getTweet(id);
 
+		if (tweet == null) {
+			return error(404, 'Tweet not found');
+		}
+
 		return {
 			tweet,
 		};
