@@ -1,8 +1,8 @@
 <script lang='ts'>
 	import type { EnrichedTweet } from 'react-tweet';
-	import type { TwitterComponents } from '../types.js';
 	import AvatarImg from './AvatarImg.svelte';
 	import VerifiedBadge from './VerifiedBadge.svelte';
+	import type { TwitterComponents } from '$lib/types.js';
 
 	type Props = {
 		tweet: EnrichedTweet;
