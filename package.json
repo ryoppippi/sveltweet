@@ -37,6 +37,7 @@
 		"svelte": "^5.0.0"
 	},
 	"dependencies": {
+		"await-to-js": "^3.0.0",
 		"scn": "^1.0.19"
 	},
 	"devDependencies": {
@@ -46,7 +47,6 @@
 		"@sveltejs/kit": "^2.5.18",
 		"@sveltejs/package": "^2.3.2",
 		"@sveltejs/vite-plugin-svelte": "^3.1.1",
-		"await-to-js": "^3.0.0",
 		"eslint": "^9.8.0",
 		"eslint-plugin-format": "^0.1.2",
 		"eslint-plugin-svelte": "^2.43.0",
