@@ -35,9 +35,6 @@
 	"peerDependencies": {
 		"svelte": "^5.0.0"
 	},
-	"dependencies": {
-		"scn": "^1.0.19"
-	},
 	"devDependencies": {
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.21",
 		"@sveltejs/adapter-auto": "^2.1.1",
