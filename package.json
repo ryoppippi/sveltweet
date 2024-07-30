@@ -37,12 +37,12 @@
 		"svelte": "^5.0.0"
 	},
 	"dependencies": {
-		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.21",
 		"date-fns": "^2.30.0",
 		"scn": "^1.0.19",
 		"svelte-html-event": "^0.0.6"
 	},
 	"devDependencies": {
+		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.21",
 		"@sveltejs/adapter-auto": "^2.1.1",
 		"@sveltejs/adapter-vercel": "^5.4.1",
 		"@sveltejs/kit": "^2.5.18",
