@@ -8,12 +8,16 @@
 	} from '../types.js';
 	import { getMediaUrl, getMp4Video } from '../utils.js';
 
-	export let tweet: TEnrichedTweet | TEnrichedQuotedTweet;
-	export let media: IMediaAnimatedGif | IMediaVideo;
+	type Props = {
+		tweet: TEnrichedTweet | TEnrichedQuotedTweet;
+		media: IMediaAnimatedGif | IMediaVideo;
+	};
+	const { tweet, media }: Props = $props();
 
-	let playButton = true;
-	let isPlaying = false;
-	let ended = false;
+	let playButton = $state(true);
+	let isPlaying = $state(false);
+	let ended = $state(false);
+
 	const mp4Video = getMp4Video(media);
 	let timeout: any;
 	let video: HTMLVideoElement;
@@ -63,12 +67,12 @@
 	class='image'
 	controls={!playButton}
 	muted
+	onended={handleEnded}
+	onpause={handlePause}
+	onplay={handlePlay}
 	poster={getMediaUrl(media, 'small')}
 	preload='metadata'
 	tabIndex={playButton ? -1 : 0}
-	on:play={handlePlay}
-	on:pause={handlePause}
-	on:ended={handleEnded}
 >
 	<source src={mp4Video.url} type={mp4Video.content_type} />
 </video>
@@ -77,8 +81,8 @@
 	<button
 		class='videoButton'
 		aria-label='View video on Twitter'
+		onclick={handleButtonClick}
 		type='button'
-		on:click={handleButtonClick}
 	>
 		<svg class='videoButtonIcon' aria-hidden='true' viewBox='0 0 24 24'>
 			<g>

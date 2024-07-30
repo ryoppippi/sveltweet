@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import { enrichTweet } from '../utils.js';
-	import type { ITweet, TwitterComponents } from '../types.js';
+	import type { ITweet, TEnrichedTweet, TwitterComponents } from '../types.js';
 	import TweetContainer from './TweetContainer.svelte';
 	import TweetHeader from './TweetHeader.svelte';
 	import TweetInReplyTo from './TweetInReply.svelte';
@@ -12,14 +12,18 @@
 	import { building, dev } from '$app/environment';
 	// import QuotedTweet from './quoted-tweet/QuotedTweet.svelte';
 
-	export let tweet: ITweet;
-	export let components: TwitterComponents = {};
+	type Props = {
+		tweet: ITweet;
+		components?: TwitterComponents;
+	};
+
+	const { tweet, components }: Props = $props();
 
 	if (dev || building) {
 	// console.info(`using tweet ${JSON.stringify(tweet)}`);
 	}
 
-	let enrichedTweet: any;
+	let enrichedTweet = $state<TEnrichedTweet>();
 	try {
 		enrichedTweet = enrichTweet(tweet);
 	}
@@ -28,7 +32,7 @@
 	}
 </script>
 
-{#if enrichedTweet}
+{#if enrichedTweet != null}
 	<TweetContainer>
 		<TweetHeader {components} tweet={enrichedTweet} />
 		{#if enrichedTweet.in_reply_to_status_id_str}

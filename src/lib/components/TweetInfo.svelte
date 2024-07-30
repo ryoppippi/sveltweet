@@ -2,7 +2,7 @@
 	import type { TEnrichedTweet } from '../types.js';
 	import TweetInfoCreatedAt from './TweetInfoCreatedAt.svelte';
 
-	export let tweet: TEnrichedTweet;
+	const { tweet }: { tweet: TEnrichedTweet } = $props();
 </script>
 
 <div class='info'>

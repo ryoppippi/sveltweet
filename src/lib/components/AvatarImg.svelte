@@ -1,9 +1,19 @@
 <script lang='ts'>
-	export let src: string;
-	export let alt: string;
-	export let width: string;
-	export let height: string;
-	export let style = '';
+	type Props = {
+		src: string;
+		alt: string;
+		width: number;
+		height: number;
+		style?: string;
+	};
+
+	const {
+		src,
+		alt,
+		width,
+		height,
+		style = '',
+	}: Props = $props();
 </script>
 
 <img {style} {alt} {height} {src} {width} />

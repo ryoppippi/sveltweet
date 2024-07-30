@@ -3,7 +3,7 @@
 	import type { TEnrichedTweet } from '../types.js';
 	import TweetActionsCopy from './TweetActionsCopy.svelte';
 
-	export let tweet: TEnrichedTweet;
+	const { tweet }: { tweet: TEnrichedTweet } = $props();
 	const favoriteCount = formatNumber(tweet.favorite_count);
 </script>
 

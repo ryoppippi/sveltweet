@@ -1,14 +1,20 @@
 <script lang='ts'>
+	import type { Snippet } from 'svelte';
 	import scn from 'scn';
 	import '../theme.css';
 
-	export let className: string = '';
+	type Props = {
+		className?: string;
+		children: Snippet;
+	};
+	const { className = '', children }: Props = $props();
+
 	const computedClass = scn('react-tweet-theme', 'root', className);
 </script>
 
 <div class={computedClass}>
 	<article class='article'>
-		<slot />
+		{@render children()}
 	</article>
 </div>
 

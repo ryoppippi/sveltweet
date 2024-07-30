@@ -1,20 +1,17 @@
 <script lang='ts'>
-	import { onMount } from 'svelte';
 	import { format } from 'date-fns';
 	import type { TEnrichedTweet } from '../types.js';
 
-	export let tweet: TEnrichedTweet;
+	const { tweet }: { tweet: TEnrichedTweet } = $props();
 
-	let createdAt: Date | null = null;
+	let createdAt = $state<Date>();
 
-	onMount(() => {
-		if (typeof window !== 'undefined') {
-			createdAt = new Date(tweet.created_at);
-		}
+	$effect(() => {
+		createdAt = new Date(tweet.created_at);
 	});
 </script>
 
-{#if createdAt}
+{#if createdAt != null}
 	<a
 		class='root'
 		aria-label={format(createdAt, 'h:mm a · MMM d, y')}

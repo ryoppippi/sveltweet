@@ -2,9 +2,10 @@
 	import type { TEnrichedTweet } from '../types.js';
 	import { formatNumber } from '../utils.js';
 
-	export let tweet: TEnrichedTweet;
+	type Props = { tweet: TEnrichedTweet };
+	const { tweet }: Props = $props();
 
-	$: replyText
+	const replyText
 		= tweet.conversation_count === 0
 			? 'Read more on X'
 			: tweet.conversation_count === 1

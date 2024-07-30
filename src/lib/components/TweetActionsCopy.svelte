@@ -1,11 +1,10 @@
 <script lang='ts'>
-	import { onMount } from 'svelte';
 	import type { TEnrichedTweet } from '../types.js';
 
-	export let tweet: TEnrichedTweet;
+	const { tweet }: { tweet: TEnrichedTweet } = $props();
 
-	let copied = false;
-	let copyAllText = false;
+	let copied = $state(false);
+	let copyAllText = $state(false);
 
 	const handleCopy = () => {
 		navigator.clipboard.writeText(tweet.url);
@@ -14,7 +13,7 @@
 
 	let timeout: ReturnType<typeof setTimeout>;
 
-	onMount(() => {
+	$effect(() => {
 		if (copied) {
 			timeout = setTimeout(() => {
 				copied = false;
@@ -27,16 +26,19 @@
 		};
 	});
 
-	$: if (copied) {
-		clearTimeout(timeout);
-		timeout = setTimeout(() => {
-			copied = false;
-			copyAllText = true;
-		}, 6000);
-	}
+// $effect(() => {
+	// 	if (copied) {
+	// 		clearTimeout(timeout);
+	// 		timeout = setTimeout(() => {
+	// 			copied = false;
+	// 			copyAllText = true;
+	// 		}, 6000);
+	// 	}
+	// });
+
 </script>
 
-<button class='copy' aria-label='Copy link' type='button' on:click={handleCopy}>
+<button class='copy' aria-label='Copy link' onclick={handleCopy} type='button'>
 	<div class='copyIconWrapper'>
 		{#if copied}
 			<svg class='copyIcon' aria-hidden='true' viewBox='0 0 24 24'>
