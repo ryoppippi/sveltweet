@@ -13,6 +13,7 @@
 </script>
 
 <div
+	class={className}
 	class:react-tweet-theme={true}
 	class:root={true}
 >
