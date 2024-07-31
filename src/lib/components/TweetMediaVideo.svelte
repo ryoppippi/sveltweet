@@ -15,6 +15,8 @@
 	let timeout = $state(0);
 
 	const mp4Video = getMp4Video(media);
+
+	// svelte-ignore non_reactive_update
 	let video: HTMLVideoElement;
 
 	$effect(() => {
