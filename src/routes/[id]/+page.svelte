@@ -1,8 +1,9 @@
 <script lang='js'>
 	import ToggleDark from './ToggleDark.svelte';
-	import { SvelteTweet } from '$lib';
+	import { SvelteTweet, SvelteTweetNotFound } from '$lib';
 
 	const { data } = $props();
+	const { tweet } = data;
 
 	let isDark = $state(false);
 
@@ -26,7 +27,11 @@
 <div id='container'>
 	<ToggleDark />
 
-	<SvelteTweet tweet={data.tweet} />
+	{#if tweet != null}
+		<SvelteTweet {tweet} />
+	{:else}
+		<SvelteTweetNotFound />
+	{/if}
 </div>
 
 <style>
