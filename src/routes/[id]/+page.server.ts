@@ -1,6 +1,6 @@
-import { type Tweet, getTweet } from 'react-tweet/api';
 import { error } from '@sveltejs/kit';
 import type { RequestEvent } from './$types';
+import { type Tweet, getTweet } from '$lib/api';
 
 export async function load({ params }: RequestEvent) {
 	const { id } = params;

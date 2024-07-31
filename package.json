@@ -12,9 +12,9 @@
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
 		},
-		"./server": {
-			"types": "./dist/server.d.ts",
-			"import": "./dist/server.js"
+		"./api": {
+			"types": "./dist/api.d.ts",
+			"import": "./dist/api.js"
 		}
 	},
 	"types": "./dist/index.d.ts",
