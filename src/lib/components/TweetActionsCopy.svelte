@@ -4,7 +4,6 @@
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 
 	let copied = $state(false);
-	let copyAllText = $state(false);
 
 	const handleCopy = () => {
 		navigator.clipboard.writeText(tweet.url);
@@ -17,7 +16,6 @@
 		if (copied) {
 			timeout = setTimeout(() => {
 				copied = false;
-				copyAllText = true;
 			}, 6000);
 		}
 
@@ -46,7 +44,7 @@
 		{/if}
 	</div>
 	<span class='copyText'>
-		{copied ? 'Copied!' : copyAllText ? 'Copy link to Tweet' : 'Copy link'}
+		{copied ? 'Copied!' : 'Copy link'}
 	</span>
 </button>
 
