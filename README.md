@@ -23,7 +23,7 @@ npx nypm add @ryoppippi/sveltekit-tweet
 ## Usage
 
 ### SvelteKit
-1.  Go to the tweet you want to embed. You will find the URL i
+1.  Go to the tweet you want to embed. You will find the URL
 2.  Use the `getTweet` function in your `+page.server.ts` file to fetch the tweet data.
 
     ```ts
