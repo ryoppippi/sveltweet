@@ -25,7 +25,6 @@ const config = {
 
 		alias: {
 			$: relativePath('src'),
-			$components: relativePath('src/lib/components'),
 		},
 	},
 };
