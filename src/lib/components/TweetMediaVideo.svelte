@@ -55,7 +55,7 @@
 		}
 	}}
 	poster={getMediaUrl(media, 'small')}
-	preload='metadata'
+	preload='none'
 	tabIndex={playButton ? -1 : 0}
 >
 	<source src={mp4Video.url} type={mp4Video.content_type} />
