@@ -3,6 +3,18 @@
 	let isAsync = $state(false);
 </script>
 
+<div class='nav'>
+	<h1>
+		<a href='https://github.com/ryoppippi/svelte-tweet'> Svelte Tweet </a>
+	</h1>
+</div>
+
+<div class='nav'>
+	<a href='/examples'>
+		examples
+	</a>
+</div>
+
 <form
 	action="/{isAsync ? 'async' : 'sync'}/{id}"
 	method='GET'
@@ -24,7 +36,7 @@
 	flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 60vh;
   }
 
   form > div {
@@ -41,4 +53,16 @@
     padding: 0.5rem 1rem;
     font-size: 1rem;
   }
+
+  .nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  }
+
+  .nav a {
+	color: var(--text-color);
+	font-size: 2rem;
+  }
+
 </style>
