@@ -2,6 +2,7 @@
 	import type { EnrichedQuotedTweet, EnrichedTweet } from 'react-tweet';
 	import type { MediaAnimatedGif, MediaVideo	} from 'react-tweet/api';
 	import { getMediaUrl, getMp4Video } from 'react-tweet';
+	import { BROWSER } from 'esm-env';
 
 	type Props = {
 		tweet: EnrichedTweet | EnrichedQuotedTweet;
@@ -27,7 +28,7 @@
 </script>
 
 <!-- current does not work @see https://github.com/sveltejs/kit/issues/11057 -->
-{#if typeof window !== 'undefined'}
+{#if BROWSER}
 	<video
 		bind:this={video}
 		class='image'
