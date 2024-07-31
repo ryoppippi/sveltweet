@@ -175,4 +175,15 @@
 .viewReplies:hover {
   background-color: var(--tweet-color-blue-primary-hover);
 }
+.image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+}
 </style>
