@@ -4,7 +4,7 @@
 </script>
 
 <form
-	action="/{isAsync ? 'async' : ''}/{id}"
+	action="/{isAsync ? 'async' : 'sync'}/{id}"
 	method='GET'
 >
 	<div>
