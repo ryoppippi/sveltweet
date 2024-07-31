@@ -22,6 +22,7 @@
 				style:margin-bottom='0'
 				alt={user.name}
 				height={48}
+				loading='lazy'
 				src={user.profile_image_url_https}
 				width={48}
 			/>
