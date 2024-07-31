@@ -25,17 +25,6 @@
 			clearTimeout(timeout);
 		};
 	});
-
-// $effect(() => {
-	// 	if (copied) {
-	// 		clearTimeout(timeout);
-	// 		timeout = setTimeout(() => {
-	// 			copied = false;
-	// 			copyAllText = true;
-	// 		}, 6000);
-	// 	}
-	// });
-
 </script>
 
 <button class='copy' aria-label='Copy link' onclick={handleCopy} type='button'>
