@@ -9,7 +9,7 @@ export async function load({ params }: RequestEvent) {
 		return error(404, 'Tweet not found');
 	}
 
-	const tweet = (getTweet(id));
+	const tweet = getTweet(id);
 
 	return {
 		tweet: _type === 'sync' ? await tweet : tweet,
