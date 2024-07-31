@@ -3,9 +3,10 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 	import * as Icons from './icons';
 
-	type Props = {
-		user: TweetUser;
-	};
+	type Props = { user: TweetUser };
+	type IconComponent = typeof Icons[keyof typeof Icons];
+	type DivSnippetProps = { icon: IconComponent } & HTMLAttributes<HTMLDivElement>;
+
 	const { user }: Props = $props();
 
 	const isGovernment = user.verified_type === 'Government';
@@ -13,8 +14,6 @@
 	const isBlue = user.is_blue_verified;
 	const isVerified = user.verified || isBlue || isGovernment || isBusiness;
 
-	type IconComponent = typeof Icons[keyof typeof Icons];
-	type DivSnippetProps = { icon: IconComponent } & HTMLAttributes<HTMLDivElement>;
 </script>
 
 {#snippet authorVerifiedDiv({ icon, ...rest }: DivSnippetProps)}
