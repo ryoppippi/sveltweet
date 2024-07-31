@@ -93,7 +93,7 @@
 			rel='noopener noreferrer'
 			target='_blank'
 		>
-			{playButton ? 'Watch on Twitter' : 'Continue watching on Twitter'}
+			{playButton ? 'Watch on X' : 'Continue watching on X'}
 		</a>
 	</div>
 {/if}
