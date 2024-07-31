@@ -3,10 +3,10 @@
 	"type": "module",
 	"version": "0.1.0",
 	"packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
-	"description": "The best way to embed tweets in your SvelteKit app, supporting both SSR and static prerendering modes.",
+	"description": "The best way to embed tweets in your Svelte app, supporting both SSR and static prerendering modes.",
 	"author": "ryoppippi",
 	"license": "MIT",
-	"repository": "ryoppippi/sveltekit-tweet",
+	"repository": "ryoppippi/svelte-tweet",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
