@@ -12,18 +12,16 @@
 		copied = true;
 	};
 
-	let timeout: ReturnType<typeof setTimeout>;
-
 	$effect(() => {
 		if (copied) {
-			timeout = setTimeout(() => {
+			const timeout = setTimeout(() => {
 				copied = false;
 			}, timeoutMs);
-		}
 
-		return () => {
-			clearTimeout(timeout);
-		};
+			return () => {
+				clearTimeout(timeout);
+			};
+		}
 	});
 </script>
 
