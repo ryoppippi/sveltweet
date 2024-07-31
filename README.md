@@ -9,6 +9,8 @@ The best way to embed tweets in your Svelte app, supporting both SSR and static 
 
 > This package is a Svelte version of [vercel/react-tweet](https://github.com/vercel/react-tweet) licensed under MIT License, many thanks to the original authors for making it possible!
 
+> This repo is fork of [fayez-nazzal/sveltekit-tweet](https://github.com/fayez-nazzal/sveltekit-tweet)
+
 # Requirements
 - Svelte 5.0.0-next or later ( This libray uses [`runes`](https://svelte-5-preview.vercel.app/docs/runes) )
 
@@ -69,8 +71,6 @@ npx nypm add @ryoppippi/sveltekit-tweet
 {#await getTweet(id) then tweet}
     <SvelteTweet tweet={data.tweet} />
 {/await}
+```
 
 
-# Acknowledgements
-
-This repo is fork of [fayez-nazzal/sveltekit-tweet](https://github.com/fayez-nazzal/sveltekit-tweet)
