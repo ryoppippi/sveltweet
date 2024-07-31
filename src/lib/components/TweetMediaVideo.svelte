@@ -73,7 +73,11 @@
 		}}
 		type='button'
 	>
-		<svg class='videoButtonIcon' aria-hidden='true' viewBox='0 0 24 24'>
+		<svg
+			class='videoButtonIcon'
+			aria-hidden='true'
+			viewBox='0 0 24 24'
+		>
 			<g>
 				<path d='M21 12L4 2v20l17-10z' />
 			</g>
@@ -83,7 +87,12 @@
 
 {#if !isPlaying && !ended}
 	<div class='watchOnTwitter'>
-		<a class='anchor' href={tweet.url} rel='noopener noreferrer' target='_blank'>
+		<a
+			class='anchor'
+			href={tweet.url}
+			rel='noopener noreferrer'
+			target='_blank'
+		>
 			{playButton ? 'Watch on Twitter' : 'Continue watching on Twitter'}
 		</a>
 	</div>
