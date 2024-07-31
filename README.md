@@ -73,4 +73,5 @@ npx nypm add @ryoppippi/sveltekit-tweet
 {/await}
 ```
 
-
+# License
+[MIT](./LICENSE)
