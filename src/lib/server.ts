@@ -6,4 +6,5 @@
     Package URL: https://github.com/vercel/react-tweet
 */
 
-export { default as Tweet } from './components/Tweet.svelte';
+export { getTweet } from 'react-tweet/api';
+export type * from 'react-tweet/api';

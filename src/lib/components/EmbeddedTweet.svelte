@@ -10,17 +10,12 @@
 	import TweetActions from './TweetActions.svelte';
 	import TweetReplies from './TweetReplies.svelte';
 	import { QuotedTweet } from './quoted';
-	import { dev } from '$app/environment';
 
 	type Props = {
 		tweet: Tweet;
 	};
 
 	const { tweet }: Props = $props();
-
-	if (dev) {
-		console.info(`using tweet ${JSON.stringify(tweet)}`); // eslint-disable-line no-console
-	}
 
 	const enrichedTweet = enrichTweet(tweet);
 </script>
