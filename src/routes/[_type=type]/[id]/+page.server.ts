@@ -1,17 +1,18 @@
 import { error } from '@sveltejs/kit';
 import type { RequestEvent } from './$types';
-import { type Tweet, getTweet } from '$lib/api';
+import { getTweet } from '$lib/api';
 
 export async function load({ params }: RequestEvent) {
-	const { id } = params;
+	const { id, _type } = params;
 
 	if (id === '') {
 		return error(404, 'Tweet not found');
 	}
 
-	const tweet = await (getTweet(id));
+	const tweet = (getTweet(id));
 
-	tweet satisfies Tweet | undefined;
-
-	return { tweet };
+	return {
+		tweet: _type === 'sync' ? await tweet : tweet,
+		type: _type,
+	};
 }

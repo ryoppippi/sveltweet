@@ -45,6 +45,7 @@
 	},
 	"devDependencies": {
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.21",
+		"@std/async": "npm:@jsr/std__async@^1.0.1",
 		"@sveltejs/adapter-auto": "^2.1.1",
 		"@sveltejs/adapter-vercel": "^5.4.1",
 		"@sveltejs/kit": "^2.5.18",

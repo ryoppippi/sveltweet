@@ -1,5 +1,5 @@
-<script lang='js'>
-	let isDark = $state(false);
+<script lang='ts'>
+	let { isDark = $bindable(false) }: { isDark: boolean } = $props();
 
 	$effect(() => {
 		isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
