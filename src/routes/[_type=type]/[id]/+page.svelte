@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import ToggleDark from './ToggleDark.svelte';
+	import ToggleDark from '../../ToggleDark.svelte';
 	import {
 		SvelteTweet,
 		SvelteTweetNotFound,

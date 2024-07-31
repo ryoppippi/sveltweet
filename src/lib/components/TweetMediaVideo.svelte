@@ -24,47 +24,50 @@
 	});
 </script>
 
-<video
-	bind:this={video}
-	class='image'
-	controls={!playButton}
-	muted
-	onended={() => {
-		ended = true;
-	}}
-	onpause={() => {
-		if (timeout > 0) {
-			clearTimeout(timeout);
-		}
-		timeout = setTimeout(() => {
-			if (isPlaying) {
-				isPlaying = false;
+<!-- current does not work @see https://github.com/sveltejs/kit/issues/11057 -->
+{#if typeof window !== 'undefined'}
+	<video
+		bind:this={video}
+		class='image'
+		controls={!playButton}
+		muted
+		onended={() => {
+			ended = true;
+		}}
+		onpause={() => {
+			if (timeout > 0) {
+				clearTimeout(timeout);
 			}
-			timeout = 0;
-		}, 100);
-	}}
-	onplay={() => {
-		if (timeout > 0) {
-			clearTimeout(timeout);
-		}
-		if (!isPlaying) {
-			isPlaying = true;
-		}
-		if (ended) {
-			ended = false;
-		}
-	}}
-	poster={getMediaUrl(media, 'small')}
-	preload='none'
-	tabIndex={playButton ? -1 : 0}
->
-	<source src={mp4Video.url} type={mp4Video.content_type} />
-</video>
+			timeout = setTimeout(() => {
+				if (isPlaying) {
+					isPlaying = false;
+				}
+				timeout = 0;
+			}, 100);
+		}}
+		onplay={() => {
+			if (timeout > 0) {
+				clearTimeout(timeout);
+			}
+			if (!isPlaying) {
+				isPlaying = true;
+			}
+			if (ended) {
+				ended = false;
+			}
+		}}
+		poster={getMediaUrl(media, 'small')}
+		preload='none'
+		tabIndex={playButton ? -1 : 0}
+	>
+		<source src={mp4Video.url} type={mp4Video.content_type} />
+	</video>
+{/if}
 
 {#if playButton}
 	<button
 		class='videoButton'
-		aria-label='View video on Twitter'
+		aria-label='View video on X'
 		onclick={() => {
 			playButton = false;
 			isPlaying = true;

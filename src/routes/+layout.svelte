@@ -5,18 +5,23 @@
 {@render children()}
 
 <style>
+	:root {
+		--text-color: #0084f6;
+		--background-color: #f2eee2;
+	}
 	:global {
 		body {
-			background-color: #f2eee2;
-			color: #0084f6;
+			background-color: var(--background-color);
+			color: var(--text-color);
 			transition: background-color 0.3s
 		}
 
 		@media (prefers-color-scheme: dark) {
-			body {
-				background-color: #1d3040;
-				color: #bfc2c7;
+			:root {
+				--text-color: #bfc2c7;
+				--background-color: #1d3040;
 			}
 		}
 	}
+
 </style>
