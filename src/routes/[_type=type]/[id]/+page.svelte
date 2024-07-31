@@ -1,5 +1,4 @@
 <script lang='ts'>
-	import { delay } from '@std/async';
 	import ToggleDark from './ToggleDark.svelte';
 	import {
 		SvelteTweet,
@@ -12,11 +11,6 @@
 	const { tweet, type } = data;
 
 	let isDark = $state(false);
-
-	async function delayedTweet() {
-		await delay(1500);
-		return tweet;
-	}
 </script>
 
 {#snippet renderTweet(tweet: Tweet | undefined)}
@@ -33,7 +27,7 @@
 	{#if type === 'sync'}
 		{@render renderTweet(tweet as Awaited<typeof tweet>)}
 	{:else}
-		{#await delayedTweet()}
+		{#await tweet}
 			<SvelteTweetSkeleton />
 		{:then tweet}
 			{@render renderTweet(tweet)}
