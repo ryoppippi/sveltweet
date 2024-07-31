@@ -53,7 +53,13 @@
 				>
 					<!-- svelte-ignore element_invalid_self_closing_tag -->
 					<div style={getSkeletonStyle(media, length)} class='skeleton' />
-					<img class='image' alt={media.ext_alt_text || 'Image'} draggable src={getMediaUrl(media, 'small')} />
+					<img
+						class='image'
+						alt={media.ext_alt_text || 'Image'}
+						draggable
+						loading='lazy'
+						src={getMediaUrl(media, 'small')}
+					/>
 				</a>
 			{:else}
 				<div class='mediaContainer'>

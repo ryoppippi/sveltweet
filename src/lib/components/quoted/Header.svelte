@@ -24,6 +24,7 @@
 			<img
 				alt={user.name}
 				height={20}
+				loading='lazy'
 				src={user.profile_image_url_https}
 				width={20}
 			/>
