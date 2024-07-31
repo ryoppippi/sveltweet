@@ -3,8 +3,9 @@
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 
+	const timeoutMs = 6000;
+
 	let copied = $state(false);
-	let copyAllText = $state(false);
 
 	const handleCopy = () => {
 		navigator.clipboard.writeText(tweet.url);
@@ -17,25 +18,13 @@
 		if (copied) {
 			timeout = setTimeout(() => {
 				copied = false;
-				copyAllText = true;
-			}, 6000);
+			}, timeoutMs);
 		}
 
 		return () => {
 			clearTimeout(timeout);
 		};
 	});
-
-// $effect(() => {
-	// 	if (copied) {
-	// 		clearTimeout(timeout);
-	// 		timeout = setTimeout(() => {
-	// 			copied = false;
-	// 			copyAllText = true;
-	// 		}, 6000);
-	// 	}
-	// });
-
 </script>
 
 <button class='copy' aria-label='Copy link' onclick={handleCopy} type='button'>
@@ -57,7 +46,7 @@
 		{/if}
 	</div>
 	<span class='copyText'>
-		{copied ? 'Copied!' : copyAllText ? 'Copy link to Tweet' : 'Copy link'}
+		{copied ? 'Copied!' : 'Copy link'}
 	</span>
 </button>
 
