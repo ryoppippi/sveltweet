@@ -42,6 +42,7 @@
 		"svelte": "^5.0.0"
 	},
 	"dependencies": {
+		"esm-env": "^1.0.0",
 		"react-tweet": "^3.2.1"
 	},
 	"devDependencies": {
