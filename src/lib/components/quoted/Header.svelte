@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import type { EnrichedQuotedTweet } from 'react-tweet';
-	import VerifiedBadge from '$components/VerifiedBadge.svelte';
+	import VerifiedBadge from '../VerifiedBadge.svelte';
 
 	type Props = { tweet: EnrichedQuotedTweet };
 
