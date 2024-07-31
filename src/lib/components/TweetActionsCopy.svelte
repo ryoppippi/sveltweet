@@ -3,6 +3,8 @@
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 
+	const timeoutMs = 6000;
+
 	let copied = $state(false);
 
 	const handleCopy = () => {
@@ -16,7 +18,7 @@
 		if (copied) {
 			timeout = setTimeout(() => {
 				copied = false;
-			}, 6000);
+			}, timeoutMs);
 		}
 
 		return () => {
