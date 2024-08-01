@@ -8,7 +8,7 @@
   <span class='skeleton' {...rest} />
 {/snippet}
 
-<TweetContainer style='pointer-events: none; padding-bottom: 0.25rem;'>
+<TweetContainer class='tweet-container-skeleton'>
 	{@render skeleton({ style: 'height: 3rem; margin-bottom: 0.75rem;' })}
 	{@render skeleton({ style: 'height: 6rem; margin: 0.5rem 0;' })}
 
@@ -22,6 +22,13 @@
 </TweetContainer>
 
 <style>
+:global {
+  .tweet-container-skeleton {
+    pointer-events: none;
+    padding-bottom: 0.25rem;
+  }
+}
+
 .skeleton {
   display: block;
   width: 100%;
