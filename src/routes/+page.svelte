@@ -1,68 +1,62 @@
-<script lang='ts'>
-	let id = $state('1629307668568633344');
+<script lang="ts">
+	let id = $state("1629307668568633344");
 	let isAsync = $state(false);
 </script>
 
-<div class='nav'>
+<div class="nav">
 	<h1>
-		<a href='https://github.com/ryoppippi/svelte-tweet'> Svelte Tweet </a>
+		<a href="https://github.com/ryoppippi/sveltweet"> Svelte Tweet </a>
 	</h1>
 </div>
 
-<div class='nav'>
-	<a href='/examples'>
-		examples
-	</a>
+<div class="nav">
+	<a href="/examples"> examples </a>
 </div>
 
-<form
-	action="/{isAsync ? 'async' : 'sync'}/{id}"
-	method='GET'
->
+<form action="/{isAsync ? 'async' : 'sync'}/{id}" method="GET">
 	<div>
-		<label for='id'>Enter a X ID:</label>
-		<input type='text' bind:value={id} />
+		<label for="id">Enter a X ID:</label>
+		<input type="text" bind:value={id} />
 	</div>
 	<div>
-		<label for='async'>Async Streaming</label>
-		<input id='async' type='checkbox' bind:checked={isAsync} />
+		<label for="async">Async Streaming</label>
+		<input id="async" type="checkbox" bind:checked={isAsync} />
 	</div>
-	<button type='submit'>Go</button>
+	<button type="submit">Go</button>
 </form>
 
 <style>
-  form {
-    display: flex;
-	flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-  }
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 60vh;
+	}
 
-  form > div {
-	margin-bottom: 1rem;
-	display: flex;
-	flex-direction: row;
-  }
+	form > div {
+		margin-bottom: 1rem;
+		display: flex;
+		flex-direction: row;
+	}
 
-  input {
-    font-size: 1rem;
-  }
+	input {
+		font-size: 1rem;
+	}
 
-  button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-  }
+	button {
+		padding: 0.5rem 1rem;
+		font-size: 1rem;
+	}
 
-  .nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-  }
+	.nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
 
-  .nav a {
-	color: var(--text-color);
-	font-size: 2rem;
-  }
-
+	.nav a {
+		color: var(--text-color);
+		font-size: 2rem;
+	}
 </style>
