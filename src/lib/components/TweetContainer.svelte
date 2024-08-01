@@ -1,19 +1,14 @@
-<script context='module'>
-	export const className = `tweet-container`;
-</script>
-
 <script lang='ts'>
 	import type { Snippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
 	import 'react-tweet/theme.css';
 
-	type Props = {
-		children: Snippet;
-	};
-	const { children }: Props = $props();
+	type Props = { children: Snippet } & HTMLAttributes<HTMLDivElement>;
+	const { children, ...rest }: Props = $props();
 </script>
 
 <div
-	class={className}
+	{...rest}
 	class:react-tweet-theme={true}
 	class:root={true}
 >
