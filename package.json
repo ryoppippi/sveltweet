@@ -65,6 +65,6 @@
 		"tslib": "^2.6.3",
 		"typescript": "^5.5.4",
 		"typescript-svelte-plugin": "^0.3.39",
-		"vite": "^4.5.3"
+		"vite": "^5.3.5"
 	}
 }
