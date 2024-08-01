@@ -22,12 +22,9 @@
 </TweetContainer>
 
 <style>
-:global {
-  .tweet-container-skeleton {
-    pointer-events: none;
-    padding-bottom: 0.25rem;
-  }
-}
+	:global {
+		@import "$rt/tweet-skeleton.module.css?.root=.tweet-container-skeleton" scoped;
+	}
 
-	@import "$rt/tweet-skeleton.module.css" scoped;
+	@import "$rt/skeleton.module.css" scoped;
 </style>
