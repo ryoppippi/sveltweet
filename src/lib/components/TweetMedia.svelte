@@ -36,7 +36,10 @@
 	const mediaDetails = tweet.mediaDetails ?? [];
 </script>
 
-<div class={['root', !quoted && 'rounded'].join(' ')}>
+<div
+	class='root'
+	class:rounded={!quoted}
+>
 	<div
 		class='mediaWrapper'
 		class:grid2Columns={length > 1}
