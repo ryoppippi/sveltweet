@@ -14,5 +14,5 @@
 </svg>
 
 <style>
-	@import "./icon.css" scoped;
+	@import "$rt_icons/icons.module.css" scoped;
 </style>

@@ -18,12 +18,5 @@
 </p>
 
 <style>
-	.root {
-		font-size: var(--tweet-body-font-size);
-		font-weight: var(--tweet-body-font-weight);
-		line-height: var(--tweet-body-line-height);
-		margin: var(--tweet-body-margin);
-		overflow-wrap: break-word;
-		white-space: pre-wrap;
-	}
+	@import "$rt/tweet-body.module.css" scoped;
 </style>

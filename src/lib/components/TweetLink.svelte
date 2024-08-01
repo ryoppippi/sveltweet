@@ -10,15 +10,5 @@
 </a>
 
 <style>
-	.root {
-		font-weight: inherit;
-		color: var(--tweet-color-blue-secondary);
-		text-decoration: none;
-		cursor: pointer;
-	}
-
-	.root:hover {
-		text-decoration-thickness: 1px;
-		text-decoration-line: underline;
-	}
+	@import "$rt/tweet-link.module.css" scoped;
 </style>
