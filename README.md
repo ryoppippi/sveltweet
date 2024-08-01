@@ -17,7 +17,7 @@ The best way to embed tweets in your Svelte app, supporting both SSR and static 
 ## Installation
 
 ```bash
-npx nypm add @ryoppippi/sveltekit-tweet
+npx nypm add sveltweet
 ```
 
 ## Usage
