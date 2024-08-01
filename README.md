@@ -1,4 +1,4 @@
-# Sveltweet
+# Sveltweet (__Svelte + Tweet__)
 
 The best way to embed tweets in your Svelte app, supporting both SSR and static prerendering modes.
 
