@@ -21,14 +21,5 @@
 {/if}
 
 <style>
-.root {
-  color: inherit;
-  text-decoration: none;
-  font-size: var(--tweet-info-font-size);
-  line-height: var(--tweet-info-line-height);
-}
-.root:hover {
-  text-decoration-thickness: 1px;
-  text-decoration-line: underline;
-}
+	@import "$rt/tweet-info-created-at.module.css" scoped;
 </style>

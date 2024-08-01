@@ -38,20 +38,5 @@
 {/if}
 
 <style>
-.verifiedOld {
-	color: var(--tweet-verified-old-color);
-}
-
-.verifiedBlue {
-	color: var(--tweet-verified-blue-color);
-}
-
-.verifiedGovernment {
-	/* color: var(--tweet-verified-government-color); */
-	color: rgb(130, 154, 171);
-}
-
-.authorVerified {
-	display: inline-flex;
-}
+	@import "$rt/verified-badge.module.css" scoped;
 </style>

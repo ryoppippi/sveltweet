@@ -49,55 +49,5 @@
 </button>
 
 <style>
-	.copy {
-		text-decoration: none;
-		color: inherit;
-		display: flex;
-		align-items: center;
-		margin-right: 1.25rem;
-	}
-	.copy:hover {
-		background-color: rgba(0, 0, 0, 0);
-	}
-
-	.copyIconWrapper {
-		width: var(--tweet-actions-icon-wrapper-size);
-		height: var(--tweet-actions-icon-wrapper-size);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-left: -0.25rem;
-		border-radius: 9999px;
-	}
-	.copyIcon {
-		height: var(--tweet-actions-icon-size);
-		fill: currentColor;
-		user-select: none;
-	}
-	.copyText {
-		font-size: var(--tweet-actions-font-size);
-		font-weight: var(--tweet-actions-font-weight);
-		line-height: var(--tweet-actions-line-height);
-		margin-left: 0.25rem;
-	}
-
-	.copy {
-		font: inherit;
-		background: none;
-		border: none;
-		cursor: pointer;
-	}
-
-	.copy:hover > .copyIconWrapper {
-		background-color: var(--tweet-color-green-primary-hover);
-	}
-
-	.copy:hover .copyIcon {
-		color: var(--tweet-color-green-primary);
-	}
-
-	.copy:hover > .copyText {
-		color: var(--tweet-color-green-primary);
-		text-decoration-line: underline;
-	}
+	@import "$rt/tweet-actions.module.css" scoped;
 </style>

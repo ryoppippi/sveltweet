@@ -10,14 +10,5 @@
 </TweetContainer>
 
 <style>
-.root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 0.75rem;
-}
-.root > h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
+	@import "$rt/tweet-not-found.module.css" scoped;
 </style>
