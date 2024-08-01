@@ -1,4 +1,4 @@
-# Svelte Tweet
+# Sveltweet
 
 The best way to embed tweets in your Svelte app, supporting both SSR and static prerendering modes.
 
@@ -27,7 +27,7 @@ npx nypm add @ryoppippi/sveltekit-tweet
 2.  Use the `getTweet` function in your `+page.server.ts` file to fetch the tweet data.
 
     ```ts
-    import { getTweet } from 'svelte-tweet/api';
+    import { getTweet } from 'sveltweet/api';
     import { error } from '@sveltejs/kit';
     import type { RequestEvent } from './$types';
 
@@ -49,7 +49,7 @@ npx nypm add @ryoppippi/sveltekit-tweet
 
     ```svelte
     <script lang='ts'>
-    	import { SvelteTweet } from 'svelte-tweet';
+    	import { SvelteTweet } from 'sveltweet';
     	import type { PageData } from './$types';
 
         const { data }: { data: PageData } = $props()
@@ -62,8 +62,8 @@ npx nypm add @ryoppippi/sveltekit-tweet
 
 ```svelte
 <script lang='ts'>
-    import { SvelteTweet } from 'svelte-tweet';
-    import { getTweet } from 'svelte-tweet/api';
+    import { SvelteTweet } from 'sveltweet';
+    import { getTweet } from 'sveltweet/api';
 
     const id = '';
 </script>
