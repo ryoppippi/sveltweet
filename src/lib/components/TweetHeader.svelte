@@ -53,7 +53,7 @@
 	</div>
 	<a
 		class='brand'
-		aria-label='View on Twitter'
+		aria-label='View on X'
 		href={tweet.url}
 		rel='noopener noreferrer'
 		target='_blank'
