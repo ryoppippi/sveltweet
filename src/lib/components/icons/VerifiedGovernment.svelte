@@ -1,7 +1,3 @@
-<script>
-	import './icon.css';
-</script>
-
 <svg
 	class='verified'
 	aria-label='Verified account'
@@ -16,3 +12,7 @@
 		/>
 	</g>
 </svg>
+
+<style>
+	@import "./icon.css" scoped;
+</style>
