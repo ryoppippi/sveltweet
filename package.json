@@ -38,7 +38,7 @@
 		"release": "nr check && nr lint && nr build && bumpp && npm publish"
 	},
 	"peerDependencies": {
-		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/kit": "^2.5.18",
 		"svelte": "^5.0.0"
 	},
 	"dependencies": {
