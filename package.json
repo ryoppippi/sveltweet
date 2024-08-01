@@ -22,7 +22,7 @@
 		"!dist/**/*.spec.*",
 		"!dist/**/*.test.*",
 		"dist",
-		"src"
+		"src/lib/"
 	],
 	"svelte": "./dist/index.js",
 	"scripts": {
