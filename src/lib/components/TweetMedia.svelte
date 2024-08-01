@@ -21,20 +21,26 @@
 			paddingBottom = paddingBottom * 2;
 		}
 
-		// return {
-		// 	width: media.type === 'photo' ? undefined : 'unset',
-		// 	paddingBottom: `${paddingBottom}%`
-		// };
-
-		return `width: ${
-			media.type === 'photo' ? undefined : 'unset'
-		}; padding-bottom: ${paddingBottom}%;`;
+		return {
+			width: media.type === 'photo' ? undefined : 'unset',
+			paddingBottom: `${paddingBottom}%`,
+		};
 	};
 
 	const length = tweet.mediaDetails?.length ?? 0;
 
 	const mediaDetails = tweet.mediaDetails ?? [];
 </script>
+
+{#snippet skeletonDiv(params: Parameters<typeof getSkeletonStyle>)}
+	{@const { width, paddingBottom } = getSkeletonStyle(...params)}
+	<!-- svelte-ignore element_invalid_self_closing_tag -->
+	<div
+		style:width={width}
+		style:padding-bottom={paddingBottom}
+		class='skeleton'
+	/>
+{/snippet}
 
 <div
 	class='root'
@@ -54,8 +60,7 @@
 					rel='noopener noreferrer'
 					target='_blank'
 				>
-					<!-- svelte-ignore element_invalid_self_closing_tag -->
-					<div style={getSkeletonStyle(media, length)} class='skeleton' />
+					{@render skeletonDiv([media, length])}
 					<img
 						class='image'
 						alt={media.ext_alt_text || 'Image'}
@@ -66,8 +71,7 @@
 				</a>
 			{:else}
 				<div class='mediaContainer'>
-					<!-- svelte-ignore element_invalid_self_closing_tag -->
-					<div style={getSkeletonStyle(media, length)} class='skeleton' />
+					{@render skeletonDiv([media, length])}
 					<TweetMediaVideo {media} {tweet} />
 				</div>
 			{/if}
