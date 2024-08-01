@@ -1,5 +1,9 @@
 # Sveltweet (__Svelte + Tweet__)
 
+[![npm version](https://img.shields.io/npm/v/sveltweet?color=yellow)](https://npmjs.com/package/sveltweet)
+[![npm downloads](https://img.shields.io/npm/dm/sveltweet?color=yellow)](https://npmjs.com/package/sveltweet)
+
+
 The best way to embed tweets in your Svelte app, supporting both SSR and static prerendering modes.
 
 - The tweet is loaded in the server-side.
