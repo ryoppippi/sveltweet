@@ -1,7 +1,7 @@
 import path from 'node:path';
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { importCSSPreprocess } from './preprocess/importcss.js';
+import { importCSSPreprocess } from '@ryoppippi/svelte-preprocess-import-css';
 
 /** @param {...string} args */
 function relativePath(...args) {
