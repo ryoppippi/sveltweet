@@ -10,6 +10,10 @@
 	const isIconSquare = $derived(user.profile_image_shape === 'Square');
 </script>
 
+{#snippet span(name: string)}
+	<span title={name}>{name}</span>
+{/snippet}
+
 <div class='header'>
 	<a
 		class='avatar'
@@ -32,11 +36,11 @@
 	</a>
 	<div class='author'>
 		<div class='authorText'>
-			<span title={user.name}>{user.name}</span>
+			{@render span(user.name)}
 		</div>
 		<VerifiedBadge {user} />
 		<div class='username'>
-			<span title={`@${user.screen_name}`}>@{user.screen_name}</span>
+			{@render span(`@${user.screen_name}`)}
 		</div>
 	</div>
 </div>
