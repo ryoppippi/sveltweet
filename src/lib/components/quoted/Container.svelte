@@ -22,23 +22,5 @@
 </div>
 
 <style>
-.root {
-  width: 100%;
-  overflow: hidden;
-  border: var(--tweet-border);
-  border-radius: 12px;
-  margin: var(--tweet-quoted-container-margin);
-  transition-property: background-color, box-shadow;
-  transition-duration: 0.2s;
-  cursor: pointer;
-}
-
-.root:hover {
-  background-color: var(--tweet-quoted-bg-color-hover);
-}
-
-.article {
-  position: relative;
-  box-sizing: inherit;
-}
+	@import "$rt_qt/quoted-tweet-container.module.css" scoped;
 </style>
