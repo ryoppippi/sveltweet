@@ -22,8 +22,8 @@ importers:
         specifier: npm:@jsr/ryoppippi__eslint-config@^0.0.21
         version: '@jsr/ryoppippi__eslint-config@0.0.21(@vue/compiler-sfc@3.4.35)(eslint-plugin-format@0.1.2(eslint@9.8.0))(eslint-plugin-svelte@2.43.0(eslint@9.8.0)(svelte@5.0.0-next.202))(eslint@9.8.0)(svelte-eslint-parser@0.41.0(svelte@5.0.0-next.202))(svelte@5.0.0-next.202)(typescript@5.5.4)'
       '@ryoppippi/svelte-preprocess-import-css':
-        specifier: npm:@jsr/ryoppippi__svelte-preprocess-import-css@^0.1.3
-        version: '@jsr/ryoppippi__svelte-preprocess-import-css@0.1.3(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.202)(vite@5.3.5))'
+        specifier: npm:@jsr/ryoppippi__svelte-preprocess-import-css@^0.2.0
+        version: '@jsr/ryoppippi__svelte-preprocess-import-css@0.2.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.202)(vite@5.3.5))'
       '@std/async':
         specifier: npm:@jsr/std__async@^1.0.1
         version: '@jsr/std__async@1.0.1'
@@ -388,8 +388,8 @@ packages:
   '@jsr/ryoppippi__eslint-config@0.0.21':
     resolution: {integrity: sha512-qUSqd01B3n4Mw8su5T9oUZ3LPUUG95ybThuksz2dcPjygsex0FzFgzFLF4gaXMszyyj2Or+T1a4nji6bf+lJwQ==, tarball: https://npm.jsr.io/~/11/@jsr/ryoppippi__eslint-config/0.0.21.tgz}
 
-  '@jsr/ryoppippi__svelte-preprocess-import-css@0.1.3':
-    resolution: {integrity: sha512-Sn8f8xdKgkU/Tma0xYBgefAFfHSnEgGNYJtD0A3Wf0OlamwBKzG9NlIcA/fNKr+Vgwr3mdTtudYcDlh+Y7FG+Q==, tarball: https://npm.jsr.io/~/11/@jsr/ryoppippi__svelte-preprocess-import-css/0.1.3.tgz}
+  '@jsr/ryoppippi__svelte-preprocess-import-css@0.2.0':
+    resolution: {integrity: sha512-kSsMzIuLyIbNgTHitH3yPMfJUCBWC5mrRLB/ETmOjb/0uoL0FaD82ldDR1tXJ9JFOvTvPJuiCP6mC5gOsGnBeg==, tarball: https://npm.jsr.io/~/11/@jsr/ryoppippi__svelte-preprocess-import-css/0.2.0.tgz}
 
   '@jsr/std__async@1.0.1':
     resolution: {integrity: sha512-NwX2UXmpHrp5iJJGlC80PZ2bcflvkOtKjtGAHN6dqpuYoxJpEliy8fMJOLofvyulWvlY1SkDD9da9uS00ERfpg==, tarball: https://npm.jsr.io/~/11/@jsr/std__async/1.0.1.tgz}
@@ -893,6 +893,9 @@ packages:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
 
+  css-selector-extract@4.0.1:
+    resolution: {integrity: sha512-Ee2PJUE0Ma9NqCZ5AauYIsKZJA8Ni81XIbwoypv3Iid4MAPfRmjYBLxpRWsAi10D/iPIWZ5DIRGJ8dj/mRGsCQ==}
+
   css-tree@2.3.1:
     resolution: {integrity: sha512-6Fv1DV/TYw//QF5IzQdqsNDjx/wc8TrMBZsqjL9eW01tWb7R7k/mq+/VXfJCl7SoD5emsJop9cOByJZfs8hYIw==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0}
@@ -918,6 +921,10 @@ packages:
     peerDependenciesMeta:
       supports-color:
         optional: true
+
+  decode-uri-component@0.4.1:
+    resolution: {integrity: sha512-+8VxcR21HhTy8nOt6jf20w0c9CADrw1O8d+VZ/YzzCt4bJ3uBjw+D1q2osAB8RnpwwaeYBxy0HyKQxD5JBMuuQ==}
+    engines: {node: '>=14.16'}
 
   dedent-js@1.0.1:
     resolution: {integrity: sha512-OUepMozQULMLUmhxS95Vudo0jb0UchLimi3+pQ2plj61Fcy8axbP9hbiD4Sz6DPqn6XG3kfmziVfQ1rSys5AJQ==}
@@ -1266,6 +1273,10 @@ packages:
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
+
+  filter-obj@5.1.0:
+    resolution: {integrity: sha512-qWeTREPoT7I0bifpPUXtxkZJ1XJzxWtfoWWkdVGqa+eCr3SHW/Ocp89o8vLvbUuQnadybJpjOKu4V+RwO6sGng==}
+    engines: {node: '>=14.16'}
 
   find-up-simple@1.0.0:
     resolution: {integrity: sha512-q7Us7kcjj2VMePAa02hDAF6d+MzsdsAWEwYyOpwUtlerRBkOEPBCRZrAV4XfcSN8fHAgaD0hP7miwoay6DCprw==}
@@ -1877,6 +1888,10 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
+  query-string@9.1.0:
+    resolution: {integrity: sha512-t6dqMECpCkqfyv2FfwVS1xcB6lgXW/0XZSaKdsCNGYkqMO76AFiJEg4vINzoDKcZa6MS7JX+OHIjwh06K5vczw==}
+    engines: {node: '>=18'}
+
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -2032,6 +2047,10 @@ packages:
 
   spdx-license-ids@3.0.18:
     resolution: {integrity: sha512-xxRs31BqRYHwiMzudOrpSiHtZ8i/GeionCBDSilhYRj+9gIcI8wCZTlXZKu9vZIVqViP3dcp9qE5G6AlIaD+TQ==}
+
+  split-on-first@3.0.0:
+    resolution: {integrity: sha512-qxQJTx2ryR0Dw0ITYyekNQWpz6f8dGd7vffGNflQQ3Iqj9NJ6qiZ7ELpZsJ/QBhIVAiDfXdag3+Gp8RvWa62AA==}
+    engines: {node: '>=12'}
 
   stable-hash@0.0.4:
     resolution: {integrity: sha512-LjdcbuBeLcdETCrPn9i8AYAZ1eCtu4ECAWtP7UleOiZ9LzVxRzzUZEoZ8zB24nhkQnDWyET0I+3sWokSDS3E7g==}
@@ -2633,11 +2652,13 @@ snapshots:
       - typescript
       - vitest
 
-  '@jsr/ryoppippi__svelte-preprocess-import-css@0.1.3(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.202)(vite@5.3.5))':
+  '@jsr/ryoppippi__svelte-preprocess-import-css@0.2.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.202)(vite@5.3.5))':
     dependencies:
       '@sveltejs/kit': 2.5.19(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.202)(vite@5.3.5))(svelte@4.2.18)(vite@5.3.5)
+      css-selector-extract: 4.0.1
       magic-string: 0.30.11
       pathe: 1.1.2
+      query-string: 9.1.0
       svelte: 4.2.18
       unconfig: 0.5.5
       vite: 5.3.5
@@ -3227,6 +3248,10 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
+  css-selector-extract@4.0.1:
+    dependencies:
+      postcss: 8.4.40
+
   css-tree@2.3.1:
     dependencies:
       mdn-data: 2.0.30
@@ -3241,6 +3266,8 @@ snapshots:
   debug@4.3.6:
     dependencies:
       ms: 2.1.2
+
+  decode-uri-component@0.4.1: {}
 
   dedent-js@1.0.1: {}
 
@@ -3706,6 +3733,8 @@ snapshots:
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
+
+  filter-obj@5.1.0: {}
 
   find-up-simple@1.0.0: {}
 
@@ -4273,6 +4302,12 @@ snapshots:
 
   punycode@2.3.1: {}
 
+  query-string@9.1.0:
+    dependencies:
+      decode-uri-component: 0.4.1
+      filter-obj: 5.1.0
+      split-on-first: 3.0.0
+
   queue-microtask@1.2.3: {}
 
   rc9@2.1.2:
@@ -4448,6 +4483,8 @@ snapshots:
       spdx-license-ids: 3.0.18
 
   spdx-license-ids@3.0.18: {}
+
+  split-on-first@3.0.0: {}
 
   stable-hash@0.0.4: {}
 
