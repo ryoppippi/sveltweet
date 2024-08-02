@@ -40,20 +40,8 @@ npx nypm add sveltweet
         },
     });
     ```
-1.  Enable `css.injected` in `svelte.config.js` (This solves layout-broken bug on dev mode):
-    
-    ```js
-    export default {
-        // ...
-        compilerOptions: {
-            css: process.env.NODE_ENV === 'development' ? 'injected' : undefined,
-        },
-        // ...
-    };
-    ```
-
-2.  Go to the tweet you want to embed. You will find the URL
-3.  Use the `getTweet` function in your `+page.server.ts` file to fetch the tweet data.
+1.  Go to the tweet you want to embed. You will find the URL
+2.  Use the `getTweet` function in your `+page.server.ts` file to fetch the tweet data.
 
     ```ts
     import { getTweet } from 'sveltweet/api';
@@ -74,7 +62,7 @@ npx nypm add sveltweet
 
     ```
 
-4.  Use the `SvelteTweet` component in your `+page.svelte` file to render the tweet.
+3.  Use the `SvelteTweet` component in your `+page.svelte` file to render the tweet.
 
     ```svelte
     <script lang='ts'>
