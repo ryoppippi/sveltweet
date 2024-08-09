@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import TweetInfoCreatedAt from './TweetInfoCreatedAt.svelte';
-	import type { EnrichedTweet } from '$lib/utils.js';
+	import type { EnrichedTweet } from '$rt/utils.js';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 </script>
@@ -24,5 +24,5 @@
 </div>
 
 <style>
-	@import "$rt/tweet-info.module.css" scoped;
+	@import "$rt_tw/tweet-info.module.css" scoped;
 </style>

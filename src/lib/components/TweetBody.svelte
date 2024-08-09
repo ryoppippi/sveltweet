@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import TweetLink from './TweetLink.svelte';
-	import type { EnrichedTweet } from '$lib/utils.js';
+	import type { EnrichedTweet } from '$rt/utils.js';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 </script>
@@ -18,5 +18,5 @@
 </p>
 
 <style>
-	@import "$rt/tweet-body.module.css" scoped;
+	@import "$rt_tw/tweet-body.module.css" scoped;
 </style>

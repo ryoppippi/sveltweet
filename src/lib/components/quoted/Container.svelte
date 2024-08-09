@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import type { Snippet } from 'svelte';
-	import type { EnrichedQuotedTweet } from '$lib/utils.ts';
+	import type { EnrichedQuotedTweet } from '$rt/utils.ts';
 
 	type Props = { tweet: EnrichedQuotedTweet; children: Snippet };
 

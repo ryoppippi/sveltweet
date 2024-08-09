@@ -33,9 +33,10 @@ const config = {
 
 		alias: {
 			$: relativePath('src'),
-			$rt: relativePath('./node_modules/react-tweet/dist/twitter-theme/'),
-			$rt_icons: relativePath('./node_modules/react-tweet/dist/twitter-theme/icons/'),
-			$rt_qt: relativePath('./node_modules/react-tweet/dist/twitter-theme/quoted-tweet/'),
+			$rt: relativePath('./src/lib/react-tweet/dist'),
+			$rt_tw: relativePath('./src/lib/react-tweet/dist/twitter-theme'),
+			$rt_icons: relativePath('./src/lib/react-tweet/dist/twitter-theme/icons'),
+			$rt_qt: relativePath('./src/lib/react-tweet/dist/twitter-theme/quoted-tweet'),
 		},
 	},
 };

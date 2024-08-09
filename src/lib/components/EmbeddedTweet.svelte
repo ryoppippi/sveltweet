@@ -8,8 +8,8 @@
 	import TweetActions from './TweetActions.svelte';
 	import TweetReplies from './TweetReplies.svelte';
 	import { QuotedTweet } from './quoted';
-	import type { Tweet } from '$lib/api';
-	import { enrichTweet } from '$lib/utils.js';
+	import type { Tweet } from '$rt/api';
+	import { enrichTweet } from '$rt/utils.js';
 
 	type Props = {
 		tweet: Tweet;

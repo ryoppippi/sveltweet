@@ -1,8 +1,7 @@
 <script lang='ts'>
 	import { BROWSER } from 'esm-env';
-	import type { MediaAnimatedGif, MediaVideo	} from '$lib/api';
-	import { getMediaUrl, getMp4Video } from '$lib/utils.js';
-	import type { EnrichedQuotedTweet, EnrichedTweet } from '$lib/utils.js';
+	import type { MediaAnimatedGif, MediaVideo	} from '$rt/api';
+	import { type EnrichedQuotedTweet, type EnrichedTweet, getMediaUrl, getMp4Video } from '$rt/utils';
 
 	type Props = {
 		tweet: EnrichedTweet | EnrichedQuotedTweet;
@@ -111,6 +110,6 @@
 {/if}
 
 <style>
-	@import "$rt/tweet-media.module.css?.image" scoped;
-	@import "$rt/tweet-media-video.module.css" scoped;
+	@import "$rt_tw/tweet-media.module.css?.image" scoped;
+	@import "$rt_tw/tweet-media-video.module.css" scoped;
 </style>

@@ -1,7 +1,6 @@
 <script lang='ts'>
 	import TweetActionsCopy from './TweetActionsCopy.svelte';
-	import { formatNumber } from '$lib/utils.js';
-	import type { EnrichedTweet } from '$lib/utils.js';
+	import { type EnrichedTweet, formatNumber } from '$rt/utils.js';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 	const favoriteCount = formatNumber(tweet.favorite_count);
@@ -48,5 +47,5 @@
 </div>
 
 <style>
-	@import "$rt/tweet-actions.module.css" scoped;
+	@import "$rt_tw/tweet-actions.module.css" scoped;
 </style>

@@ -10,5 +10,5 @@
 </TweetContainer>
 
 <style>
-	@import "$rt/tweet-not-found.module.css" scoped;
+	@import "$rt_tw/tweet-not-found.module.css" scoped;
 </style>

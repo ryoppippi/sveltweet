@@ -1,7 +1,7 @@
 <script lang='ts'>
 	import type { HTMLAttributes } from 'svelte/elements';
 	import * as Icons from './icons';
-	import type { TweetUser } from '$lib/api';
+	import type { TweetUser } from '$rt/api';
 
 	type Props = { user: TweetUser };
 	type IconComponent = typeof Icons[keyof typeof Icons];
@@ -38,5 +38,5 @@
 {/if}
 
 <style>
-	@import "$rt/verified-badge.module.css" scoped;
+	@import "$rt_tw/verified-badge.module.css" scoped;
 </style>

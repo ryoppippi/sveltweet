@@ -10,5 +10,5 @@
 </a>
 
 <style>
-	@import "$rt/tweet-link.module.css" scoped;
+	@import "$rt_tw/tweet-link.module.css" scoped;
 </style>

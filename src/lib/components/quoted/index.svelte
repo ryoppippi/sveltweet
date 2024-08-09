@@ -3,7 +3,7 @@
 	import QuotedTweetContainer from './Container.svelte';
 	import QuotedTweetHeader from './Header.svelte';
 	import QuotedTweetBody from './Body.svelte';
-	import type { EnrichedQuotedTweet } from '$lib/utils.js';
+	import type { EnrichedQuotedTweet } from '$rt/utils.js';
 
 	type Props = { tweet: EnrichedQuotedTweet };
 	const { tweet }: Props = $props();

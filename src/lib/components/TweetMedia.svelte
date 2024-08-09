@@ -1,8 +1,7 @@
 <script lang='ts'>
 	import TweetMediaVideo from './TweetMediaVideo.svelte';
-	import { getMediaUrl } from '$lib/utils.js';
-	import type { MediaDetails } from '$lib/api';
-	import type { EnrichedQuotedTweet, EnrichedTweet } from '$lib/utils.js';
+	import { type EnrichedQuotedTweet, type EnrichedTweet, getMediaUrl } from '$rt/utils.js';
+	import type { MediaDetails } from '$rt/api';
 
 	type Props = {
 		tweet: EnrichedTweet | EnrichedQuotedTweet;
@@ -80,5 +79,5 @@
 </div>
 
 <style>
-	@import "$rt/tweet-media.module.css" scoped;
+	@import "$rt_tw/tweet-media.module.css" scoped;
 </style>
