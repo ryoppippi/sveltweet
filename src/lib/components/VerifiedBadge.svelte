@@ -1,7 +1,7 @@
 <script lang='ts'>
-	import type { TweetUser } from 'react-tweet/api';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import * as Icons from './icons';
+	import type { TweetUser } from '$lib/api';
 
 	type Props = { user: TweetUser };
 	type IconComponent = typeof Icons[keyof typeof Icons];

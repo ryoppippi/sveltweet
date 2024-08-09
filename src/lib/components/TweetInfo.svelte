@@ -1,6 +1,6 @@
 <script lang='ts'>
-	import type { EnrichedTweet } from 'react-tweet';
 	import TweetInfoCreatedAt from './TweetInfoCreatedAt.svelte';
+	import type { EnrichedTweet } from '$lib/utils.js';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 </script>

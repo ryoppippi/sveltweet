@@ -1,8 +1,8 @@
 <script lang='ts'>
-	import type { EnrichedQuotedTweet, EnrichedTweet } from 'react-tweet';
-	import type { MediaDetails } from 'react-tweet/api';
-	import { getMediaUrl } from 'react-tweet';
 	import TweetMediaVideo from './TweetMediaVideo.svelte';
+	import { getMediaUrl } from '$lib/utils.js';
+	import type { MediaDetails } from '$lib/api';
+	import type { EnrichedQuotedTweet, EnrichedTweet } from '$lib/utils.js';
 
 	type Props = {
 		tweet: EnrichedTweet | EnrichedQuotedTweet;
