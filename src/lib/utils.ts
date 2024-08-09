@@ -18,7 +18,7 @@ import type {
 	TweetBase,
 	UrlEntity,
 	UserMentionEntity,
-} from 'react-tweet/api';
+} from '$lib/api';
 
 export type TweetCoreProps = {
 	id: string;

@@ -1,6 +1,6 @@
 <script lang='ts'>
-	import type { MediaAnimatedGif, MediaVideo	} from 'react-tweet/api';
 	import { BROWSER } from 'esm-env';
+	import type { MediaAnimatedGif, MediaVideo	} from '$lib/api';
 	import { getMediaUrl, getMp4Video } from '$lib/utils.js';
 	import type { EnrichedQuotedTweet, EnrichedTweet } from '$lib/utils.js';
 

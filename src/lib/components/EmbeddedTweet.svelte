@@ -1,5 +1,4 @@
 <script lang='ts'>
-	import type { Tweet } from 'react-tweet/api';
 	import TweetContainer from './TweetContainer.svelte';
 	import TweetHeader from './TweetHeader.svelte';
 	import TweetInReplyTo from './TweetInReply.svelte';
@@ -9,6 +8,7 @@
 	import TweetActions from './TweetActions.svelte';
 	import TweetReplies from './TweetReplies.svelte';
 	import { QuotedTweet } from './quoted';
+	import type { Tweet } from '$lib/api';
 	import { enrichTweet } from '$lib/utils.js';
 
 	type Props = {
