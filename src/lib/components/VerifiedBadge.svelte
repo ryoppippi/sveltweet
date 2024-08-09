@@ -39,4 +39,5 @@
 
 <style>
 	@import "$rt_tw/verified-badge.module.css" scoped;
+	@import "$rt_tw/tweet-header.module.css?.authorVerified" scoped;
 </style>
