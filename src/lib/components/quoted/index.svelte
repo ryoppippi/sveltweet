@@ -1,9 +1,9 @@
 <script lang='ts'>
-	import type { EnrichedQuotedTweet } from 'react-tweet';
 	import TweetMedia from '../TweetMedia.svelte';
 	import QuotedTweetContainer from './Container.svelte';
 	import QuotedTweetHeader from './Header.svelte';
 	import QuotedTweetBody from './Body.svelte';
+	import type { EnrichedQuotedTweet } from '$lib/utils.js';
 
 	type Props = { tweet: EnrichedQuotedTweet };
 	const { tweet }: Props = $props();

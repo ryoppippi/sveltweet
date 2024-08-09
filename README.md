@@ -27,19 +27,6 @@ npx nypm add sveltweet
 ## Usage
 
 ### SvelteKit
-0.  Add `ssr.noExternal` Add ssr option to `vite.config.ts` to ignore the external module `react-tweet` for dev server.
-
-    ```ts
-    import { sveltekit } from '@sveltejs/kit/vite';
-    import { defineConfig } from 'vite';
-
-    export default defineConfig({
-        plugins: [sveltekit()],
-        ssr: {
-            noExternal: ['react-tweet'],
-        },
-    });
-    ```
 1.  Go to the tweet you want to embed. You will find the URL
 2.  Use the `getTweet` function in your `+page.server.ts` file to fetch the tweet data.
 
