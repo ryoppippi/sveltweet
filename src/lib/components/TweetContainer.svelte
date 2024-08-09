@@ -1,8 +1,7 @@
 <script lang='ts'>
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	// eslint-disable-next-line antfu/no-import-dist
-	import '../react-tweet/dist/twitter-theme/theme.css';
+	import '../react-tweet/twitter-theme/theme.css';
 
 	type Props = { children: Snippet } & HTMLAttributes<HTMLDivElement>;
 	const { children, ...rest }: Props = $props();

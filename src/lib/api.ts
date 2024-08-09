@@ -1,1 +1,1 @@
-export * from './react-tweet/dist/api';
+export * from './react-tweet/api';

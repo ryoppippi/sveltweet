@@ -1,18 +1,15 @@
 #!/usr/bin/env node
 
-import path from 'node:path';
 import { $ } from 'dax-sh';
 
-/** @param {...string} args */
-function relativePath(...args) {
-	return path.resolve(import.meta.dirname, ...args);
-}
+const from = $.path('./node_modules/react-tweet/dist');
+const to = $.path('./src/lib/react-tweet/');
 
-const from = relativePath('./node_modules/react-tweet/dist');
-const to = relativePath('./src/lib/react-tweet');
-
-// eslint-disable-next-line no-console
-console.log(`Copying ${from} to ${to}`);
-
+await $`rm -rf ${to}`;
 await $`mkdir -p ${to}`;
-await $`cp -r ${from} ${to}`;
+
+const output = await $`ls ${from}`.lines();
+
+for (const file of output) {
+	await $`cp -r ${from.join(file)} ${to.join(file)}`;
+}

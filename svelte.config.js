@@ -32,10 +32,10 @@ const config = {
 		adapter: adapter(),
 
 		alias: {
-			$rt: relativePath('./src/lib/react-tweet/dist'),
-			$rt_tw: relativePath('./src/lib/react-tweet/dist/twitter-theme'),
-			$rt_icons: relativePath('./src/lib/react-tweet/dist/twitter-theme/icons'),
-			$rt_qt: relativePath('./src/lib/react-tweet/dist/twitter-theme/quoted-tweet'),
+			$rt: relativePath('./src/lib/react-tweet'),
+			$rt_tw: relativePath('./src/lib/react-tweet/twitter-theme'),
+			$rt_icons: relativePath('./src/lib/react-tweet/twitter-theme/icons'),
+			$rt_qt: relativePath('./src/lib/react-tweet/twitter-theme/quoted-tweet'),
 		},
 	},
 };
