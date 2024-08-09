@@ -34,7 +34,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint --cache .",
 		"format": "nr lint --fix",
-		"release": "nr check && nr lint && nr build && bumpp && npm publish"
+		"release": "nr check && nr lint && nr build && nlx bumpp && npm publish"
 	},
 	"peerDependencies": {
 		"@sveltejs/kit": "^2.5.20",
@@ -52,7 +52,6 @@
 		"@sveltejs/kit": "^2.5.20",
 		"@sveltejs/package": "^2.3.2",
 		"@sveltejs/vite-plugin-svelte": "^3.1.1",
-		"bumpp": "^9.4.2",
 		"eslint": "^9.8.0",
 		"eslint-plugin-format": "^0.1.2",
 		"eslint-plugin-svelte": "^2.43.0",
