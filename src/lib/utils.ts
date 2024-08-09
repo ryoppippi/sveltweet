@@ -1,7 +1,5 @@
-/* eslint-disable eslint-comments/no-unlimited-disable */
-/* eslint-disable */ 
-/* 
-  copy from https://github.com/vercel/react-tweet/blob/3367f07a2177462af1d05d62b1785bb9aa4ab787/packages/react-tweet/src/utils.ts#L229 
+/*
+  copy from https://github.com/vercel/react-tweet/blob/3367f07a2177462af1d05d62b1785bb9aa4ab787/packages/react-tweet/src/utils.ts#L229
   TODO: waiting for PR https://github.com/vercel/react-tweet/pull/177
 */
 
