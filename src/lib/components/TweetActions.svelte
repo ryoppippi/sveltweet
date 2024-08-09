@@ -47,5 +47,7 @@
 </div>
 
 <style>
-	@import "$rt_tw/tweet-actions.module.css" scoped;
+	:global {
+		@import "$rt_tw/tweet-actions.module.css" scoped;
+	}
 </style>

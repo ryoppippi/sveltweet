@@ -47,7 +47,3 @@
 		{copied ? 'Copied!' : 'Copy link'}
 	</span>
 </button>
-
-<style>
-	@import "$rt_tw/tweet-actions.module.css" scoped;
-</style>
