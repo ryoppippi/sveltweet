@@ -47,4 +47,4 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
-      - run: pnpm dlx pkg-pr-new publish
+      - run: pnpm dlx pkg-pr-new publish --compact
