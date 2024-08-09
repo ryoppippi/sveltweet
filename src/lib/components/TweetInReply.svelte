@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import type { EnrichedTweet } from '$lib/utils.js';
+	import type { EnrichedTweet } from '$rt/utils.js';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 </script>
@@ -9,5 +9,5 @@
 </a>
 
 <style>
-	@import "$rt/tweet-in-reply-to.module.css" scoped;
+	@import "$rt_tw/tweet-in-reply-to.module.css" scoped;
 </style>

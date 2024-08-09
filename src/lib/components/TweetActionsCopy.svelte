@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import type { EnrichedTweet } from '$lib/utils.js';
+	import type { EnrichedTweet } from '$rt/utils.js';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 
@@ -49,5 +49,5 @@
 </button>
 
 <style>
-	@import "$rt/tweet-actions.module.css" scoped;
+	@import "$rt_tw/tweet-actions.module.css" scoped;
 </style>

@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import VerifiedBadge from './VerifiedBadge.svelte';
-	import type { EnrichedTweet } from '$lib/utils.js';
+	import type { EnrichedTweet } from '$rt/utils.js';
 
 	type Props = {
 		tweet: EnrichedTweet;
@@ -68,5 +68,5 @@
 </div>
 
 <style>
-	@import "$rt/tweet-header.module.css" scoped;
+	@import "$rt_tw/tweet-header.module.css" scoped;
 </style>

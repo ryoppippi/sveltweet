@@ -1,6 +1,5 @@
 <script lang='ts'>
-	import type { EnrichedTweet } from '$lib/utils.js';
-	import { formatNumber } from '$lib/utils.js';
+	import { type EnrichedTweet, formatNumber } from '$rt/utils';
 
 	type Props = { tweet: EnrichedTweet };
 	const { tweet }: Props = $props();
@@ -22,5 +21,5 @@
 </div>
 
 <style>
-	@import "$rt/tweet-replies.module.css" scoped;
+	@import "$rt_tw/tweet-replies.module.css" scoped;
 </style>

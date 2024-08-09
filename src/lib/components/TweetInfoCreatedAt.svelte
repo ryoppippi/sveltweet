@@ -1,6 +1,6 @@
 <script lang='ts'>
-	import type { EnrichedTweet } from '$lib/utils.js';
-	import { formatDate } from '$lib/date-utils.js';
+	import type { EnrichedTweet } from '$rt/utils.js';
+	import { formatDate } from '$rt/date-utils.js';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 
@@ -21,5 +21,5 @@
 {/if}
 
 <style>
-	@import "$rt/tweet-info-created-at.module.css" scoped;
+	@import "$rt_tw/tweet-info-created-at.module.css" scoped;
 </style>

@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import VerifiedBadge from '../VerifiedBadge.svelte';
-	import type { EnrichedQuotedTweet } from '$lib/utils.js';
+	import type { EnrichedQuotedTweet } from '$rt/utils.js';
 
 	type Props = { tweet: EnrichedQuotedTweet };
 
