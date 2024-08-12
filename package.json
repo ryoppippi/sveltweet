@@ -60,7 +60,7 @@
 		"magic-string": "^0.30.11",
 		"react-tweet": "^3.2.1",
 		"std-env": "^3.7.0",
-		"svelte": "5.0.0-next.208",
+		"svelte": "5.0.0-next.214",
 		"svelte-check": "^3.8.5",
 		"svelte-eslint-parser": "^0.41.0",
 		"tslib": "^2.6.3",
