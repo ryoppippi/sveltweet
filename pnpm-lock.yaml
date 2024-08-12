@@ -19,8 +19,8 @@ importers:
         specifier: npm:@jsr/ryoppippi__eslint-config@^0.0.21
         version: '@jsr/ryoppippi__eslint-config@0.0.21(@vue/compiler-sfc@3.4.35)(eslint-plugin-format@0.1.2(eslint@9.8.0))(eslint-plugin-svelte@2.43.0(eslint@9.8.0)(svelte@5.0.0-next.208))(eslint@9.8.0)(svelte-eslint-parser@0.41.0(svelte@5.0.0-next.208))(svelte@5.0.0-next.208)(typescript@5.5.4)'
       '@ryoppippi/svelte-preprocess-import-css':
-        specifier: npm:@jsr/ryoppippi__svelte-preprocess-import-css@^0.3.0
-        version: '@jsr/ryoppippi__svelte-preprocess-import-css@0.3.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.208)(vite@5.3.5))'
+        specifier: npm:@jsr/ryoppippi__svelte-preprocess-import-css@^0.3.3
+        version: '@jsr/ryoppippi__svelte-preprocess-import-css@0.3.4(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.208)(vite@5.3.5))'
       '@std/async':
         specifier: npm:@jsr/std__async@^1.0.2
         version: '@jsr/std__async@1.0.2'
@@ -538,8 +538,8 @@ packages:
   '@jsr/ryoppippi__eslint-config@0.0.21':
     resolution: {integrity: sha512-qUSqd01B3n4Mw8su5T9oUZ3LPUUG95ybThuksz2dcPjygsex0FzFgzFLF4gaXMszyyj2Or+T1a4nji6bf+lJwQ==, tarball: https://npm.jsr.io/~/11/@jsr/ryoppippi__eslint-config/0.0.21.tgz}
 
-  '@jsr/ryoppippi__svelte-preprocess-import-css@0.3.0':
-    resolution: {integrity: sha512-3nu8/y7LnPogUDBtR3A9aawzHYRad0RiBJ+Aww6nVTCZDX/tYX4yrTWIjMhPepjbXx7ANaKyhTpyFAgehJDZYQ==, tarball: https://npm.jsr.io/~/11/@jsr/ryoppippi__svelte-preprocess-import-css/0.3.0.tgz}
+  '@jsr/ryoppippi__svelte-preprocess-import-css@0.3.4':
+    resolution: {integrity: sha512-+P8wfBZo4rHEuR3tz19VZU3pgI3USAaoZMn/N/5f237yjLys5OLUj5B4dnpUjK371YVqS+PWYGnb0SHFkcJClg==, tarball: https://npm.jsr.io/~/11/@jsr/ryoppippi__svelte-preprocess-import-css/0.3.4.tgz}
 
   '@jsr/std__async@1.0.2':
     resolution: {integrity: sha512-eLkh0Wu4T9Bzxcc04phpWLa/JHi8VGCbkehb/AQPZcZzS8FyxZUd69RZrVasnX1NEeT9xSwueIS4qHBqbgzbPQ==, tarball: https://npm.jsr.io/~/11/@jsr/std__async/1.0.2.tgz}
@@ -2738,7 +2738,7 @@ snapshots:
       - typescript
       - vitest
 
-  '@jsr/ryoppippi__svelte-preprocess-import-css@0.3.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.208)(vite@5.3.5))':
+  '@jsr/ryoppippi__svelte-preprocess-import-css@0.3.4(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.208)(vite@5.3.5))':
     dependencies:
       '@sveltejs/kit': 2.5.20(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.208)(vite@5.3.5))(svelte@4.2.18)(vite@5.3.5)
       css-selector-extract: 4.0.1
@@ -2746,6 +2746,7 @@ snapshots:
       pathe: 1.1.2
       query-string: 9.1.0
       svelte: 4.2.18
+      ufo: 1.5.4
       unconfig: 0.5.5
       vite: 5.3.5
     transitivePeerDependencies:
