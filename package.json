@@ -45,7 +45,7 @@
 		"esm-env": "^1.0.0"
 	},
 	"devDependencies": {
-		"@antfu/ni": "^0.22.1",
+		"@antfu/ni": "^0.22.4",
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.21",
 		"@ryoppippi/svelte-preprocess-import-css": "npm:@jsr/ryoppippi__svelte-preprocess-import-css@^0.3.4",
 		"@std/async": "npm:@jsr/std__async@^1.0.3",
