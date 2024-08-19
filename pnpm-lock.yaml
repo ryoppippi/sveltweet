@@ -31,7 +31,7 @@ importers:
         specifier: ^2.5.22
         version: 2.5.22(@sveltejs/vite-plugin-svelte@3.1.1(svelte@5.0.0-next.214)(vite@5.4.0))(svelte@5.0.0-next.214)(vite@5.4.0)
       '@sveltejs/package':
-        specifier: ^2.3.3
+        specifier: ^2.3.4
         version: 2.3.4(svelte@5.0.0-next.214)(typescript@5.5.4)
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.1.1
