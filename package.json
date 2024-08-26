@@ -61,7 +61,7 @@
 		"react-tweet": "^3.2.1",
 		"std-env": "^3.7.0",
 		"svelte": "5.0.0-next.224",
-		"svelte-check": "^3.8.5",
+		"svelte-check": "^3.8.6",
 		"svelte-eslint-parser": "^0.41.0",
 		"tslib": "^2.6.3",
 		"typescript": "^5.5.4",
