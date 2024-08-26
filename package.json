@@ -46,7 +46,7 @@
 	},
 	"devDependencies": {
 		"@antfu/ni": "^0.22.4",
-		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.22",
+		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.23",
 		"@ryoppippi/svelte-preprocess-import-css": "npm:@jsr/ryoppippi__svelte-preprocess-import-css@^0.3.4",
 		"@std/async": "npm:@jsr/std__async@^1.0.3",
 		"@sveltejs/adapter-auto": "^3.2.4",
