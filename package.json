@@ -41,9 +41,6 @@
 		"@sveltejs/kit": "^2.5.24",
 		"svelte": "^5.0.0"
 	},
-	"dependencies": {
-		"esm-env": "^1.0.0"
-	},
 	"devDependencies": {
 		"@antfu/ni": "^0.22.4",
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.23",

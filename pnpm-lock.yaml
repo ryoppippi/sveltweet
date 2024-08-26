@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      esm-env:
-        specifier: ^1.0.0
-        version: 1.0.0
     devDependencies:
       '@antfu/ni':
         specifier: ^0.22.4

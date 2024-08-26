@@ -1,5 +1,4 @@
 <script lang='ts'>
-	import { BROWSER } from 'esm-env';
 	import type { MediaAnimatedGif, MediaVideo	} from '$rt/api';
 	import { type EnrichedQuotedTweet, type EnrichedTweet, getMediaUrl, getMp4Video } from '$rt/utils';
 
@@ -16,7 +15,6 @@
 
 	const mp4Video = getMp4Video(media);
 
-	// svelte-ignore non_reactive_update
 	let video: HTMLVideoElement;
 
 	$effect(() => {
@@ -27,44 +25,42 @@
 </script>
 
 <!-- current does not work @see https://github.com/sveltejs/kit/issues/11057 -->
-{#if BROWSER}
-	<video
-		bind:this={video}
-		class='image'
-		controls={!playButton}
-		muted
-		onended={() => {
-			ended = true;
-		}}
-		onpause={() => {
-			if (timeout > 0) {
-				clearTimeout(timeout);
+<video
+	bind:this={video}
+	class='image'
+	controls={!playButton}
+	muted
+	onended={() => {
+		ended = true;
+	}}
+	onpause={() => {
+		if (timeout > 0) {
+			clearTimeout(timeout);
+		}
+		timeout = setTimeout(() => {
+			if (isPlaying) {
+				isPlaying = false;
 			}
-			timeout = setTimeout(() => {
-				if (isPlaying) {
-					isPlaying = false;
-				}
-				timeout = 0;
-			}, 100);
-		}}
-		onplay={() => {
-			if (timeout > 0) {
-				clearTimeout(timeout);
-			}
-			if (!isPlaying) {
-				isPlaying = true;
-			}
-			if (ended) {
-				ended = false;
-			}
-		}}
-		poster={getMediaUrl(media, 'small')}
-		preload='none'
-		tabIndex={playButton ? -1 : 0}
-	>
-		<source src={mp4Video.url} type={mp4Video.content_type} />
-	</video>
-{/if}
+			timeout = 0;
+		}, 100);
+	}}
+	onplay={() => {
+		if (timeout > 0) {
+			clearTimeout(timeout);
+		}
+		if (!isPlaying) {
+			isPlaying = true;
+		}
+		if (ended) {
+			ended = false;
+		}
+	}}
+	poster={getMediaUrl(media, 'small')}
+	preload='none'
+	tabIndex={playButton ? -1 : 0}
+>
+	<source src={mp4Video.url} type={mp4Video.content_type} />
+</video>
 
 {#if playButton}
 	<button
