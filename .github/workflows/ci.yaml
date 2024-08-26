@@ -1,5 +1,8 @@
 name: lint / check
 
+env:
+  NODE_VERSION: lts/*
+
 on:
   push:
   pull_request:
@@ -9,29 +12,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Run secretlint
         shell: bash
         run: pnpm dlx @secretlint/quick-start $(git ls-files)
-      - name: Run check
-        run: pnpm check
-      - name: Run lint
-        run: pnpm lint
+      - run: pnpm check
+      - run: pnpm lint
 
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
@@ -40,10 +41,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build:package
