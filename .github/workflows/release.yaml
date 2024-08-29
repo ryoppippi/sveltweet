@@ -1,5 +1,8 @@
 name: release
 
+env:
+  NODE_VERSION: lts/*
+
 on:
   push:
     tags:
@@ -9,7 +12,32 @@ permissions:
   contents: write
 
 jobs:
+  npm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: Release
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        working-directory: ${{env.PACKAGE_DIR}}
+
   release:
+    needs:
+      - npm
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
