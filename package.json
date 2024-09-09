@@ -40,7 +40,7 @@
 		"prepublishOnly": "nr build"
 	},
 	"peerDependencies": {
-		"@sveltejs/kit": "^2.5.25",
+		"@sveltejs/kit": "^2.5.26",
 		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
@@ -49,7 +49,7 @@
 		"@ryoppippi/svelte-preprocess-import-css": "npm:@jsr/ryoppippi__svelte-preprocess-import-css@^0.3.4",
 		"@std/async": "npm:@jsr/std__async@^1.0.5",
 		"@sveltejs/adapter-auto": "^3.2.4",
-		"@sveltejs/kit": "^2.5.25",
+		"@sveltejs/kit": "^2.5.26",
 		"@sveltejs/package": "^2.3.4",
 		"@sveltejs/vite-plugin-svelte": "4.0.0-next.6",
 		"dax-sh": "^0.41.0",
