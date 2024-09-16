@@ -50,7 +50,7 @@
 		"@std/async": "npm:@jsr/std__async@^1.0.5",
 		"@sveltejs/adapter-auto": "^3.2.4",
 		"@sveltejs/kit": "^2.5.27",
-		"@sveltejs/package": "^2.3.4",
+		"@sveltejs/package": "^2.3.5",
 		"@sveltejs/vite-plugin-svelte": "4.0.0-next.7",
 		"dax-sh": "^0.41.0",
 		"eslint": "^9.10.0",
