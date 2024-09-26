@@ -1,5 +1,9 @@
+<script>
+	import s from '../../react-tweet/twitter-theme/icons/icons.module.css';
+</script>
+
 <svg
-	class='verified'
+	class={s.verified}
 	aria-label='Verified account'
 	role='img'
 	viewBox='0 0 22 22'
@@ -11,8 +15,5 @@
 			fill-rule='evenodd'
 		/>
 	</g>
-</svg>
 
-<style>
-	@import "$rt_icons/icons.module.css" scoped;
-</style>
+</svg>

@@ -2,6 +2,7 @@
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import '../react-tweet/twitter-theme/theme.css';
+	import s from '../react-tweet/twitter-theme/tweet-container.module.css';
 
 	type Props = { children: Snippet } & HTMLAttributes<HTMLDivElement>;
 	const { children, ...rest }: Props = $props();
@@ -9,14 +10,10 @@
 
 <div
 	{...rest}
+	class={s.root}
 	class:react-tweet-theme={true}
-	class:root={true}
 >
-	<article class='article'>
+	<article class={s.article}>
 		{@render children()}
 	</article>
 </div>
-
-<style>
-	@import "$rt_tw/tweet-container.module.css" scoped;
-</style>

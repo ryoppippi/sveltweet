@@ -1,4 +1,5 @@
 <script lang='ts'>
+	import s from '../react-tweet/twitter-theme/tweet-header.module.css';
 	import VerifiedBadge from './VerifiedBadge.svelte';
 	import type { EnrichedTweet } from '$rt/utils.js';
 
@@ -11,10 +12,10 @@
 	const { user } = tweet;
 </script>
 
-<div class='header'>
-	<a class='avatar' href={tweet.url} rel='noopener noreferrer' target='_blank'>
+<div class={s.header}>
+	<a class={s.avatar} href={tweet.url} rel='noopener noreferrer' target='_blank'>
 		<div
-			class='avatarOverflow'
+			class={s.avatarOverflow}
 			class:avatarSquare={user.profile_image_shape === 'Square'}
 		>
 			<img
@@ -27,38 +28,38 @@
 				width={48}
 			/>
 		</div>
-		<div class='avatarOverflow'>
+		<div class={s.avatarOverflow}>
 			<!-- svelte-ignore element_invalid_self_closing_tag -->
-			<div class='avatarShadow' />
+			<div class={s.avatarShadow} />
 		</div>
 	</a>
-	<div class='author'>
-		<a class='authorLink' href={tweet.url} rel='noopener noreferrer' target='_blank'>
-			<div class='authorLinkText'>
+	<div class={s.author}>
+		<a class={s.authorLink} href={tweet.url} rel='noopener noreferrer' target='_blank'>
+			<div class={s.authorLinkText}>
 				<span title={user.name}>{user.name}</span>
 			</div>
 			<VerifiedBadge {user} />
 		</a>
-		<div class='authorMeta'>
-			<a class='username' href={tweet.url} rel='noopener noreferrer' target='_blank'>
+		<div class={s.authorMeta}>
+			<a class={s.username} href={tweet.url} rel='noopener noreferrer' target='_blank'>
 				<span title='@{user.screen_name}'>@{user.screen_name}</span>
 			</a>
-			<div class='authorFollow'>
-				<span class='separator'>·</span>
-				<a class='follow' href={user.follow_url} rel='noopener noreferrer' target='_blank'>
+			<div class={s.authorFollow}>
+				<span class={s.separator}>·</span>
+				<a class={s.follow} href={user.follow_url} rel='noopener noreferrer' target='_blank'>
 					Follow
 				</a>
 			</div>
 		</div>
 	</div>
 	<a
-		class='brand'
+		class={s.brand}
 		aria-label='View on X'
 		href={tweet.url}
 		rel='noopener noreferrer'
 		target='_blank'
 	>
-		<svg class='twitterIcon' aria-hidden='true' viewBox='0 0 24 24'>
+		<svg class={s.twitterIcon} aria-hidden='true' viewBox='0 0 24 24'>
 			<g>
 				<path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'
 				/>
@@ -66,7 +67,3 @@
 		</svg>
 	</a>
 </div>
-
-<style>
-	@import "$rt_tw/tweet-header.module.css" scoped;
-</style>

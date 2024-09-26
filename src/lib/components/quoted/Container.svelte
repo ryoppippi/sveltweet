@@ -1,5 +1,6 @@
 <script lang='ts'>
 	import type { Snippet } from 'svelte';
+	import s from '../../react-tweet/twitter-theme/quoted-tweet/quoted-tweet-container.module.css';
 	import type { EnrichedQuotedTweet } from '$rt/utils.ts';
 
 	type Props = { tweet: EnrichedQuotedTweet; children: Snippet };
@@ -10,17 +11,13 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <div
-	class='root'
+	class={s.root}
 	onclick={(e) => {
 		e.preventDefault();
 		window.open(tweet.url, '_blank');
 	}}
 >
-	<article class='article'>
+	<article class={s.article}>
 		{@render children()}
 	</article>
 </div>
-
-<style>
-	@import "$rt_qt/quoted-tweet-container.module.css" scoped;
-</style>
