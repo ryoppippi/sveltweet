@@ -1,6 +1,8 @@
 <script lang='ts'>
 	import type { HTMLAttributes } from 'svelte/elements';
 	import * as Icons from './icons';
+	import s from '$rt_tw/verified-badge.module.css';
+	import sHeader from '$rt_tw/tweet-header.module.css';
 	import type { TweetUser } from '$rt/api';
 
 	type Props = { user: TweetUser };
@@ -17,7 +19,7 @@
 </script>
 
 {#snippet authorVerifiedDiv({ Icon, ...rest }: DivSnippetProps)}
-	<div {...rest} class:authorVerified={true}>
+	<div {...rest} class={sHeader.authorVerified}>
 		<Icon />
 	</div>
 {/snippet}
@@ -25,19 +27,14 @@
 <!-- @see https://github.com/vercel/react-tweet/blob/3367f07a2177462af1d05d62b1785bb9aa4ab787/packages/react-tweet/src/twitter-theme/verified-badge.tsx#L20-L34 */ -->
 {#if isVerified}
 	{#if isGovernment}
-		{@render authorVerifiedDiv({ Icon: Icons.VerifiedGovernment, class: 'verifiedGovernment' })}
+		{@render authorVerifiedDiv({ Icon: Icons.VerifiedGovernment, class: s.verifiedGovernment })}
 	{:else if isBusiness}
 		{@render authorVerifiedDiv({ Icon: Icons.VerifiedBusiness, class: '' })}
 	{:else if !isBlue}
 		<!-- verified but not blue -->
-		{@render authorVerifiedDiv({ Icon: Icons.Verified, class: 'verifiedOld' })}
+		{@render authorVerifiedDiv({ Icon: Icons.Verified, class: s.verifiedOld })}
 	{:else}
 		<!-- normal paid premium user -->
-		{@render authorVerifiedDiv({ Icon: Icons.Verified, class: 'verifiedBlue' })}
+		{@render authorVerifiedDiv({ Icon: Icons.Verified, class: s.verifiedBlue })}
 	{/if}
 {/if}
-
-<style>
-	@import "$rt_tw/verified-badge.module.css" scoped;
-	@import "$rt_tw/tweet-header.module.css?.authorVerified" scoped;
-</style>
