@@ -1,5 +1,6 @@
 <script lang='ts'>
 	import type { EnrichedQuotedTweet } from '$rt/utils.js';
+	import s from '$rt_qt/quoted-tweet-body.module.css';
 
 	type Props = { tweet: EnrichedQuotedTweet };
 
@@ -7,7 +8,7 @@
 </script>
 
 <p
-	class='root'
+	class={s.root}
 	dir='auto'
 	lang={tweet.lang}
 >
@@ -15,7 +16,3 @@
 		<span>{item.text}</span>
 	{/each}
 </p>
-
-<style>
-	@import "$rt_qt/quoted-tweet-body.module.css" scoped;
-</style>
