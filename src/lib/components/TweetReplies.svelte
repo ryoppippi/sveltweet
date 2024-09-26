@@ -1,5 +1,6 @@
 <script lang='ts'>
 	import { type EnrichedTweet, formatNumber } from '$rt/utils';
+	import s from '$rt_tw/tweet-replies.module.css';
 
 	type Props = { tweet: EnrichedTweet };
 	const { tweet }: Props = $props();
@@ -12,14 +13,10 @@
 			: `Read ${formatNumber(tweet.conversation_count)} replies`;
 </script>
 
-<div class='replies'>
-	<a class='link' href={tweet.url} rel='noopener noreferrer' target='_blank'>
-		<span class='text'>
+<div class={s.replies}>
+	<a class={s.link} href={tweet.url} rel='noopener noreferrer' target='_blank'>
+		<span class={s.text}>
 			{replyText}
 		</span>
 	</a>
 </div>
-
-<style>
-	@import "$rt_tw/tweet-replies.module.css" scoped;
-</style>
