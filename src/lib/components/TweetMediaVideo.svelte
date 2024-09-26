@@ -1,6 +1,8 @@
 <script lang='ts'>
 	import type { MediaAnimatedGif, MediaVideo	} from '$rt/api';
 	import { type EnrichedQuotedTweet, type EnrichedTweet, getMediaUrl, getMp4Video } from '$rt/utils';
+	import mediaStyles from '$rt_tw/tweet-media.module.css';
+	import s from '$rt_tw/tweet-media-video.module.css';
 
 	type Props = {
 		tweet: EnrichedTweet | EnrichedQuotedTweet;
@@ -27,7 +29,7 @@
 <!-- current does not work @see https://github.com/sveltejs/kit/issues/11057 -->
 <video
 	bind:this={video}
-	class='image'
+	class={mediaStyles.image}
 	controls={!playButton}
 	muted
 	onended={() => {
@@ -64,7 +66,7 @@
 
 {#if playButton}
 	<button
-		class='videoButton'
+		class={s.videoButton}
 		aria-label='View video on X'
 		onclick={() => {
 			playButton = false;
@@ -75,7 +77,7 @@
 		type='button'
 	>
 		<svg
-			class='videoButtonIcon'
+			class={s.videoButtonIcon}
 			aria-hidden='true'
 			viewBox='0 0 24 24'
 		>
@@ -87,9 +89,9 @@
 {/if}
 
 {#if !isPlaying && !ended}
-	<div class='watchOnTwitter'>
+	<div class={s.watchOnTwitter}>
 		<a
-			class='anchor'
+			class={s.anchor}
 			href={tweet.url}
 			rel='noopener noreferrer'
 			target='_blank'
@@ -100,12 +102,7 @@
 {/if}
 
 {#if ended}
-	<a class='anchor viewReplies' href={tweet.url} rel='noopener noreferrer' target='_blank'>
+	<a class='{s.anchor} {s.viewReplies}' href={tweet.url} rel='noopener noreferrer' target='_blank'>
 		View replies
 	</a>
 {/if}
-
-<style>
-	@import "$rt_tw/tweet-media.module.css?.image" scoped;
-	@import "$rt_tw/tweet-media-video.module.css" scoped;
-</style>
