@@ -1,4 +1,8 @@
-<svg class='verified' aria-label='Verified account' role='img' viewBox='0 0 22 22'>
+<script>
+	import s from '$rt_icons/icons.module.css';
+</script>
+
+<svg class={s.verified} aria-label='Verified account' role='img' viewBox='0 0 22 22'>
 	<g>
 		<linearGradient
 			id='0-a'
@@ -42,7 +46,3 @@
 		</g>
 	</g>
 </svg>
-
-<style>
-	@import "$rt_icons/icons.module.css" scoped;
-</style>
