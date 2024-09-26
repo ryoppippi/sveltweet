@@ -1,6 +1,7 @@
 <script lang='ts'>
 	import VerifiedBadge from '../VerifiedBadge.svelte';
 	import type { EnrichedQuotedTweet } from '$rt/utils.js';
+	import s from '$rt_qt/quoted-tweet-header.module.css';
 
 	type Props = { tweet: EnrichedQuotedTweet };
 
@@ -14,17 +15,14 @@
 	<span title={name}>{name}</span>
 {/snippet}
 
-<div class='header'>
+<div class={s.header}>
 	<a
-		class='avatar'
+		class={s.avatar}
 		href={tweet.url}
 		rel='noopener noreferrer'
 		target='_blank'
 	>
-		<div
-			class:avatarOverflow={!isIconSquare}
-			class:avatarSquare={isIconSquare}
-		>
+		<div class='{s.avatarOverflow} {isIconSquare ? s.avatarSquare : ''}'>
 			<img
 				alt={user.name}
 				height={20}
@@ -34,17 +32,13 @@
 			/>
 		</div>
 	</a>
-	<div class='author'>
-		<div class='authorText'>
+	<div class={s.author}>
+		<div class={s.authorText}>
 			{@render span(user.name)}
 		</div>
 		<VerifiedBadge {user} />
-		<div class='username'>
+		<div class={s.username}>
 			{@render span(`@${user.screen_name}`)}
 		</div>
 	</div>
 </div>
-
-<style>
-	@import "$rt_qt/quoted-tweet-header.module.css" scoped;
-</style>
