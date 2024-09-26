@@ -1,8 +1,8 @@
 <script lang='ts'>
 	import type { HTMLAttributes } from 'svelte/elements';
 	import TweetContainer from './TweetContainer.svelte';
-
 </script>
+<!-- TODO: aniamtion is not working -->
 {#snippet skeleton({ ...rest }: HTMLAttributes<HTMLSpanElement>)}
   <!-- svelte-ignore element_invalid_self_closing_tag -->
   <span class='skeleton' {...rest} />
