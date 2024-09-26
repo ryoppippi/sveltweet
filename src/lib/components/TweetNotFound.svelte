@@ -1,6 +1,6 @@
 <script lang='ts'>
+	import s from '../react-tweet/twitter-theme/tweet-not-found.module.css';
 	import TweetContainer from './TweetContainer.svelte';
-	import s from '$rt_tw/tweet-not-found.module.css';
 </script>
 
 <TweetContainer>

@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import type { Snippet } from 'svelte';
-	import s from '$rt_tw/tweet-link.module.css';
+	import s from '../react-tweet/twitter-theme/tweet-link.module.css';
 
 	type Props = { href: string; children: Snippet };
 	const { href, children }: Props = $props();

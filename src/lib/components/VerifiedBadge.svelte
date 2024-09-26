@@ -1,8 +1,8 @@
 <script lang='ts'>
 	import type { HTMLAttributes } from 'svelte/elements';
+	import sHeader from '../react-tweet/twitter-theme/tweet-header.module.css';
+	import s from '../react-tweet/twitter-theme/verified-badge.module.css';
 	import * as Icons from './icons';
-	import s from '$rt_tw/verified-badge.module.css';
-	import sHeader from '$rt_tw/tweet-header.module.css';
 	import type { TweetUser } from '$rt/api';
 
 	type Props = { user: TweetUser };

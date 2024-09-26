@@ -15,8 +15,10 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [
 		importCSSPreprocess(),
-		cssModules(),
 		vitePreprocess(),
+		cssModules({
+			parseExternalStylesheet: true,
+		}),
 	],
 
 	compilerOptions: {

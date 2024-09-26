@@ -1,5 +1,5 @@
 <script>
-	import s from '$rt_icons/icons.module.css';
+	import s from '../../react-tweet/twitter-theme/icons/icons.module.css';
 </script>
 
 <svg class={s.verified} aria-label='Verified account' role='img' viewBox='0 0 24 24'>

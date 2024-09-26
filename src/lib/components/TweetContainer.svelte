@@ -2,7 +2,7 @@
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import '../react-tweet/twitter-theme/theme.css';
-	import s from '$rt_tw/tweet-container.module.css';
+	import s from '../react-tweet/twitter-theme/tweet-container.module.css';
 
 	type Props = { children: Snippet } & HTMLAttributes<HTMLDivElement>;
 	const { children, ...rest }: Props = $props();

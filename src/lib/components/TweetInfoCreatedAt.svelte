@@ -1,7 +1,7 @@
 <script lang='ts'>
+	import s from '../react-tweet/twitter-theme/tweet-info-created-at.module.css';
 	import type { EnrichedTweet } from '$rt/utils.js';
 	import { formatDate } from '$rt/date-utils.js';
-	import s from '$rt_tw/tweet-info-created-at.module.css';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 

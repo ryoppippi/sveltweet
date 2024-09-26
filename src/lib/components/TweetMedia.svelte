@@ -1,8 +1,8 @@
 <script lang='ts'>
+	import s from '../react-tweet/twitter-theme/tweet-media.module.css';
 	import TweetMediaVideo from './TweetMediaVideo.svelte';
 	import { type EnrichedQuotedTweet, type EnrichedTweet, getMediaUrl } from '$rt/utils.js';
 	import type { MediaDetails } from '$rt/api';
-	import s from '$rt_tw/tweet-media.module.css';
 
 	type Props = {
 		tweet: EnrichedTweet | EnrichedQuotedTweet;
