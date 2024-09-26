@@ -1,6 +1,7 @@
 <script lang='ts'>
 	import type { EnrichedTweet } from '$rt/utils.js';
 	import { formatDate } from '$rt/date-utils.js';
+	import s from '$rt_tw/tweet-info-created-at.module.css';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 
@@ -10,7 +11,7 @@
 {#if createdAt != null}
 	{@const formattedCreatedAtDate = formatDate(createdAt)}
 	<a
-		class='root'
+		class={s.root}
 		aria-label={formattedCreatedAtDate}
 		href={tweet.url}
 		rel='noopener noreferrer'
@@ -19,7 +20,3 @@
 		<time dateTime={createdAt.toISOString()}>{formattedCreatedAtDate}</time>
 	</a>
 {/if}
-
-<style>
-	@import "$rt_tw/tweet-info-created-at.module.css" scoped;
-</style>
