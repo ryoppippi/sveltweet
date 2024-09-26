@@ -18,6 +18,7 @@
 <div class={s.header}>
 	<a
 		class={s.avatar}
+		aria-label={`View ${user.name}'s profile`}
 		href={tweet.url}
 		rel='noopener noreferrer'
 		target='_blank'
