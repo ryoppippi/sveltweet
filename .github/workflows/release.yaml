@@ -1,8 +1,5 @@
 name: release
 
-env:
-  NODE_VERSION: lts/*
-
 on:
   push:
     tags:
@@ -25,12 +22,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: actions/checkout@v4
-      - run: corepack enable
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
-          registry-url: 'https://registry.npmjs.org'
+      - uses: pnpm/action-setup@v4.0.0
       - run: pnpm install --frozen-lockfile
       - run: npm publish --provenance --access public
         env:
@@ -45,7 +37,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: oven-sh/setup-bun@v2
-      - run: bunx changelogithub
+      - uses: pnpm/action-setup@v4.0.0
+      - run: pnpm dlx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
