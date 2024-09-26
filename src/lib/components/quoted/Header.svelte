@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import VerifiedBadge from '../VerifiedBadge.svelte';
-	import s from '../../react-tweet/twitter-theme/quoted-tweet/quoted-tweet-container.module.css';
+	import s from '../../react-tweet/twitter-theme/quoted-tweet/quoted-tweet-header.module.css';
 	import type { EnrichedQuotedTweet } from '$rt/utils.js';
 
 	type Props = { tweet: EnrichedQuotedTweet };
