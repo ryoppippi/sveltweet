@@ -2,6 +2,7 @@
 	import TweetMediaVideo from './TweetMediaVideo.svelte';
 	import { type EnrichedQuotedTweet, type EnrichedTweet, getMediaUrl } from '$rt/utils.js';
 	import type { MediaDetails } from '$rt/api';
+	import s from '$rt_tw/tweet-media.module.css';
 
 	type Props = {
 		tweet: EnrichedTweet | EnrichedQuotedTweet;
@@ -37,31 +38,33 @@
 	<div
 		style:width={width}
 		style:padding-bottom={paddingBottom}
-		class='skeleton'
+		class={s.skeleton}
 	/>
 {/snippet}
 
 <div
-	class='root'
+	class={s.root}
 	class:rounded={!quoted}
 >
 	<div
-		class='mediaWrapper'
-		class:grid2Columns={length > 1}
-		class:grid2x2={length > 4}
-		class:grid3={length === 3}
+		class={[
+			s.mediaWrapper,
+			length > 1 && s.grid2Columns,
+			length === 3 && s.grid3,
+			length > 4 && s.grid2x2,
+		].filter(Boolean).join(' ')}
 	>
 		{#each mediaDetails as media (media)}
 			{#if media.type === 'photo'}
 				<a
-					class='mediaContainer mediaLink'
+					class='{s.mediaContainer} {s.mediaLink}'
 					href={tweet.url}
 					rel='noopener noreferrer'
 					target='_blank'
 				>
 					{@render skeletonDiv([media, length])}
 					<img
-						class='image'
+						class={s.image}
 						alt={media.ext_alt_text || 'Image'}
 						draggable
 						loading='lazy'
@@ -69,7 +72,7 @@
 					/>
 				</a>
 			{:else}
-				<div class='mediaContainer'>
+				<div class={s.mediaContainer}>
 					{@render skeletonDiv([media, length])}
 					<TweetMediaVideo {media} {tweet} />
 				</div>
@@ -77,7 +80,3 @@
 		{/each}
 	</div>
 </div>
-
-<style>
-	@import "$rt_tw/tweet-media.module.css" scoped;
-</style>
