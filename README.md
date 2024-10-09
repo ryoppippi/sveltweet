@@ -77,5 +77,10 @@ npx nypm add sveltweet
 {/await}
 ```
 
+## Customisation
+
+`Sveltweet` shares the same CSS file with [`react-tweet`](https://react-tweet.vercel.app/). 
+So, refer to the [`Custom Theme`](https://react-tweet.vercel.app/custom-theme) section in the `react-tweet` documentation to customise the tweet appearance.
+
 # License
 [MIT](./LICENSE)
