@@ -16,6 +16,7 @@
 	let timeout = $state(0);
 
 	const mp4Video = getMp4Video(media);
+	const poster = $derived(getMediaUrl(media, 'small'));
 
 	let video: HTMLVideoElement;
 
@@ -57,7 +58,7 @@
 			ended = false;
 		}
 	}}
-	poster={getMediaUrl(media, 'small')}
+	{poster}
 	preload='none'
 	tabIndex={playButton ? -1 : 0}
 >
