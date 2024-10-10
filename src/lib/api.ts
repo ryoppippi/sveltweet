@@ -1,1 +1,1 @@
-export * from './react-tweet/api';
+export * from '$rt/api/index.js';
