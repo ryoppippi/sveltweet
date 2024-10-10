@@ -23,6 +23,10 @@
 			<Tweet {tweet} />
 		</div>
 	{/each}
+	<div>
+		<h1> Fetched via preprocessor </h1>
+		<Tweet tweet={__TWEET_1844335472719561111} />
+	</div>
 </div>
 
 <style>
