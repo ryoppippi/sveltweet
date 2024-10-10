@@ -39,7 +39,7 @@
 		if (timeout > 0) {
 			clearTimeout(timeout);
 		}
-		timeout = setTimeout(() => {
+		timeout = window.setTimeout(() => {
 			if (isPlaying) {
 				isPlaying = false;
 			}
@@ -48,7 +48,7 @@
 	}}
 	onplay={() => {
 		if (timeout > 0) {
-			clearTimeout(timeout);
+			window.clearTimeout(timeout);
 		}
 		if (!isPlaying) {
 			isPlaying = true;
