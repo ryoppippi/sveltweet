@@ -1,10 +1,45 @@
 <script lang='ts'>
-	import type { ComponentProps } from 'svelte';
-	import EmbeddedTweet from './EmbeddedTweet.svelte';
+	import TweetContainer from './TweetContainer.svelte';
+	import TweetHeader from './TweetHeader.svelte';
+	import TweetInReplyTo from './TweetInReply.svelte';
+	import TweetBody from './TweetBody.svelte';
+	import TweetMedia from './TweetMedia.svelte';
+	import TweetInfo from './TweetInfo.svelte';
+	import TweetActions from './TweetActions.svelte';
+	import TweetReplies from './TweetReplies.svelte';
+	import { QuotedTweet } from './quoted';
+	import type { Tweet } from '$rt/api';
+	import { enrichTweet } from '$rt/utils.js';
 
-	type Props = ComponentProps<EmbeddedTweet>;
+	type Props = {
+		tweet: Tweet;
+	};
 
-	const { ...rest }: Props = $props();
+	const { tweet }: Props = $props();
+
+	const enrichedTweet = enrichTweet(tweet);
 </script>
 
-<EmbeddedTweet {...rest} />
+{#if enrichedTweet != null}
+	<TweetContainer>
+		<TweetHeader tweet={enrichedTweet} />
+
+		{#if enrichedTweet.in_reply_to_status_id_str != null}
+			<TweetInReplyTo tweet={enrichedTweet} />
+		{/if}
+
+		<TweetBody tweet={enrichedTweet} />
+
+		{#if (enrichedTweet.mediaDetails ?? []).length > 0}
+			<TweetMedia tweet={enrichedTweet} />
+		{/if}
+
+		{#if enrichedTweet.quoted_tweet != null}
+			<QuotedTweet tweet={enrichedTweet.quoted_tweet} />
+		{/if}
+
+		<TweetInfo tweet={enrichedTweet} />
+		<TweetActions tweet={enrichedTweet} />
+		<TweetReplies tweet={enrichedTweet} />
+	</TweetContainer>
+{/if}
