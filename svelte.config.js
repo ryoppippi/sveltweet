@@ -4,6 +4,9 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { importCSSPreprocess } from '@ryoppippi/svelte-preprocess-import-css';
 import { cssModules } from 'svelte-preprocess-cssmodules';
 
+// eslint-disable-next-line antfu/no-import-dist
+import SveltweetPreprocessor from './dist/preprocessor.js';
+
 /** @param {...string} args */
 function relativePath(...args) {
 	return path.resolve(import.meta.dirname, ...args);
@@ -16,6 +19,7 @@ const config = {
 	preprocess: [
 		importCSSPreprocess(),
 		vitePreprocess(),
+		SveltweetPreprocessor(),
 		cssModules({
 			parseExternalStylesheet: true,
 		}),
