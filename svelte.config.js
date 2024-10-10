@@ -4,8 +4,13 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { importCSSPreprocess } from '@ryoppippi/svelte-preprocess-import-css';
 import { cssModules } from 'svelte-preprocess-cssmodules';
 
-// eslint-disable-next-line antfu/no-import-dist
-import SveltweetPreprocessor from './dist/preprocessor.js';
+let SveltweetPreprocessor;
+try {
+	SveltweetPreprocessor = (await import('./dist/preprocessor.js')).default;
+}
+catch (e) {
+	console.error('Failed to import SveltweetPreprocessor from dist/preprocessor.js');
+}
 
 /** @param {...string} args */
 function relativePath(...args) {
@@ -19,7 +24,7 @@ const config = {
 	preprocess: [
 		importCSSPreprocess(),
 		vitePreprocess(),
-		SveltweetPreprocessor(),
+		...[SveltweetPreprocessor != null ? SveltweetPreprocessor() : {}],
 		cssModules({
 			parseExternalStylesheet: true,
 		}),
