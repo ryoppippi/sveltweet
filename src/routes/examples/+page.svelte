@@ -3,7 +3,6 @@
 	import {
 		SvelteTweet,
 	} from '$lib';
-	import preprocessor from '$lib/preprocessor';
 
 	const { data } = $props();
 	const { tweets } = data;
