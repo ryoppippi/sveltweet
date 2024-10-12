@@ -43,7 +43,7 @@ export default function (options: Options = {}): PreprocessorGroup {
 					const tweet = await getTweet(id);
 					s.overwrite(start, end, JSON.stringify(tweet));
 				}
-				catch (e) {
+				catch {
 					console.error(`Failed to fetch tweet ${id} in ${filename}`);
 				}
 			}
