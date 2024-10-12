@@ -8,7 +8,7 @@ let SveltweetPreprocessor;
 try {
 	SveltweetPreprocessor = (await import('./dist/preprocessor.js')).default;
 }
-catch (e) {
+catch {
 	console.error('Failed to import SveltweetPreprocessor from dist/preprocessor.js');
 }
 
