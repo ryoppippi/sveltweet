@@ -47,7 +47,7 @@
 		"@antfu/ni": "^0.23.0",
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.23",
 		"@ryoppippi/svelte-preprocess-import-css": "npm:@jsr/ryoppippi__svelte-preprocess-import-css@^0.3.4",
-		"@std/async": "npm:@jsr/std__async@^1.0.5",
+		"@std/async": "npm:@jsr/std__async@^1.0.6",
 		"@sveltejs/adapter-auto": "^3.2.5",
 		"@sveltejs/kit": "^2.6.4",
 		"@sveltejs/package": "^2.3.5",
