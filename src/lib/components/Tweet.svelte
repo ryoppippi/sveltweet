@@ -2,7 +2,7 @@
 	import type { ComponentProps } from 'svelte';
 	import EmbeddedTweet from './EmbeddedTweet.svelte';
 
-	type Props = ComponentProps<EmbeddedTweet>;
+	type Props = ComponentProps<typeof EmbeddedTweet>;
 
 	const { ...rest }: Props = $props();
 </script>
