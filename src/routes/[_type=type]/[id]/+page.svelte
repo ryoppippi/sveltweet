@@ -1,11 +1,11 @@
 <script lang='ts'>
 	import ToggleDark from '../../ToggleDark.svelte';
 	import {
-		SvelteTweet,
-		SvelteTweetNotFound,
-		SvelteTweetSkeleton,
-		type Tweet,
+		Tweet,
+		TweetNotFound,
+		TweetSkeleton,
 	} from '$lib';
+	import type { Tweet as TweetType } from '$lib/api';
 
 	const { data } = $props();
 	const { tweet, type } = data;
@@ -13,11 +13,11 @@
 	let isDark = $state(false);
 </script>
 
-{#snippet renderTweet(tweet: Tweet | undefined)}
+{#snippet renderTweet(tweet: TweetType | undefined)}
 	{#if tweet != null}
-		<SvelteTweet {tweet} />
+		<Tweet {tweet} />
 	{:else}
-		<SvelteTweetNotFound />
+		<TweetNotFound />
 	{/if}
 {/snippet}
 
@@ -28,7 +28,7 @@
 		{@render renderTweet(tweet as Awaited<typeof tweet>)}
 	{:else}
 		{#await tweet}
-			<SvelteTweetSkeleton />
+			<TweetSkeleton />
 		{:then tweet}
 			{@render renderTweet(tweet)}
 		{/await}

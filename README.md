@@ -49,37 +49,37 @@ npx nypm add sveltweet
 
     ```
 
-3.  Use the `SvelteTweet` component in your `+page.svelte` file to render the tweet.
+3.  Use the `Tweet` component in your `+page.svelte` file to render the tweet.
 
     ```svelte
     <script lang='ts'>
-    	import { SvelteTweet } from 'sveltweet';
+    	import { Tweet } from 'sveltweet';
     	import type { PageData } from './$types';
 
         const { data }: { data: PageData } = $props()
     </script>
 
-    <SvelteTweet tweet={data.tweet} />
+    <Tweet tweet={data.tweet} />
     ```
 
 ### Svelte
 
 ```svelte
 <script lang='ts'>
-    import { SvelteTweet } from 'sveltweet';
+    import { Tweet } from 'sveltweet';
     import { getTweet } from 'sveltweet/api';
 
     const id = '';
 </script>
 
 {#await getTweet(id) then tweet}
-    <SvelteTweet tweet={data.tweet} />
+    <Tweet tweet={data.tweet} />
 {/await}
 ```
 
 ## Customisation
 
-`Sveltweet` shares the same CSS file with [`react-tweet`](https://react-tweet.vercel.app/). 
+`Tweet` shares the same CSS file with [`react-tweet`](https://react-tweet.vercel.app/). 
 So, refer to the [`Custom Theme`](https://react-tweet.vercel.app/custom-theme) section in the `react-tweet` documentation to customise the tweet appearance.
 
 # License
