@@ -1,8 +1,6 @@
 <script lang='ts'>
 	import ToggleDark from '../ToggleDark.svelte';
-	import {
-		SvelteTweet,
-	} from '$lib';
+	import { Tweet } from '$lib';
 
 	const { data } = $props();
 	const { tweets } = data;
@@ -22,7 +20,7 @@
 			<h1>
 				<a href='#{id}'>{id}</a>
 			</h1>
-			<SvelteTweet {tweet} />
+			<Tweet {tweet} />
 		</div>
 	{/each}
 </div>
