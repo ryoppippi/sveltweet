@@ -18,8 +18,8 @@ importers:
         specifier: npm:@jsr/ryoppippi__svelte-preprocess-import-css@^0.3.4
         version: '@jsr/ryoppippi__svelte-preprocess-import-css@0.3.4(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.3)(vite@5.4.11))'
       '@std/async':
-        specifier: npm:@jsr/std__async@^1.0.8
-        version: '@jsr/std__async@1.0.8'
+        specifier: npm:@jsr/std__async@^1.0.9
+        version: '@jsr/std__async@1.0.9'
       '@sveltejs/adapter-auto':
         specifier: ^3.3.1
         version: 3.3.1(@sveltejs/kit@2.8.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.3)(vite@5.4.11))(svelte@5.2.3)(vite@5.4.11))
@@ -570,8 +570,8 @@ packages:
   '@jsr/ryoppippi__svelte-preprocess-import-css@0.3.4':
     resolution: {integrity: sha512-+P8wfBZo4rHEuR3tz19VZU3pgI3USAaoZMn/N/5f237yjLys5OLUj5B4dnpUjK371YVqS+PWYGnb0SHFkcJClg==, tarball: https://npm.jsr.io/~/11/@jsr/ryoppippi__svelte-preprocess-import-css/0.3.4.tgz}
 
-  '@jsr/std__async@1.0.8':
-    resolution: {integrity: sha512-veKSzQ5lY6uJL60IxPFD2P1uVssdOtb8LmApllO2HzwzgY3ZDsjD4ZIaDjUykXwBNfUY2tHAlE7d62OGsbzdAg==, tarball: https://npm.jsr.io/~/11/@jsr/std__async/1.0.8.tgz}
+  '@jsr/std__async@1.0.9':
+    resolution: {integrity: sha512-gJgMcOx2DqpWeiFKnLIli4FcjjXlkJlMyPtHF+r7bGXI3FQPXEIpy8Z8A7/o3hjMyh8vSDdPijPpiLfPU91iUg==, tarball: https://npm.jsr.io/~/11/@jsr/std__async/1.0.9.tgz}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2774,7 +2774,7 @@ snapshots:
       - supports-color
       - terser
 
-  '@jsr/std__async@1.0.8': {}
+  '@jsr/std__async@1.0.9': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
