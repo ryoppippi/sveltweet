@@ -7,7 +7,9 @@
 
 	$effect(() => {
 		isDark = prefersDark.current;
+	});
 
+	$effect(() => {
 		if (isDark) {
 			window.document.body.classList.add('dark');
 			window.document.body.dataset.theme = 'dark';
