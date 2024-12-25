@@ -1,11 +1,13 @@
 <script lang='ts'>
+	import { MediaQuery } from 'svelte/reactivity';
+
 	let { isDark = $bindable(false) }: { isDark: boolean } = $props();
 
-	$effect(() => {
-		isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-	});
+	const prefersDark = new MediaQuery('(prefers-color-scheme: dark)');
 
 	$effect(() => {
+		isDark = prefersDark.current;
+
 		if (isDark) {
 			window.document.body.classList.add('dark');
 			window.document.body.dataset.theme = 'dark';
