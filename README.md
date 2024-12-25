@@ -7,7 +7,7 @@
 The best way to embed tweets in your Svelte app, supporting both SSR and static prerendering modes.
 
 - The tweet is loaded in the server-side.
-- No need for any additonal client-side scripts.
+- No need for any additional client-side scripts.
 - No need for any loading UI, the tweet is available immediately.
 - Supports both SSR and prerendering.
 
@@ -16,7 +16,7 @@ The best way to embed tweets in your Svelte app, supporting both SSR and static 
 > This repo is fork of [fayez-nazzal/sveltekit-tweet](https://github.com/fayez-nazzal/sveltekit-tweet)
 
 ## Requirements
-- Svelte 5.16.0 or later ( This libray uses [`runes`](https://svelte-5-preview.vercel.app/docs/runes) )
+- Svelte 5.16.0 or later ( This library uses [`runes`](https://svelte-5-preview.vercel.app/docs/runes) )
 
 ## Installation
 
