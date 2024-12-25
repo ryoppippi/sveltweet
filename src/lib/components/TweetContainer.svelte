@@ -10,8 +10,7 @@
 
 <div
 	{...rest}
-	class={s.root}
-	class:react-tweet-theme={true}
+	class={[s.root, 'react-tweet-theme']}
 >
 	<article class={s.article}>
 		{@render children()}

@@ -14,10 +14,7 @@
 
 <div class={s.header}>
 	<a class={s.avatar} href={tweet.url} rel='noopener noreferrer' target='_blank'>
-		<div
-			class={s.avatarOverflow}
-			class:avatarSquare={user.profile_image_shape === 'Square'}
-		>
+		<div class={[s.avatarOverflow, { avatarSquare: user.profile_image_shape === 'Square' }]}>
 			<img
 				style:margin-top='0'
 				style:margin-bottom='0'

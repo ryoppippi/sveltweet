@@ -42,17 +42,16 @@
 	/>
 {/snippet}
 
-<div
-	class={s.root}
-	class:rounded={!quoted}
->
+<div class={[s.root, { rounded: !quoted }]}>
 	<div
 		class={[
 			s.mediaWrapper,
-			length > 1 && s.grid2Columns,
-			length === 3 && s.grid3,
-			length > 4 && s.grid2x2,
-		].filter(Boolean).join(' ')}
+			{
+				[s.grid2Columns]: length > 1,
+				[s.grid3]: length === 3,
+				[s.grid2x2]: length > 4,
+			},
+		]}
 	>
 		{#each mediaDetails as media (media)}
 			{#if media.type === 'photo'}
