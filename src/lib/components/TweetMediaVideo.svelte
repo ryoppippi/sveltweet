@@ -20,11 +20,6 @@
 
 	let video: HTMLVideoElement;
 
-	$effect(() => {
-		return () => {
-			clearTimeout(timeout);
-		};
-	});
 </script>
 
 <!-- current does not work @see https://github.com/sveltejs/kit/issues/11057 -->

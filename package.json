@@ -15,6 +15,10 @@
 		"./api": {
 			"types": "./dist/api.d.ts",
 			"import": "./dist/api.js"
+		},
+		"./preprocessor": {
+			"types": "./dist/preprocessor.d.ts",
+			"import": "./dist/preprocessor.js"
 		}
 	},
 	"types": "./dist/index.d.ts",
@@ -27,7 +31,7 @@
 	"svelte": "./dist/index.js",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "nr build:page && nr build:package",
+		"build": "nr build:package && nr build:page",
 		"build:page": "vite build",
 		"build:package": "svelte-kit sync && svelte-package && nlx publint",
 		"preview": "vite preview",

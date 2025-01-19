@@ -4,6 +4,14 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { importCSSPreprocess } from '@ryoppippi/svelte-preprocess-import-css';
 import { cssModules } from 'svelte-preprocess-cssmodules';
 
+let SveltweetPreprocessor;
+try {
+	SveltweetPreprocessor = (await import('./dist/preprocessor.js')).default;
+}
+catch {
+	console.error('Failed to import SveltweetPreprocessor from dist/preprocessor.js');
+}
+
 /** @param {...string} args */
 function relativePath(...args) {
 	return path.resolve(import.meta.dirname, ...args);
@@ -16,6 +24,7 @@ const config = {
 	preprocess: [
 		importCSSPreprocess(),
 		vitePreprocess(),
+		...[SveltweetPreprocessor != null ? SveltweetPreprocessor() : {}],
 		cssModules({
 			parseExternalStylesheet: true,
 		}),
