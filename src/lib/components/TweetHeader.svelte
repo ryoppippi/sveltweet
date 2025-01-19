@@ -35,7 +35,7 @@
 			<div class={s.authorLinkText}>
 				<span title={user.name}>{user.name}</span>
 			</div>
-			<VerifiedBadge {user} />
+			<VerifiedBadge class={s.authorVerified} {user} />
 		</a>
 		<div class={s.authorMeta}>
 			<a class={s.username} href={tweet.url} rel='noopener noreferrer' target='_blank'>

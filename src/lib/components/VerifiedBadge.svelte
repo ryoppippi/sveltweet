@@ -1,15 +1,14 @@
 <script lang='ts'>
 	import type { HTMLAttributes } from 'svelte/elements';
-	import sHeader from '../react-tweet/twitter-theme/tweet-header.module.css';
 	import s from '../react-tweet/twitter-theme/verified-badge.module.css';
 	import * as Icons from './icons';
 	import type { TweetUser } from '$rt/api';
 
-	type Props = { user: TweetUser };
+	type Props = { user: TweetUser; class?: string };
 	type IconComponent = typeof Icons[keyof typeof Icons];
 	type DivSnippetProps = { Icon: IconComponent } & HTMLAttributes<HTMLDivElement>;
 
-	const { user }: Props = $props();
+	const { user, class: className }: Props = $props();
 
 	const isGovernment = user.verified_type === 'Government';
 	const isBusiness = user.verified_type === 'Business';
@@ -19,7 +18,7 @@
 </script>
 
 {#snippet authorVerifiedDiv({ Icon, ...rest }: DivSnippetProps)}
-	<div {...rest} class={sHeader.authorVerified}>
+	<div {...rest} class={[rest.class, className]}>
 		<Icon />
 	</div>
 {/snippet}
