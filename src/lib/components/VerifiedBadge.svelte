@@ -17,8 +17,8 @@
 
 </script>
 
-{#snippet authorVerifiedDiv({ Icon, ...rest }: DivSnippetProps)}
-	<div {...rest} class={[rest.class, className]}>
+{#snippet authorVerifiedDiv({ Icon, class: divClassName, ...rest }: DivSnippetProps)}
+	<div {...rest} class={[divClassName, className]}>
 		<Icon />
 	</div>
 {/snippet}
