@@ -63,8 +63,8 @@ importers:
         specifier: ^0.43.0
         version: 0.43.0(svelte@5.23.2)
       svelte-preprocess-cssmodules:
-        specifier: ^2.2.5
-        version: 2.2.5(svelte@5.23.2)
+        specifier: ^3.0.1
+        version: 3.0.1(svelte@5.23.2)
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -2236,10 +2236,10 @@ packages:
       svelte:
         optional: true
 
-  svelte-preprocess-cssmodules@2.2.5:
-    resolution: {integrity: sha512-LcwR542VL+DL9DTg+I9ldFk4QvtS6Zq/fKVJrvFyHFyZsAqMhCmPPnbIkr4GZ8z8JCEEqXNrMGVL5SUK6jmg0Q==}
+  svelte-preprocess-cssmodules@3.0.1:
+    resolution: {integrity: sha512-3EKngJ8ydHiIj8cHQNaKx3uuvspvGM902wDNiDri8611QuxnDY5OemcP7k/QJjZ1s41PvLZHfsayLWyMRcMLIQ==}
     peerDependencies:
-      svelte: ^3.20.0 || ^4.0.0
+      svelte: ^5.15.0
 
   svelte2tsx@0.7.31:
     resolution: {integrity: sha512-exrN1o9mdCLAA7hTCudz731FIxomH/0SN9ZIX+WrY/XnlLuno/NNC1PF6JXPZVqp/4sMMDKteqyKoG44hliljQ==}
@@ -4616,7 +4616,7 @@ snapshots:
     optionalDependencies:
       svelte: 5.23.2
 
-  svelte-preprocess-cssmodules@2.2.5(svelte@5.23.2):
+  svelte-preprocess-cssmodules@3.0.1(svelte@5.23.2):
     dependencies:
       acorn: 8.14.0
       big.js: 6.2.2
