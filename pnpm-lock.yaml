@@ -27,8 +27,8 @@ importers:
         specifier: ^2.20.7
         version: 2.20.7(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.26.3)(vite@6.2.6(jiti@1.21.7)(tsx@4.19.2)(yaml@2.7.0)))(svelte@5.26.3)(vite@6.2.6(jiti@1.21.7)(tsx@4.19.2)(yaml@2.7.0))
       '@sveltejs/package':
-        specifier: ^2.3.10
-        version: 2.3.10(svelte@5.26.3)(typescript@5.8.3)
+        specifier: ^2.3.11
+        version: 2.3.11(svelte@5.26.3)(typescript@5.8.3)
       '@sveltejs/vite-plugin-svelte':
         specifier: 5.0.3
         version: 5.0.3(svelte@5.26.3)(vite@6.2.6(jiti@1.21.7)(tsx@4.19.2)(yaml@2.7.0))
@@ -945,8 +945,8 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       vite: ^5.0.3 || ^6.0.0
 
-  '@sveltejs/package@2.3.10':
-    resolution: {integrity: sha512-A4fQacgjJ7C/7oSmxR61/TdB14u6ecyMZ8V9JCR5Lol0bLj/PdJPU4uFodFBsKzO3iFiJMpNTgZZ+zYsYZNpUg==}
+  '@sveltejs/package@2.3.11':
+    resolution: {integrity: sha512-DSMt2U0XNAdoQBYksrmgQi5dKy7jUTVDJLiagS/iXF7AShjAmTbGJQKruBuT/FfYAWvNxfQTSjkXU8eAIjVeNg==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     peerDependencies:
@@ -2264,12 +2264,6 @@ packages:
     peerDependencies:
       svelte: ^5.15.0
 
-  svelte2tsx@0.7.34:
-    resolution: {integrity: sha512-WTMhpNhFf8/h3SMtR5dkdSy2qfveomkhYei/QW9gSPccb0/b82tjHvLop6vT303ZkGswU/da1s6XvrLgthQPCw==}
-    peerDependencies:
-      svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
-      typescript: ^4.9.4 || ^5.0.0
-
   svelte2tsx@0.7.35:
     resolution: {integrity: sha512-z2lnOnrfb5nrlRfFQI8Qdz03xQqMHUfPj0j8l/fQuydrH89cCeN+v9jgDwK9GyMtdTRUkE7Neu9Gh+vfXJAfuQ==}
     peerDependencies:
@@ -3183,14 +3177,14 @@ snapshots:
       svelte: 5.26.3
       vite: 6.2.6(jiti@1.21.7)(tsx@4.19.2)(yaml@2.7.0)
 
-  '@sveltejs/package@2.3.10(svelte@5.26.3)(typescript@5.8.3)':
+  '@sveltejs/package@2.3.11(svelte@5.26.3)(typescript@5.8.3)':
     dependencies:
       chokidar: 4.0.3
       kleur: 4.1.5
       sade: 1.8.1
       semver: 7.6.3
       svelte: 5.26.3
-      svelte2tsx: 0.7.34(svelte@5.26.3)(typescript@5.8.3)
+      svelte2tsx: 0.7.35(svelte@5.26.3)(typescript@5.8.3)
     transitivePeerDependencies:
       - typescript
 
@@ -4678,13 +4672,6 @@ snapshots:
       estree-walker: 2.0.2
       magic-string: 0.25.9
       svelte: 5.26.3
-
-  svelte2tsx@0.7.34(svelte@5.26.3)(typescript@5.8.3):
-    dependencies:
-      dedent-js: 1.0.1
-      pascal-case: 3.1.2
-      svelte: 5.26.3
-      typescript: 5.8.3
 
   svelte2tsx@0.7.35(svelte@5.26.3)(typescript@5.8.3):
     dependencies:
