@@ -61,7 +61,7 @@
 		"eslint-plugin-format": "^1.0.1",
 		"eslint-plugin-svelte": "^3.5.1",
 		"magic-string": "^0.30.17",
-		"react-tweet": "^3.2.1",
+		"react-tweet": "^3.2.2",
 		"std-env": "^3.9.0",
 		"svelte": "^5.28.2",
 		"svelte-check": "^4.1.7",
