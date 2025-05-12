@@ -6,7 +6,8 @@
 	"description": "The best way to embed tweets in your Svelte app, supporting both SSR and static prerendering modes.",
 	"author": "ryoppippi",
 	"license": "MIT",
-	"repository": "https://github.com/ryoppippi/sveltweet.git",
+	"funding": "https://github.com/ryoppippi/sveltweet?sponsor=1",
+	"repository": "ryoppippi/sveltweet.git",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
