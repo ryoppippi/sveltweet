@@ -48,7 +48,7 @@
 		"prepare": "nr /^prepare:/",
 		"prepare:copy": "./copy.mjs",
 		"prepare:git": "simple-git-hooks",
-		"prepack": "npm pkg delete scripts.preinstall && nr build && clean-pkg-json",
+		"prepack": "nr build && clean-pkg-json -r scripts.preinstall",
 		"preinstall": "npx only-allow pnpm"
 	},
 	"peerDependencies": {
