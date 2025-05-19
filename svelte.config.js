@@ -1,6 +1,6 @@
 import path from 'node:path';
 import { importCSSPreprocess } from '@ryoppippi/svelte-preprocess-import-css';
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { cssModules } from 'svelte-preprocess-cssmodules';
 
