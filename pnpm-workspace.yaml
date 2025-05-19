@@ -1,5 +1,6 @@
 onlyBuiltDependencies:
   - esbuild
   - simple-git-hooks
+  - unrs-resolver
 resolutionMode: highest
 useNodeVersion: 22.15.1
