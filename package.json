@@ -45,7 +45,8 @@
 		"prepare": "pnpm run /^prepare:/",
 		"prepare:copy": "./copy.mjs",
 		"prepare:git": "simple-git-hooks",
-		"prepublishOnly": "nr build"
+		"prepublishOnly": "nr build",
+		"preinstall": "npx only-allow pnpm"
 	},
 	"peerDependencies": {
 		"@sveltejs/kit": "^2.20.8",
