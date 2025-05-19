@@ -52,7 +52,7 @@
 		"preinstall": "npx only-allow pnpm"
 	},
 	"peerDependencies": {
-		"@sveltejs/kit": "^2.20.8",
+		"@sveltejs/kit": "^2.21.0",
 		"svelte": "^5.28.2"
 	},
 	"devDependencies": {
