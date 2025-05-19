@@ -8,6 +8,7 @@
 	"license": "MIT",
 	"funding": "https://github.com/ryoppippi/sveltweet?sponsor=1",
 	"repository": "ryoppippi/sveltweet.git",
+	"sideEffects": false,
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
