@@ -42,7 +42,9 @@
 		"lint": "eslint --cache .",
 		"format": "nr lint --fix",
 		"release": "nr check && nr lint && nr build && nlx bumpp",
-		"prepare": "./copy.mjs",
+		"prepare": "pnpm run /^prepare:/",
+		"prepare:copy": "./copy.mjs",
+		"prepare:git": "simple-git-hooks",
 		"prepublishOnly": "nr build"
 	},
 	"peerDependencies": {
@@ -61,9 +63,11 @@
 		"dax-sh": "^0.43.1",
 		"eslint": "^9.26.0",
 		"eslint-plugin-format": "^1.0.1",
-		"eslint-plugin-svelte": "^3.5.1",
+		"eslint-plugin-svelte": "^3.8.1",
+		"lint-staged": "^16.0.0",
 		"magic-string": "^0.30.17",
-		"react-tweet": "^3.2.1",
+		"react-tweet": "3.2.1",
+		"simple-git-hooks": "^2.13.0",
 		"std-env": "^3.9.0",
 		"svelte": "^5.28.2",
 		"svelte-check": "^4.1.7",
@@ -73,5 +77,13 @@
 		"typescript": "^5.8.3",
 		"typescript-svelte-plugin": "^0.3.46",
 		"vite": "^6.3.5"
+	},
+	"simple-git-hooks": {
+		"pre-commit": "pnpm lint-staged"
+	},
+	"lint-staged": {
+		"*": [
+			"eslint --cache --fix"
+		]
 	}
 }
