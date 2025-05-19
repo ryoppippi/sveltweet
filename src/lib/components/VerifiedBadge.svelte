@@ -1,8 +1,8 @@
 <script lang='ts'>
+	import type { TweetUser } from '$rt/api';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import s from '../react-tweet/twitter-theme/verified-badge.module.css';
 	import * as Icons from './icons';
-	import type { TweetUser } from '$rt/api';
 
 	type Props = { user: TweetUser; class?: string };
 	type IconComponent = typeof Icons[keyof typeof Icons];

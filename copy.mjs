@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable antfu/no-top-level-await */
 
 import { $ } from 'dax-sh';
 

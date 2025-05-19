@@ -1,7 +1,7 @@
 import path from 'node:path';
+import { importCSSPreprocess } from '@ryoppippi/svelte-preprocess-import-css';
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { importCSSPreprocess } from '@ryoppippi/svelte-preprocess-import-css';
 import { cssModules } from 'svelte-preprocess-cssmodules';
 
 let SveltweetPreprocessor;

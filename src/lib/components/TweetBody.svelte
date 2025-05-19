@@ -1,7 +1,7 @@
 <script lang='ts'>
+	import type { EnrichedTweet } from '$rt/utils.js';
 	import s from '../react-tweet/twitter-theme/tweet-body.module.css';
 	import TweetLink from './TweetLink.svelte';
-	import type { EnrichedTweet } from '$rt/utils.js';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 </script>

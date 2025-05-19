@@ -1,5 +1,5 @@
-import MagicString from 'magic-string';
 import type { PreprocessorGroup } from 'svelte/compiler';
+import MagicString from 'magic-string';
 import { getTweet } from './react-tweet/api/get-tweet.js';
 
 export type Options = {

@@ -1,11 +1,11 @@
 <script lang='ts'>
-	import ToggleDark from '../../ToggleDark.svelte';
+	import type { Tweet as TweetType } from '$lib/api';
 	import {
 		Tweet,
 		TweetNotFound,
 		TweetSkeleton,
 	} from '$lib';
-	import type { Tweet as TweetType } from '$lib/api';
+	import ToggleDark from '../../ToggleDark.svelte';
 
 	const { data } = $props();
 	const { tweet, type } = data;

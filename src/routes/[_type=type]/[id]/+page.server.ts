@@ -1,8 +1,9 @@
-import { delay } from '@std/async';
-import { error } from '@sveltejs/kit';
 import type { RequestEvent } from './$types';
 import { getTweet } from '$lib/api';
+import { delay } from '@std/async';
+import { error } from '@sveltejs/kit';
 
+// eslint-disable-next-line ts/explicit-function-return-type
 export async function load({ params }: RequestEvent) {
 	const { id, _type } = params;
 

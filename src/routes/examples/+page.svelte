@@ -1,6 +1,6 @@
 <script lang='ts'>
-	import ToggleDark from '../ToggleDark.svelte';
 	import { Tweet } from '$lib';
+	import ToggleDark from '../ToggleDark.svelte';
 
 	const { data } = $props();
 	const { tweets } = data;

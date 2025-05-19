@@ -1,6 +1,6 @@
 <script lang='ts'>
-	import s from '../react-tweet/twitter-theme/tweet-in-reply-to.module.css';
 	import type { EnrichedTweet } from '$rt/utils.js';
+	import s from '../react-tweet/twitter-theme/tweet-in-reply-to.module.css';
 
 	const { tweet }: { tweet: EnrichedTweet } = $props();
 </script>

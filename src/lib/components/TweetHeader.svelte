@@ -1,7 +1,7 @@
 <script lang='ts'>
+	import type { EnrichedTweet } from '$rt/utils.js';
 	import s from '../react-tweet/twitter-theme/tweet-header.module.css';
 	import VerifiedBadge from './VerifiedBadge.svelte';
-	import type { EnrichedTweet } from '$rt/utils.js';
 
 	type Props = {
 		tweet: EnrichedTweet;

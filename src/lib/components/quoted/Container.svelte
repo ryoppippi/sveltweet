@@ -1,7 +1,7 @@
 <script lang='ts'>
+	import type { EnrichedQuotedTweet } from '$rt/utils.ts';
 	import type { Snippet } from 'svelte';
 	import s from '../../react-tweet/twitter-theme/quoted-tweet/quoted-tweet-container.module.css';
-	import type { EnrichedQuotedTweet } from '$rt/utils.ts';
 
 	type Props = { tweet: EnrichedQuotedTweet; children: Snippet };
 

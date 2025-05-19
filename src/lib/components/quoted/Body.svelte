@@ -1,6 +1,6 @@
 <script lang='ts'>
-	import s from '../../react-tweet/twitter-theme/quoted-tweet/quoted-tweet-body.module.css';
 	import type { EnrichedQuotedTweet } from '$rt/utils.js';
+	import s from '../../react-tweet/twitter-theme/quoted-tweet/quoted-tweet-body.module.css';
 
 	type Props = { tweet: EnrichedQuotedTweet };
 

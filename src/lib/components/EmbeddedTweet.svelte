@@ -1,15 +1,15 @@
 <script lang='ts'>
-	import TweetContainer from './TweetContainer.svelte';
-	import TweetHeader from './TweetHeader.svelte';
-	import TweetInReplyTo from './TweetInReply.svelte';
-	import TweetBody from './TweetBody.svelte';
-	import TweetMedia from './TweetMedia.svelte';
-	import TweetInfo from './TweetInfo.svelte';
-	import TweetActions from './TweetActions.svelte';
-	import TweetReplies from './TweetReplies.svelte';
-	import { QuotedTweet } from './quoted';
 	import type { Tweet } from '$rt/api';
 	import { enrichTweet } from '$rt/utils.js';
+	import { QuotedTweet } from './quoted';
+	import TweetActions from './TweetActions.svelte';
+	import TweetBody from './TweetBody.svelte';
+	import TweetContainer from './TweetContainer.svelte';
+	import TweetHeader from './TweetHeader.svelte';
+	import TweetInfo from './TweetInfo.svelte';
+	import TweetInReplyTo from './TweetInReply.svelte';
+	import TweetMedia from './TweetMedia.svelte';
+	import TweetReplies from './TweetReplies.svelte';
 
 	type Props = {
 		tweet: Tweet;
