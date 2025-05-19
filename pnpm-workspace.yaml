@@ -1,0 +1,4 @@
+onlyBuiltDependencies:
+  - esbuild
+resolutionMode: highest
+useNodeVersion: 22.15.1
