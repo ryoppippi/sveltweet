@@ -4,3 +4,4 @@ onlyBuiltDependencies:
   - unrs-resolver
 resolutionMode: highest
 useNodeVersion: 22.15.1
+enablePrePostScripts: true
