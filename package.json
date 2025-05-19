@@ -50,8 +50,8 @@
 		"svelte": "^5.28.2"
 	},
 	"devDependencies": {
-		"@antfu/ni": "^24.3.0",
-		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.23",
+		"@antfu/ni": "^24.4.0",
+		"@ryoppippi/eslint-config": "^0.3.7",
 		"@ryoppippi/svelte-preprocess-import-css": "npm:@jsr/ryoppippi__svelte-preprocess-import-css@^0.3.4",
 		"@std/async": "npm:@jsr/std__async@^1.0.12",
 		"@sveltejs/adapter-auto": "^6.0.0",
