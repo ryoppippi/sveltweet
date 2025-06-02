@@ -56,7 +56,7 @@
 		"svelte": "^5.33.10"
 	},
 	"devDependencies": {
-		"@antfu/ni": "^24.4.0",
+		"@antfu/ni": "^25.0.0",
 		"@ryoppippi/eslint-config": "^0.3.7",
 		"@ryoppippi/svelte-preprocess-import-css": "jsr:^0.3.4",
 		"@std/async": "jsr:^1.0.12",
