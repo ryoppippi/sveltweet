@@ -53,7 +53,7 @@
 	},
 	"peerDependencies": {
 		"@sveltejs/kit": "^2.21.2",
-		"svelte": "^5.33.10"
+		"svelte": "^5.33.17"
 	},
 	"devDependencies": {
 		"@antfu/ni": "^25.0.0",
@@ -76,7 +76,7 @@
 		"react-tweet": "3.2.1",
 		"simple-git-hooks": "^2.13.0",
 		"std-env": "^3.9.0",
-		"svelte": "^5.33.10",
+		"svelte": "^5.33.17",
 		"svelte-check": "^4.2.1",
 		"svelte-eslint-parser": "^1.2.0",
 		"svelte-preprocess-cssmodules": "^3.0.1",
