@@ -60,7 +60,7 @@
 		"@ryoppippi/eslint-config": "^0.3.7",
 		"@ryoppippi/svelte-preprocess-import-css": "jsr:^0.3.4",
 		"@std/async": "jsr:^1.0.12",
-		"@sveltejs/adapter-vercel": "^5.8.0",
+		"@sveltejs/adapter-vercel": "^5.8.1",
 		"@sveltejs/kit": "^2.25.1",
 		"@sveltejs/package": "^2.4.0",
 		"@sveltejs/vite-plugin-svelte": "5.1.1",
