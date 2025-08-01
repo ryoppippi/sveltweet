@@ -57,6 +57,9 @@ The simplest way to embed tweets is using [SvelteKit's remote functions](https:/
         {#snippet pending()}
             <TweetSkeleton />
         {/snippet}
+        {#snippet failed()}
+            <TweetNotFound />
+        {/snippet}
     </svelte:boundary>
     ```
 
