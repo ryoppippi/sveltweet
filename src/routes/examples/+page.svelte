@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import { Tweet } from '$lib';
+	import { Tweet, TweetSkeleton } from '$lib';
 	import ToggleDark from '../ToggleDark.svelte';
 	import { EXAMPLE_TWEET_IDS } from './consts';
 	import { getTweet } from './tweet.remote';
@@ -9,21 +9,22 @@
 
 <div class='desc'>
 	These tweets are statically generated.<br />
-	Let's disable JavaScript and reload the page to see the tweets.
 </div>
 
 <div id='container'>
 	<ToggleDark bind:isDark />
 	{#each EXAMPLE_TWEET_IDS as id (id)}
-		{@const tweet = getTweet(id)}
 		<div id={id}>
 			<h1>
 				<a href='#{id}'>{id}</a>
 			</h1>
-			<!-- because svelte doesn't support server-side async rendering yet -->
-			{#if tweet.current != null}
-				<Tweet tweet={tweet.current} />
-			{/if}
+			<svelte:boundary>
+				<!-- eslint-disable-next-line antfu/no-top-level-await -->
+				<Tweet tweet={await getTweet(id)} />
+				{#snippet pending()}
+					<TweetSkeleton />
+				{/snippet}
+			</svelte:boundary>
 		</div>
 	{/each}
 </div>
