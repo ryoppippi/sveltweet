@@ -1,9 +1,8 @@
 <script lang='ts'>
 	import { Tweet } from '$lib';
 	import ToggleDark from '../ToggleDark.svelte';
-
-	const { data } = $props();
-	const { tweets } = data;
+	import { EXAMPLE_TWEET_IDS } from './consts';
+	import { getTweet } from './tweet.remote';
 
 	let isDark = $state(false);
 </script>
@@ -15,12 +14,16 @@
 
 <div id='container'>
 	<ToggleDark bind:isDark />
-	{#each tweets as { tweet, id } (id)}
+	{#each EXAMPLE_TWEET_IDS as id (id)}
+		{@const tweet = getTweet(id)}
 		<div id={id}>
 			<h1>
 				<a href='#{id}'>{id}</a>
 			</h1>
-			<Tweet {tweet} />
+			<!-- because svelte doesn't support server-side async rendering yet -->
+			{#if tweet.current != null}
+				<Tweet tweet={tweet.current} />
+			{/if}
 		</div>
 	{/each}
 </div>

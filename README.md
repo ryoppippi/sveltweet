@@ -27,6 +27,54 @@ npx nypm add sveltweet
 ## Usage
 
 ### SvelteKit
+
+#### Recommended: Using Remote Functions
+
+The simplest way to embed tweets is using [SvelteKit's remote functions](https://svelte.dev/docs/kit/remote-functions). This approach allows you to fetch tweet data directly inside your components without setting up separate server files.
+
+1. Create a remote function to fetch tweet data:
+
+    ```ts
+    // src/lib/tweet.remote.ts
+    import { query } from '@sveltejs/kit';
+    import { getTweet } from 'sveltweet/api';
+
+    export const getTweetData = query(async (id: string) => getTweet(id));
+    ```
+
+2. Use it directly in your component:
+
+    ```svelte
+    <script lang='ts'>
+        import { Tweet } from 'sveltweet';
+        import { getTweetData } from '$lib/tweet.remote';
+
+        const tweetId = '1234567890';
+    </script>
+
+    <!-- Recommended: Using await directly -->
+    <Tweet tweet={await getTweetData(tweetId)} />
+
+    <!-- Alternative: Using {#await} block for loading states -->
+    {#await getTweetData(tweetId)}
+        <p>Loading tweet...</p>
+    {:then tweet}
+        <Tweet {tweet} />
+    {:catch error}
+        <p>Error loading tweet: {error.message}</p>
+    {/await}
+    ```
+
+> [!NOTE]
+> Remote functions and await syntax require configuration. See the [SvelteKit remote functions documentation](https://svelte.dev/docs/kit/remote-functions) and [Svelte await expressions documentation](https://svelte.dev/docs/svelte/await-expressions) for setup instructions.
+
+> [!IMPORTANT]
+> When using `await` directly, make sure to wrap your component with `<svelte:boundary>` for error handling. See the [Svelte boundary documentation](https://svelte.dev/docs/svelte/svelte-boundary) for details.
+
+#### Alternative: Using Traditional Loaders
+
+If you prefer the traditional approach or need more control over data loading:
+
 1.  Go to the tweet you want to embed. You will find the URL
 2.  Use the `getTweet` function in your `+page.server.ts` file to fetch the tweet data.
 
