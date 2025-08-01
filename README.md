@@ -68,6 +68,9 @@ The simplest way to embed tweets is using [SvelteKit's remote functions](https:/
 > [!NOTE]
 > Remote functions and await syntax require configuration. See the [SvelteKit remote functions documentation](https://svelte.dev/docs/kit/remote-functions) and [Svelte await expressions documentation](https://svelte.dev/docs/svelte/await-expressions) for setup instructions.
 
+> [!IMPORTANT]
+> When using `await` directly, make sure to wrap your component with `<svelte:boundary>` for error handling. See the [Svelte boundary documentation](https://svelte.dev/docs/svelte/svelte-boundary) for details.
+
 #### Alternative: Using Traditional Loaders
 
 If you prefer the traditional approach or need more control over data loading:

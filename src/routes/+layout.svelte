@@ -2,7 +2,15 @@
 	const { children } = $props();
 </script>
 
-{@render children()}
+<svelte:boundary>
+	{@render children()}
+	{#snippet failed(error)}
+		<div style:padding='1rem' style:color='red'>
+			<h2>Something went wrong</h2>
+			<p>{error.message}</p>
+		</div>
+	{/snippet}
+</svelte:boundary>
 
 <style>
 	:root {
