@@ -44,12 +44,11 @@ The simplest way to embed tweets is using [SvelteKit's remote functions](https:/
 
 2. Use it directly in your component:
 
+    Recommended way to use the `Tweet` component with remote functions:
     ```svelte
     <script lang='ts'>
         import { Tweet } from 'sveltweet';
         import { getTweetData } from '$lib/tweet.remote';
-
-        const tweetId = '1234567890';
     </script>
 
     <!-- Recommended: Using await directly -->
@@ -59,15 +58,26 @@ The simplest way to embed tweets is using [SvelteKit's remote functions](https:/
             <TweetSkeleton />
         {/snippet}
     </svelte:boundary>
+    ```
 
-    <!-- Alternative: Using {#await} block for loading states -->
-    {#await getTweetData(tweetId)}
+    Or, if you prefer to handle loading states manually:
+    ```svelte
+    <script lang='ts'>
+        import { Tweet } from 'sveltweet';
+        import { getTweetData } from '$lib/tweet.remote';
+
+        const tweetId = '1234567890';
+        const tweet = getTweetData(tweetId);
+    </script>
+
+    <!-- Alternative: Using {#if} block for loading states -->
+    {#if tweet.error}
+        <p>Error loading tweet: {tweet.error.message}</p>
+    {:else if tweet.loading}
         <p>Loading tweet...</p>
-    {:then tweet}
-        <Tweet {tweet} />
-    {:catch error}
-        <p>Error loading tweet: {error.message}</p>
-    {/await}
+    {:else if tweet.ready}
+        <Tweet tweet={tweet.current} /> 
+    {/if}
     ```
 
 > [!NOTE]
