@@ -53,7 +53,12 @@ The simplest way to embed tweets is using [SvelteKit's remote functions](https:/
     </script>
 
     <!-- Recommended: Using await directly -->
-    <Tweet tweet={await getTweetData(tweetId)} />
+    <svelte:boundary>
+        <Tweet tweet={await getTweetData(tweetId)} />
+        {#snippet pending()}
+            <TweetSkeleton />
+        {/snippet}
+    </svelte:boundary>
 
     <!-- Alternative: Using {#await} block for loading states -->
     {#await getTweetData(tweetId)}
