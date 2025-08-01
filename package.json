@@ -17,10 +17,6 @@
 		"./api": {
 			"types": "./dist/api.d.ts",
 			"import": "./dist/api.js"
-		},
-		"./preprocessor": {
-			"types": "./dist/preprocessor.d.ts",
-			"import": "./dist/preprocessor.js"
 		}
 	},
 	"types": "./dist/index.d.ts",
