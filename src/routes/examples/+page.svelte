@@ -1,9 +1,10 @@
 <script lang='ts'>
 	import { Tweet } from '$lib';
 	import ToggleDark from '../ToggleDark.svelte';
+	import { getExampleTweets } from './tweets.remote';
 
-	const { data } = $props();
-	const { tweets } = data;
+	// eslint-disable-next-line antfu/no-top-level-await
+	const tweets = await getExampleTweets();
 
 	let isDark = $state(false);
 </script>
