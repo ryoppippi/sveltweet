@@ -1,4 +1,4 @@
-<script>
+<script lang='ts'>
 	const { children } = $props();
 </script>
 
@@ -14,7 +14,7 @@
 	{#snippet failed(error)}
 		<div style:padding='1rem' style:color='red'>
 			<h2>Something went wrong</h2>
-			<p>{error.message}</p>
+			<p>{(error as Error).message}</p>
 		</div>
 	{/snippet}
 </svelte:boundary>

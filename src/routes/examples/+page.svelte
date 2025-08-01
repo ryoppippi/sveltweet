@@ -3,9 +3,6 @@
 	import ToggleDark from '../ToggleDark.svelte';
 	import { getExampleTweets } from './tweets.remote';
 
-	// eslint-disable-next-line antfu/no-top-level-await
-	const tweets = await getExampleTweets();
-
 	let isDark = $state(false);
 </script>
 
@@ -16,7 +13,8 @@
 
 <div id='container'>
 	<ToggleDark bind:isDark />
-	{#each tweets as { tweet, id } (id)}
+	<!-- eslint-disable-next-line antfu/no-top-level-await -->
+	{#each await getExampleTweets() as { tweet, id } (id)}
 		<div id={id}>
 			<h1>
 				<a href='#{id}'>{id}</a>
