@@ -60,8 +60,8 @@ importers:
         specifier: ^0.3.12
         version: 0.3.12
       react-tweet:
-        specifier: 3.2.1
-        version: 3.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 3.2.2
+        version: 3.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       simple-git-hooks:
         specifier: ^2.13.1
         version: 2.13.1
@@ -2693,11 +2693,11 @@ packages:
     peerDependencies:
       react: ^19.0.0
 
-  react-tweet@3.2.1:
-    resolution: {integrity: sha512-dktP3RMuwRB4pnSDocKpSsW5Hq1IXRW6fONkHhxT5EBIXsKZzdQuI70qtub1XN2dtZdkJWWxfBm/Q+kN+vRYFA==}
+  react-tweet@3.2.2:
+    resolution: {integrity: sha512-hIkxAVPpN2RqWoDEbo3TTnN/pDcp9/Jb6pTgiA4EbXa9S+m2vHIvvZKHR+eS0PDIsYqe+zTmANRa5k6+/iwGog==}
     peerDependencies:
-      react: '>= 18.0.0'
-      react-dom: '>= 18.0.0'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
 
   react@19.0.0:
     resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
@@ -5860,7 +5860,7 @@ snapshots:
       react: 19.0.0
       scheduler: 0.25.0
 
-  react-tweet@3.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-tweet@3.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@swc/helpers': 0.5.15
       clsx: 2.1.1
