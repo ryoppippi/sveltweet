@@ -53,6 +53,9 @@ importers:
       magic-string:
         specifier: ^0.30.17
         version: 0.30.17
+      node:
+        specifier: runtime:22.15.1
+        version: runtime:22.15.1
       publint:
         specifier: ^0.3.12
         version: 0.3.12
@@ -2484,6 +2487,115 @@ packages:
 
   node-releases@2.0.19:
     resolution: {integrity: sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw==}
+
+  node@runtime:22.15.1:
+    resolution:
+      type: variations
+      variants:
+        - resolution:
+            archive: tarball
+            bin: bin/node
+            integrity: sha256-L+Y17ZIGM6iQ/VlIYOX+NfXKHvbaPNpixmksOc/vuJQ=
+            type: binary
+            url: https://nodejs.org/download/release/v22.15.1/node-v22.15.1-aix-ppc64.tar.gz
+          targets:
+            - cpu: ppc64
+              os: aix
+        - resolution:
+            archive: tarball
+            bin: bin/node
+            integrity: sha256-0mibhrF+G1Hnb4Af/i2azKQiXnbtpLhDw9hDjUp81v4=
+            type: binary
+            url: https://nodejs.org/download/release/v22.15.1/node-v22.15.1-darwin-arm64.tar.gz
+          targets:
+            - cpu: arm64
+              os: darwin
+        - resolution:
+            archive: tarball
+            bin: bin/node
+            integrity: sha256-HHItDdbT9g6LC+AU6gG4pZ9QiPRBkZehs3VEhU1hzG8=
+            type: binary
+            url: https://nodejs.org/download/release/v22.15.1/node-v22.15.1-darwin-x64.tar.gz
+          targets:
+            - cpu: x64
+              os: darwin
+        - resolution:
+            archive: tarball
+            bin: bin/node
+            integrity: sha256-6z8jK4Pf6DOXuYOV7Hepc+iI6JWcl4s+TutVG4hFt08=
+            type: binary
+            url: https://nodejs.org/download/release/v22.15.1/node-v22.15.1-linux-arm64.tar.gz
+          targets:
+            - cpu: arm64
+              os: linux
+        - resolution:
+            archive: tarball
+            bin: bin/node
+            integrity: sha256-NGQm4rymLJj7EiE8OegLDjSddiAjj3S3II0S4Y/eh/0=
+            type: binary
+            url: https://nodejs.org/download/release/v22.15.1/node-v22.15.1-linux-armv7l.tar.gz
+          targets:
+            - cpu: armv7l
+              os: linux
+        - resolution:
+            archive: tarball
+            bin: bin/node
+            integrity: sha256-FWUYr2kB+xNN3eX0t+454EfEFUSAw92TAwkSpdP4cJc=
+            type: binary
+            url: https://nodejs.org/download/release/v22.15.1/node-v22.15.1-linux-ppc64le.tar.gz
+          targets:
+            - cpu: ppc64le
+              os: linux
+        - resolution:
+            archive: tarball
+            bin: bin/node
+            integrity: sha256-a1qWFbZuVTGJV4pL4zCZ9wrdlsOwC/OLfc2Rgl6hZy8=
+            type: binary
+            url: https://nodejs.org/download/release/v22.15.1/node-v22.15.1-linux-s390x.tar.gz
+          targets:
+            - cpu: s390x
+              os: linux
+        - resolution:
+            archive: tarball
+            bin: bin/node
+            integrity: sha256-9LjuxoNwissaKnPHGCui3lRmpd1fcFk0oIMJA98oghw=
+            type: binary
+            url: https://nodejs.org/download/release/v22.15.1/node-v22.15.1-linux-x64.tar.gz
+          targets:
+            - cpu: x64
+              os: linux
+        - resolution:
+            archive: zip
+            bin: node.exe
+            integrity: sha256-3shdIw1FpjGRMMvIROjs+HZ7FQv+3dNA9rfEoujDzLg=
+            prefix: node-v22.15.1-win-arm64
+            type: binary
+            url: https://nodejs.org/download/release/v22.15.1/node-v22.15.1-win-arm64.zip
+          targets:
+            - cpu: arm64
+              os: win32
+        - resolution:
+            archive: zip
+            bin: node.exe
+            integrity: sha256-fHmX1u8u/ZUlpUsDP8C+byJUmlkF9dplc6QeYaQ2obU=
+            prefix: node-v22.15.1-win-x64
+            type: binary
+            url: https://nodejs.org/download/release/v22.15.1/node-v22.15.1-win-x64.zip
+          targets:
+            - cpu: x64
+              os: win32
+        - resolution:
+            archive: zip
+            bin: node.exe
+            integrity: sha256-3UMgQ+jJC38iG9O6jmRD+2nnuCcwSfrQZpo6fWaTmYU=
+            prefix: node-v22.15.1-win-x86
+            type: binary
+            url: https://nodejs.org/download/release/v22.15.1/node-v22.15.1-win-x86.zip
+          targets:
+            - cpu: x86
+              os: win32
+    version: 22.15.1
+    hasBin: true
 
   nopt@8.1.0:
     resolution: {integrity: sha512-ieGu42u/Qsa4TFktmaKEwM6MQH0pOWnaB3htzh0JRtx84+Mebc0cbZYN5bC+6WTZ4+77xrL9Pn5m7CV6VIkV7A==}
@@ -5645,6 +5757,8 @@ snapshots:
   node-gyp-build@4.8.4: {}
 
   node-releases@2.0.19: {}
+
+  node@runtime:22.15.1: {}
 
   nopt@8.1.0:
     dependencies:
