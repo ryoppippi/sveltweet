@@ -29,22 +29,22 @@
 	"svelte": "./dist/index.js",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "nr /^build:/",
+		"build": "pnpm /^build:/",
 		"build:page": "vite build",
 		"build:package": "svelte-kit sync && svelte-package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint --cache .",
-		"format": "nr lint --fix",
-		"prerelease": "nr /^prerelease:/",
-		"prerelease:check": "nr check",
-		"prerelease:lint": "nr lint",
-		"prerelease:build": "nr build && publint",
+		"format": "pnpm lint --fix",
+		"prerelease": "pnpm /^prerelease:/",
+		"prerelease:check": "pnpm check",
+		"prerelease:lint": "pnpm lint",
+		"prerelease:build": "pnpm build && publint",
 		"release": "bumpp",
-		"prepare": "nr /^prepare:/",
+		"prepare": "pnpm /^prepare:/",
 		"prepare:copy": "./copy.mjs",
 		"prepare:git": "simple-git-hooks",
-		"prepack": "nr build && clean-pkg-json -r scripts.preinstall",
+		"prepack": "pnpm build && clean-pkg-json -r scripts.preinstall",
 		"preinstall": "npx only-allow pnpm"
 	},
 	"peerDependencies": {
@@ -52,7 +52,6 @@
 		"svelte": "^5.38.1"
 	},
 	"devDependencies": {
-		"@antfu/ni": "^25.0.0",
 		"@ryoppippi/eslint-config": "^0.3.7",
 		"@ryoppippi/svelte-preprocess-import-css": "jsr:^0.3.4",
 		"@std/async": "jsr:^1.0.12",
