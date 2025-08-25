@@ -45,4 +45,4 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - run: pnpm install --frozen-lockfile
       - run: pnpm build:package
-      - run: pnpm dlx pkg-pr-new publish --compact --pnpm
+      - run: pnpm dlx pkg-pr-new publish --compact
