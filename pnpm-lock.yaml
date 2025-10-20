@@ -18,8 +18,8 @@ importers:
         specifier: jsr:^1.0.12
         version: '@jsr/std__async@1.0.12'
       '@sveltejs/adapter-vercel':
-        specifier: ^5.9.1
-        version: 5.10.0(@sveltejs/kit@2.33.0(@sveltejs/vite-plugin-svelte@6.1.4(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1)))(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1)))(rollup@4.50.1)
+        specifier: ^6.0.0
+        version: 6.0.0(@sveltejs/kit@2.33.0(@sveltejs/vite-plugin-svelte@6.1.4(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1)))(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1)))(rollup@4.50.1)
       '@sveltejs/kit':
         specifier: ^2.31.1
         version: 2.33.0(@sveltejs/vite-plugin-svelte@6.1.4(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1)))(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1))
@@ -945,8 +945,9 @@ packages:
     peerDependencies:
       acorn: ^8.9.0
 
-  '@sveltejs/adapter-vercel@5.10.0':
-    resolution: {integrity: sha512-SolaFGPtGxXw4TMtZrwY8zHgIfSSZGk9Am9lUxdfoI+rF0RG4ws3VaaFGREOx7idSawrxfAG1gjhoBNevSm7Tg==}
+  '@sveltejs/adapter-vercel@6.0.0':
+    resolution: {integrity: sha512-03fCC55QLvFtgWVA7dPx7VENa1aH05PJohnvbjSMenPfQlY8gwyElRpz/a192suqCiPxTVZ1T61G6qtS7AMtrg==}
+    engines: {node: '>=20.0'}
     peerDependencies:
       '@sveltejs/kit': ^2.4.0
 
@@ -3743,7 +3744,7 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/adapter-vercel@5.10.0(@sveltejs/kit@2.33.0(@sveltejs/vite-plugin-svelte@6.1.4(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1)))(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1)))(rollup@4.50.1)':
+  '@sveltejs/adapter-vercel@6.0.0(@sveltejs/kit@2.33.0(@sveltejs/vite-plugin-svelte@6.1.4(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1)))(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1)))(rollup@4.50.1)':
     dependencies:
       '@sveltejs/kit': 2.33.0(@sveltejs/vite-plugin-svelte@6.1.4(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1)))(svelte@5.38.1)(vite@7.1.5(jiti@2.5.1)(tsx@4.19.2)(yaml@2.8.1))
       '@vercel/nft': 0.30.0(rollup@4.50.1)
