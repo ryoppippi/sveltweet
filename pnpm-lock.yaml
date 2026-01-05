@@ -1494,6 +1494,7 @@ packages:
 
   dax-sh@0.44.1:
     resolution: {integrity: sha512-lUj0mA0LTO6CXUZmbUgFUhtlyowa+9hmg/Z4xeU8/FIdkM1oj541iZR5MELYZdX1IOFD51RLch8uiOTOHzbfSA==}
+    deprecated: This package has moved to simply be 'dax' instead of 'dax-sh'
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
