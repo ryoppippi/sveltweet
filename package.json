@@ -2,7 +2,7 @@
 	"name": "sveltweet",
 	"type": "module",
 	"version": "0.5.1",
-	"packageManager": "pnpm@10.28.0",
+	"packageManager": "pnpm@10.28.1",
 	"description": "The best way to embed tweets in your Svelte app, supporting both SSR and static prerendering modes.",
 	"author": "ryoppippi",
 	"license": "MIT",
@@ -55,15 +55,15 @@
 		"preinstall": "npx only-allow pnpm"
 	},
 	"peerDependencies": {
-		"@sveltejs/kit": "^2.49.5",
-		"svelte": "^5.46.4"
+		"@sveltejs/kit": "^2.50.1",
+		"svelte": "^5.48.0"
 	},
 	"devDependencies": {
 		"@ryoppippi/eslint-config": "^0.4.0",
 		"@ryoppippi/svelte-preprocess-import-css": "jsr:^0.3.4",
 		"@std/async": "jsr:^1.0.12",
-		"@sveltejs/adapter-vercel": "^6.3.0",
-		"@sveltejs/kit": "^2.49.5",
+		"@sveltejs/adapter-vercel": "^6.3.1",
+		"@sveltejs/kit": "^2.50.1",
 		"@sveltejs/package": "^2.5.7",
 		"@sveltejs/vite-plugin-svelte": "6.2.4",
 		"bumpp": "^10.4.0",
@@ -74,11 +74,11 @@
 		"eslint-plugin-svelte": "^3.14.0",
 		"lint-staged": "^16.2.7",
 		"magic-string": "^0.30.21",
-		"publint": "^0.3.16",
+		"publint": "^0.3.17",
 		"react-tweet": "3.3.0",
 		"simple-git-hooks": "^2.13.1",
 		"std-env": "^3.10.0",
-		"svelte": "^5.46.4",
+		"svelte": "^5.48.0",
 		"svelte-check": "^4.3.5",
 		"svelte-eslint-parser": "^1.4.1",
 		"svelte-preprocess-cssmodules": "^3.0.1",
