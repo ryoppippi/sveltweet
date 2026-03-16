@@ -77,7 +77,7 @@
 		"publint": "^0.3.18",
 		"react-tweet": "3.3.0",
 		"simple-git-hooks": "^2.13.1",
-		"std-env": "^3.10.0",
+		"std-env": "^4.0.0",
 		"svelte": "^5.53.11",
 		"svelte-check": "^4.4.5",
 		"svelte-eslint-parser": "^1.6.0",
