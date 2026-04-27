@@ -69,7 +69,7 @@
 		"bumpp": "^11.0.1",
 		"clean-pkg-json": "^1.4.2",
 		"dax-sh": "^0.44.1",
-		"eslint": "^9.39.4",
+		"eslint": "^10.2.1",
 		"eslint-plugin-format": "^2.0.1",
 		"eslint-plugin-svelte": "^3.17.1",
 		"lint-staged": "^16.4.0",
