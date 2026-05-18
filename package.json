@@ -2,7 +2,7 @@
 	"name": "sveltweet",
 	"type": "module",
 	"version": "0.5.1",
-	"packageManager": "pnpm@10.33.4",
+	"packageManager": "pnpm@11.1.2",
 	"description": "The best way to embed tweets in your Svelte app, supporting both SSR and static prerendering modes.",
 	"author": "ryoppippi",
 	"license": "MIT",
