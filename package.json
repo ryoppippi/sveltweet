@@ -55,15 +55,15 @@
 		"preinstall": "npx only-allow pnpm"
 	},
 	"peerDependencies": {
-		"@sveltejs/kit": "^2.59.1",
-		"svelte": "^5.55.5"
+		"@sveltejs/kit": "^2.60.1",
+		"svelte": "^5.55.7"
 	},
 	"devDependencies": {
 		"@ryoppippi/eslint-config": "^0.4.0",
 		"@ryoppippi/svelte-preprocess-import-css": "jsr:^0.3.4",
 		"@std/async": "jsr:^1.0.12",
 		"@sveltejs/adapter-vercel": "^6.3.3",
-		"@sveltejs/kit": "^2.59.1",
+		"@sveltejs/kit": "^2.60.1",
 		"@sveltejs/package": "^2.5.7",
 		"@sveltejs/vite-plugin-svelte": "7.1.2",
 		"bumpp": "^11.1.0",
@@ -72,13 +72,13 @@
 		"eslint": "^9.39.4",
 		"eslint-plugin-format": "^2.0.1",
 		"eslint-plugin-svelte": "^3.17.1",
-		"lint-staged": "^17.0.2",
+		"lint-staged": "^17.0.4",
 		"magic-string": "^0.30.21",
-		"publint": "^0.3.19",
+		"publint": "^0.3.21",
 		"react-tweet": "3.3.0",
 		"simple-git-hooks": "^2.13.1",
 		"std-env": "^4.1.0",
-		"svelte": "^5.55.5",
+		"svelte": "^5.55.7",
 		"svelte-check": "^4.4.8",
 		"svelte-eslint-parser": "^1.6.1",
 		"svelte-preprocess-cssmodules": "^3.0.1",
@@ -86,7 +86,7 @@
 		"typescript": "^6.0.3",
 		"typescript-svelte-plugin": "^0.3.52",
 		"valibot": "^1.4.0",
-		"vite": "^8.0.11"
+		"vite": "^8.0.13"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm lint-staged"
