@@ -33,8 +33,8 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0
       clean-pkg-json:
-        specifier: ^1.4.2
-        version: 1.4.2
+        specifier: ^2.0.0
+        version: 2.0.0
       dax-sh:
         specifier: ^0.44.1
         version: 0.44.1
@@ -1513,8 +1513,9 @@ packages:
     resolution: {integrity: sha512-Wdy2Igu8OcBpI2pZePZ5oWjPC38tmDVx5WKUXKwlLYkA0ozo85sLsLvkBbBn/sZaSCMFOGZJ14fvW9t5/d7kdA==}
     engines: {node: '>=8'}
 
-  clean-pkg-json@1.4.2:
-    resolution: {integrity: sha512-o201s9wWOYoZSRui4QyARSFc3n0IcYDu62hkJCQGX1eshSSQ/90QhS/KveWp/QlXSqcF/g/q2+IINj25V1BMKw==}
+  clean-pkg-json@2.0.0:
+    resolution: {integrity: sha512-HfgaeXf7xc2xEg28rKAb6iJ7KaBU6Bu1F+wefBUEm142fYvnn+dKuBg2WEwjv7hIs1S4tu/qdLK9wek03OolBQ==}
+    engines: {node: '>=22'}
     hasBin: true
 
   clean-regexp@1.0.0:
@@ -4421,7 +4422,7 @@ snapshots:
 
   ci-info@4.3.1: {}
 
-  clean-pkg-json@1.4.2: {}
+  clean-pkg-json@2.0.0: {}
 
   clean-regexp@1.0.0:
     dependencies:
