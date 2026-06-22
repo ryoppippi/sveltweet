@@ -2,7 +2,7 @@
 	"name": "sveltweet",
 	"type": "module",
 	"version": "0.5.1",
-	"packageManager": "pnpm@10.34.3",
+	"packageManager": "pnpm@10.34.4",
 	"description": "The best way to embed tweets in your Svelte app, supporting both SSR and static prerendering modes.",
 	"author": "ryoppippi",
 	"license": "MIT",
@@ -55,15 +55,15 @@
 		"preinstall": "npx only-allow pnpm"
 	},
 	"peerDependencies": {
-		"@sveltejs/kit": "^2.65.0",
+		"@sveltejs/kit": "^2.66.0",
 		"svelte": "^5.56.3"
 	},
 	"devDependencies": {
 		"@ryoppippi/eslint-config": "^0.4.0",
 		"@ryoppippi/svelte-preprocess-import-css": "jsr:^0.3.4",
 		"@std/async": "jsr:^1.0.12",
-		"@sveltejs/adapter-vercel": "^6.3.3",
-		"@sveltejs/kit": "^2.65.0",
+		"@sveltejs/adapter-vercel": "^6.3.4",
+		"@sveltejs/kit": "^2.66.0",
 		"@sveltejs/package": "^2.5.8",
 		"@sveltejs/vite-plugin-svelte": "7.1.2",
 		"bumpp": "^11.1.0",
