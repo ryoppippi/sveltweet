@@ -2,7 +2,7 @@
 	"name": "sveltweet",
 	"type": "module",
 	"version": "0.5.1",
-	"packageManager": "pnpm@10.34.4",
+	"packageManager": "pnpm@10.34.5",
 	"description": "The best way to embed tweets in your Svelte app, supporting both SSR and static prerendering modes.",
 	"author": "ryoppippi",
 	"license": "MIT",
@@ -55,21 +55,21 @@
 		"preinstall": "npx only-allow pnpm"
 	},
 	"peerDependencies": {
-		"@sveltejs/kit": "^2.69.2",
-		"svelte": "^5.56.4"
+		"@sveltejs/kit": "^2.69.3",
+		"svelte": "^5.56.6"
 	},
 	"devDependencies": {
 		"@ryoppippi/eslint-config": "^0.4.0",
 		"@ryoppippi/svelte-preprocess-import-css": "jsr:^0.3.4",
 		"@std/async": "jsr:^1.0.12",
 		"@sveltejs/adapter-vercel": "^6.3.4",
-		"@sveltejs/kit": "^2.69.2",
+		"@sveltejs/kit": "^2.69.3",
 		"@sveltejs/package": "^2.5.8",
 		"@sveltejs/vite-plugin-svelte": "7.2.0",
 		"bumpp": "^11.1.0",
 		"clean-pkg-json": "^2.0.0",
 		"dax-sh": "^0.44.1",
-		"eslint": "^9.39.4",
+		"eslint": "^9.39.5",
 		"eslint-plugin-format": "^2.0.1",
 		"eslint-plugin-svelte": "^3.20.0",
 		"lint-staged": "^17.0.8",
@@ -78,15 +78,15 @@
 		"react-tweet": "3.3.1",
 		"simple-git-hooks": "^2.13.1",
 		"std-env": "^4.2.0",
-		"svelte": "^5.56.4",
-		"svelte-check": "^4.7.2",
+		"svelte": "^5.56.6",
+		"svelte-check": "^4.7.3",
 		"svelte-eslint-parser": "^1.8.0",
 		"svelte-preprocess-cssmodules": "^3.0.1",
 		"tslib": "^2.8.1",
 		"typescript": "^6.0.3",
 		"typescript-svelte-plugin": "^0.3.52",
 		"valibot": "^1.4.2",
-		"vite": "^8.1.4"
+		"vite": "^8.1.5"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm lint-staged"
