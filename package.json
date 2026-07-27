@@ -55,15 +55,15 @@
 		"preinstall": "npx only-allow pnpm"
 	},
 	"peerDependencies": {
-		"@sveltejs/kit": "^2.69.3",
-		"svelte": "^5.56.6"
+		"@sveltejs/kit": "^2.70.1",
+		"svelte": "^5.56.7"
 	},
 	"devDependencies": {
 		"@ryoppippi/eslint-config": "^0.4.0",
 		"@ryoppippi/svelte-preprocess-import-css": "jsr:^0.3.4",
 		"@std/async": "jsr:^1.0.12",
 		"@sveltejs/adapter-vercel": "^6.3.4",
-		"@sveltejs/kit": "^2.69.3",
+		"@sveltejs/kit": "^2.70.1",
 		"@sveltejs/package": "^2.5.8",
 		"@sveltejs/vite-plugin-svelte": "7.2.0",
 		"bumpp": "^11.1.0",
@@ -71,14 +71,14 @@
 		"dax-sh": "^0.44.1",
 		"eslint": "^9.39.5",
 		"eslint-plugin-format": "^2.0.1",
-		"eslint-plugin-svelte": "^3.20.0",
-		"lint-staged": "^17.0.8",
+		"eslint-plugin-svelte": "^3.22.0",
+		"lint-staged": "^17.2.0",
 		"magic-string": "^0.30.21",
-		"publint": "^0.3.21",
+		"publint": "^0.3.22",
 		"react-tweet": "3.3.1",
 		"simple-git-hooks": "^2.13.1",
 		"std-env": "^4.2.0",
-		"svelte": "^5.56.6",
+		"svelte": "^5.56.7",
 		"svelte-check": "^4.7.3",
 		"svelte-eslint-parser": "^1.8.0",
 		"svelte-preprocess-cssmodules": "^3.0.1",
