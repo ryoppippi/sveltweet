@@ -66,7 +66,7 @@
 		"@sveltejs/kit": "^2.70.1",
 		"@sveltejs/package": "^2.5.8",
 		"@sveltejs/vite-plugin-svelte": "7.2.0",
-		"bumpp": "^11.1.0",
+		"bumpp": "^12.0.0",
 		"clean-pkg-json": "^2.0.0",
 		"dax-sh": "^0.44.1",
 		"eslint": "^9.39.5",
