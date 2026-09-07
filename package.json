@@ -56,7 +56,7 @@
 	},
 	"peerDependencies": {
 		"@sveltejs/kit": "^2.70.3",
-		"svelte": "^5.56.10"
+		"svelte": "^5.57.0"
 	},
 	"devDependencies": {
 		"@ryoppippi/eslint-config": "^0.4.0",
@@ -66,7 +66,7 @@
 		"@sveltejs/kit": "^2.70.3",
 		"@sveltejs/package": "^2.5.8",
 		"@sveltejs/vite-plugin-svelte": "7.3.0",
-		"bumpp": "^12.2.2",
+		"bumpp": "^12.3.0",
 		"clean-pkg-json": "^2.0.0",
 		"dax-sh": "^0.44.1",
 		"eslint": "^9.39.5",
@@ -76,9 +76,9 @@
 		"magic-string": "^1.2.3",
 		"publint": "^0.3.24",
 		"react-tweet": "3.3.1",
-		"simple-git-hooks": "^2.13.1",
+		"simple-git-hooks": "^2.14.0",
 		"std-env": "^4.2.0",
-		"svelte": "^5.56.10",
+		"svelte": "^5.57.0",
 		"svelte-check": "^4.7.6",
 		"svelte-eslint-parser": "^1.8.1",
 		"svelte-preprocess-cssmodules": "^3.0.1",
