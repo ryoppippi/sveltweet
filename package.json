@@ -64,7 +64,7 @@
 		"@std/async": "jsr:^1.0.12",
 		"@sveltejs/adapter-vercel": "^6.3.4",
 		"@sveltejs/kit": "^2.70.3",
-		"@sveltejs/package": "^2.5.8",
+		"@sveltejs/package": "^3.0.0",
 		"@sveltejs/vite-plugin-svelte": "7.3.1",
 		"bumpp": "^12.3.0",
 		"clean-pkg-json": "^2.0.0",
