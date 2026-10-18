@@ -55,7 +55,7 @@
 		"preinstall": "npx only-allow pnpm"
 	},
 	"peerDependencies": {
-		"@sveltejs/kit": "^2.70.3",
+		"@sveltejs/kit": "^3.1.0",
 		"svelte": "^5.57.1"
 	},
 	"devDependencies": {
@@ -63,7 +63,7 @@
 		"@ryoppippi/svelte-preprocess-import-css": "jsr:^0.3.4",
 		"@std/async": "jsr:^1.0.12",
 		"@sveltejs/adapter-vercel": "^6.3.4",
-		"@sveltejs/kit": "^2.70.3",
+		"@sveltejs/kit": "^3.1.0",
 		"@sveltejs/package": "^2.5.8",
 		"@sveltejs/vite-plugin-svelte": "7.3.1",
 		"bumpp": "^12.3.0",
