@@ -23,8 +23,8 @@
 
 <style>
 	:global {
-		@import "$rt_tw/tweet-skeleton.module.css?.root=.tweet-container-skeleton" scoped;
+		@import "../react-tweet/twitter-theme/tweet-skeleton.module.css?.root=.tweet-container-skeleton" scoped;
 	}
 
-	@import "$rt_tw/skeleton.module.css" scoped;
+	@import "../react-tweet/twitter-theme/skeleton.module.css" scoped;
 </style>

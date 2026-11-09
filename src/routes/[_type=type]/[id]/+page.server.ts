@@ -1,5 +1,5 @@
 import type { RequestEvent } from './$types';
-import { getTweet } from '$lib/api';
+import { getTweet } from '#lib/api.ts';
 import { delay } from '@std/async';
 import { error } from '@sveltejs/kit';
 

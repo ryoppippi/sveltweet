@@ -1,7 +1,7 @@
 <script lang='ts'>
-	import type { MediaAnimatedGif, MediaVideo	} from '$rt/api';
-	import type { EnrichedQuotedTweet, EnrichedTweet } from '$rt/utils';
-	import { getMediaUrl, getMp4Video } from '$rt/utils';
+	import type { MediaAnimatedGif, MediaVideo	} from '#rt/api/index.js';
+	import type { EnrichedQuotedTweet, EnrichedTweet } from '#rt/utils.js';
+	import { getMediaUrl, getMp4Video } from '#rt/utils.js';
 	import mediaStyles from '../react-tweet/twitter-theme//tweet-media.module.css';
 	import s from '../react-tweet/twitter-theme/tweet-media-video.module.css';
 

@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import type { EnrichedQuotedTweet } from '$rt/utils.js';
+	import type { EnrichedQuotedTweet } from '#rt/utils.js';
 	import s from '../../react-tweet/twitter-theme/quoted-tweet/quoted-tweet-header.module.css';
 	import VerifiedBadge from '../VerifiedBadge.svelte';
 

@@ -1,7 +1,7 @@
 <script lang='ts'>
-	import type { MediaDetails } from '$rt/api';
-	import type { EnrichedQuotedTweet, EnrichedTweet } from '$rt/utils.js';
-	import { getMediaUrl } from '$rt/utils.js';
+	import type { MediaDetails } from '#rt/api/index.js';
+	import type { EnrichedQuotedTweet, EnrichedTweet } from '#rt/utils.js';
+	import { getMediaUrl } from '#rt/utils.js';
 	import s from '../react-tweet/twitter-theme/tweet-media.module.css';
 	import TweetMediaVideo from './TweetMediaVideo.svelte';
 

@@ -1,5 +1,5 @@
+import { getTweet as _getTweet } from '#lib/api.ts';
 import { prerender } from '$app/server';
-import { getTweet as _getTweet } from '$lib/api';
 import { error } from '@sveltejs/kit';
 import * as v from 'valibot';
 

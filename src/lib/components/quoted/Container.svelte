@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import type { EnrichedQuotedTweet } from '$rt/utils.ts';
+	import type { EnrichedQuotedTweet } from '#rt/utils.js';
 	import type { Snippet } from 'svelte';
 	import s from '../../react-tweet/twitter-theme/quoted-tweet/quoted-tweet-container.module.css';
 

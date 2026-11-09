@@ -1,1 +1,1 @@
-export * from '$rt/api/index.js';
+export * from '#rt/api/index.js';
