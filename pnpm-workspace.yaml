@@ -1,6 +1,8 @@
+enablePrePostScripts: true
+patchedDependencies:
+  svelte-preprocess-cssmodules@3.0.1: patches/svelte-preprocess-cssmodules@3.0.1.patch
 onlyBuiltDependencies:
   - esbuild
   - simple-git-hooks
   - unrs-resolver
 resolutionMode: highest
-enablePrePostScripts: true

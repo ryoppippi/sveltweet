@@ -1,6 +1,6 @@
 <script lang='ts'>
-	import type { EnrichedTweet } from '$rt/utils';
-	import { formatNumber } from '$rt/utils';
+	import type { EnrichedTweet } from '#rt/utils.js';
+	import { formatNumber } from '#rt/utils.js';
 	import s from '../react-tweet/twitter-theme/tweet-replies.module.css';
 
 	type Props = { tweet: EnrichedTweet };

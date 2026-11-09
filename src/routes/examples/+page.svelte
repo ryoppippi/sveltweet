@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import { Tweet, TweetSkeleton } from '$lib';
+	import { Tweet, TweetSkeleton } from '#lib';
 	import ToggleDark from '../ToggleDark.svelte';
 	import { EXAMPLE_TWEET_IDS } from './consts';
 	import { getTweet } from './tweet.remote';

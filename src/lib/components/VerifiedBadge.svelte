@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import type { TweetUser } from '$rt/api';
+	import type { TweetUser } from '#rt/api/index.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import s from '../react-tweet/twitter-theme/verified-badge.module.css';
 	import * as Icons from './icons';

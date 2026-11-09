@@ -1,6 +1,6 @@
 <script lang='ts'>
-	import type { Tweet } from '$rt/api';
-	import { enrichTweet } from '$rt/utils.js';
+	import type { Tweet } from '#rt/api/index.js';
+	import { enrichTweet } from '#rt/utils.js';
 	import { QuotedTweet } from './quoted';
 	import TweetActions from './TweetActions.svelte';
 	import TweetBody from './TweetBody.svelte';

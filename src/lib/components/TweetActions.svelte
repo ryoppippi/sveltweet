@@ -1,6 +1,6 @@
 <script lang='ts'>
-	import type { EnrichedTweet } from '$rt/utils.js';
-	import { formatNumber } from '$rt/utils.js';
+	import type { EnrichedTweet } from '#rt/utils.js';
+	import { formatNumber } from '#rt/utils.js';
 	import s from '../react-tweet/twitter-theme/tweet-actions.module.css';
 	import TweetActionsCopy from './TweetActionsCopy.svelte';
 
